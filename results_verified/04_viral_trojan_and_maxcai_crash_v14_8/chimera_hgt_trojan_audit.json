@@ -1,0 +1,972 @@
+{
+  "version": "14.8",
+  "os_kernels": {
+    "Drosophila": {
+      "clade": "insect",
+      "table": 1,
+      "gc3": 0.6304444342310874,
+      "native_d2b": 0.03397392107586983,
+      "native_d3b": 0.16402013422115624,
+      "file": "GCF_000001215.4_Release_6_plus_ISO1_MT_cds_from_genomic.fna.gz"
+    },
+    "Mouse": {
+      "clade": "mammal",
+      "table": 1,
+      "gc3": 0.5710290310963432,
+      "native_d2b": 0.05331801946279935,
+      "native_d3b": 0.10518969770847608,
+      "file": "GCF_000001635.27_GRCm39_cds_from_genomic.fna.gz"
+    },
+    "Arabidopsis": {
+      "clade": "plant",
+      "table": 1,
+      "gc3": 0.4170198628144247,
+      "native_d2b": 0.024998846749670012,
+      "native_d3b": 0.10126723746193056,
+      "file": "GCF_000001735.4_TAIR10.1_cds_from_genomic.fna.gz"
+    },
+    "Zebrafish": {
+      "clade": "vertebrate",
+      "table": 1,
+      "gc3": 0.5349779631437276,
+      "native_d2b": 0.047875926079604,
+      "native_d3b": 0.10776148076630854,
+      "file": "GCF_000002035.6_GRCz11_cds_from_genomic.fna.gz"
+    },
+    "E.coli": {
+      "clade": "bacterium",
+      "table": 1,
+      "gc3": 0.560399820684662,
+      "native_d2b": 0.043763214252676264,
+      "native_d3b": 0.2127739402330091,
+      "file": "GCF_000005845.2_ASM584v2_cds_from_genomic.fna.gz"
+    },
+    "Pseudomonas_aeruginosa": {
+      "clade": "bacterium",
+      "table": 1,
+      "gc3": 0.8794814369457388,
+      "native_d2b": 0.06728505384790306,
+      "native_d3b": 0.36729937393944034,
+      "file": "GCF_000006765.1_ASM676v1_cds_from_genomic.fna.gz"
+    },
+    "M.jannaschii": {
+      "clade": "archaeon",
+      "table": 1,
+      "gc3": 0.4191303668485843,
+      "native_d2b": 0.060049386025636586,
+      "native_d3b": 0.21215570259662053,
+      "file": "GCF_000007745.1_ASM774v1_cds_from_genomic.fna.gz"
+    },
+    "B.subtilis": {
+      "clade": "bacterium",
+      "table": 1,
+      "gc3": 0.44484682768747785,
+      "native_d2b": 0.041844204427303744,
+      "native_d3b": 0.15786621922497535,
+      "file": "GCF_000009045.1_ASM904v1_cds_from_genomic.fna.gz"
+    },
+    "Synechocystis_sp_PCC6803": {
+      "clade": "cyanobacterium",
+      "table": 1,
+      "gc3": 0.4894580452231016,
+      "native_d2b": 0.06653948594907932,
+      "native_d3b": 0.2199568988605991,
+      "file": "GCF_000009725.1_ASM972v1_cds_from_genomic.fna.gz"
+    },
+    "H.salinarum": {
+      "clade": "archaeon",
+      "table": 1,
+      "gc3": 0.8607630556861193,
+      "native_d2b": 0.0353885810129726,
+      "native_d3b": 0.29648401151327386,
+      "file": "GCF_000015585.1_ASM1558v1_cds_from_genomic.fna.gz"
+    },
+    "Yeast": {
+      "clade": "fungus",
+      "table": 1,
+      "gc3": 0.37833081588858947,
+      "native_d2b": 0.009574728065166571,
+      "native_d3b": 0.11763256372744779,
+      "file": "GCF_000146045.2_R64_cds_from_genomic.fna.gz"
+    },
+    "Mycobacterium_tuberculosis": {
+      "clade": "bacterium",
+      "table": 1,
+      "gc3": 0.7984137915290608,
+      "native_d2b": 0.0437664538193534,
+      "native_d3b": 0.1848979336242622,
+      "file": "GCF_000195955.2_ASM19595v2_cds_from_genomic.fna.gz"
+    },
+    "Human_T2T": {
+      "clade": "mammal",
+      "table": 1,
+      "gc3": 0.5813134417181934,
+      "native_d2b": 0.04951106062474819,
+      "native_d3b": 0.11676787648839504,
+      "file": "GCF_009914755.1_T2T-CHM13v2.0_cds_from_genomic.fna.gz"
+    }
+  },
+  "module_a_viral_trojans": [
+    {
+      "virus": "Epstein_Barr_Virus_HHV4",
+      "accession": "NC_007605.1",
+      "true_host": "Human_T2T",
+      "role": "Human herpesvirus 4 (latent in human B-cells; lifelong stealth persistence)",
+      "n_genes": 84,
+      "n_genes_ge_80cod": 82,
+      "gc3": 0.6818776928753363,
+      "whole_d2b_on_human": 0.01832989325990253,
+      "whole_d3b_on_human": 0.09890411966525603,
+      "whole_d2b_on_ecoli": -0.06994070074783831,
+      "whole_d3b_on_ecoli": -0.07909591376479863,
+      "genes_pos_d3b_on_human": 76,
+      "genes_pos_d2b_on_human": 62,
+      "top_trojan_genes_on_human": [
+        {
+          "gene": "BaRF1",
+          "product": "ribonucleotide reductase subunit 2",
+          "codons": 301,
+          "gc3": 0.7308970099667774,
+          "d2b_human": 0.05174549979751353,
+          "d3b_human": 0.19600975070577764,
+          "d2b_ecoli": -0.04990153831016553,
+          "d3b_ecoli": 0.04727420372467517,
+          "human_vs_ecoli_d2b_adv": 0.10164703810767906
+        },
+        {
+          "gene": "BALF5",
+          "product": "DNA polymerase catalytic subunit",
+          "codons": 1014,
+          "gc3": 0.8195266272189349,
+          "d2b_human": 0.03262759540294624,
+          "d3b_human": 0.2106295314806883,
+          "d2b_ecoli": -0.05475053849859357,
+          "d3b_ecoli": -0.019138280662239993,
+          "human_vs_ecoli_d2b_adv": 0.08737813390153981
+        },
+        {
+          "gene": "BALF2",
+          "product": "single-stranded DNA-binding protein",
+          "codons": 1127,
+          "gc3": 0.8349600709849158,
+          "d2b_human": 0.038725226211298924,
+          "d3b_human": 0.1950286460362589,
+          "d2b_ecoli": -0.05083136632439178,
+          "d3b_ecoli": -0.007134948254849505,
+          "human_vs_ecoli_d2b_adv": 0.0895565925356907
+        },
+        {
+          "gene": "BBRF3",
+          "product": "envelope glycoprotein M",
+          "codons": 404,
+          "gc3": 0.806930693069307,
+          "d2b_human": 0.05189102751400876,
+          "d3b_human": 0.1686261748712421,
+          "d2b_ecoli": -0.015966433937105506,
+          "d3b_ecoli": 0.018837861396427513,
+          "human_vs_ecoli_d2b_adv": 0.06785746145111426
+        },
+        {
+          "gene": "BLLF3",
+          "product": "deoxyuridine triphosphatase",
+          "codons": 277,
+          "gc3": 0.7725631768953068,
+          "d2b_human": 0.053824814865921056,
+          "d3b_human": 0.1537066693289395,
+          "d2b_ecoli": -0.1018066429790343,
+          "d3b_ecoli": -0.09994264413117193,
+          "human_vs_ecoli_d2b_adv": 0.15563145784495536
+        }
+      ]
+    },
+    {
+      "virus": "Human_Adenovirus_C2",
+      "accession": "AC_000008.1",
+      "true_host": "Human_T2T",
+      "role": "Human respiratory DNA virus (hijacks human nuclear splicing & ribosomes)",
+      "n_genes": 36,
+      "n_genes_ge_80cod": 33,
+      "gc3": 0.6476089641785777,
+      "whole_d2b_on_human": -0.012679073021105047,
+      "whole_d3b_on_human": 0.11051165163646282,
+      "whole_d2b_on_ecoli": -0.037699414085837546,
+      "whole_d3b_on_ecoli": -0.037688462820426594,
+      "genes_pos_d3b_on_human": 33,
+      "genes_pos_d2b_on_human": 13,
+      "top_trojan_genes_on_human": [
+        {
+          "gene": "AP_000207.1",
+          "product": "pVII",
+          "codons": 197,
+          "gc3": 0.766497461928934,
+          "d2b_human": -0.023816157030923435,
+          "d3b_human": 0.2308904693177345,
+          "d2b_ecoli": 0.013038099926458102,
+          "d3b_ecoli": -0.13015410925178195,
+          "human_vs_ecoli_d2b_adv": -0.03685425695738154
+        },
+        {
+          "gene": "AP_000211.1",
+          "product": "hexon",
+          "codons": 951,
+          "gc3": 0.5667718191377498,
+          "d2b_human": 0.027048097435724117,
+          "d3b_human": 0.14678014752302548,
+          "d2b_ecoli": -0.03357282336838896,
+          "d3b_ecoli": 0.032391027785817705,
+          "human_vs_ecoli_d2b_adv": 0.060620920804113076
+        },
+        {
+          "gene": "AP_000206.1",
+          "product": "III",
+          "codons": 570,
+          "gc3": 0.7491228070175439,
+          "d2b_human": 0.006196731034874503,
+          "d3b_human": 0.16207342570388317,
+          "d2b_ecoli": -0.04931542829906377,
+          "d3b_ecoli": 0.05573591647404719,
+          "human_vs_ecoli_d2b_adv": 0.05551215933393827
+        },
+        {
+          "gene": "AP_000222.1",
+          "product": "E3 RID-alpha",
+          "codons": 90,
+          "gc3": 0.5333333333333333,
+          "d2b_human": 0.09584633032587053,
+          "d3b_human": 0.07196007469795518,
+          "d2b_ecoli": -0.03517073351045141,
+          "d3b_ecoli": -0.08213308984148338,
+          "human_vs_ecoli_d2b_adv": 0.13101706383632195
+        },
+        {
+          "gene": "AP_000205.1",
+          "product": "pIIIa",
+          "codons": 584,
+          "gc3": 0.7808219178082192,
+          "d2b_human": -0.022849698871314494,
+          "d3b_human": 0.17389433024403012,
+          "d2b_ecoli": -0.030004231199398212,
+          "d3b_ecoli": 0.005316382835601985,
+          "human_vs_ecoli_d2b_adv": 0.007154532328083718
+        }
+      ]
+    },
+    {
+      "virus": "Human_Papillomavirus_16",
+      "accession": "NC_001526.4",
+      "true_host": "Human_T2T",
+      "role": "High-risk oncogenic human DNA virus (E6/E7 p53/RB1 inactivator)",
+      "n_genes": 8,
+      "n_genes_ge_80cod": 8,
+      "gc3": 0.253416149068323,
+      "whole_d2b_on_human": -0.02661270692642237,
+      "whole_d3b_on_human": 0.09697123147990983,
+      "whole_d2b_on_ecoli": -0.03660978655252567,
+      "whole_d3b_on_ecoli": -0.09523451654656245,
+      "genes_pos_d3b_on_human": 7,
+      "genes_pos_d2b_on_human": 1,
+      "top_trojan_genes_on_human": [
+        {
+          "gene": "E7",
+          "product": "transforming protein E7",
+          "codons": 97,
+          "gc3": 0.38144329896907214,
+          "d2b_human": 0.032700098217279816,
+          "d3b_human": 0.06822334617861969,
+          "d2b_ecoli": -0.07623257908933478,
+          "d3b_ecoli": -0.06242629453545767,
+          "human_vs_ecoli_d2b_adv": 0.1089326773066146
+        },
+        {
+          "gene": "L2",
+          "product": "minor capsid protein L2",
+          "codons": 472,
+          "gc3": 0.15677966101694915,
+          "d2b_human": -0.031220650628310587,
+          "d3b_human": 0.13080176090970674,
+          "d2b_ecoli": -0.013485405751223922,
+          "d3b_ecoli": -0.06575913841701819,
+          "human_vs_ecoli_d2b_adv": -0.017735244877086664
+        },
+        {
+          "gene": "E1",
+          "product": "replication protein E1",
+          "codons": 648,
+          "gc3": 0.2345679012345679,
+          "d2b_human": -0.027778210997837505,
+          "d3b_human": 0.11424109973827701,
+          "d2b_ecoli": -0.04591003798765936,
+          "d3b_ecoli": -0.07597637589286155,
+          "human_vs_ecoli_d2b_adv": 0.018131826989821853
+        },
+        {
+          "gene": "E2",
+          "product": "regulatory protein E2",
+          "codons": 364,
+          "gc3": 0.29945054945054944,
+          "d2b_human": -0.020967324779249452,
+          "d3b_human": 0.10546332094472177,
+          "d2b_ecoli": -0.032333109377588265,
+          "d3b_ecoli": -0.0721217230262221,
+          "human_vs_ecoli_d2b_adv": 0.011365784598338813
+        },
+        {
+          "gene": "L1",
+          "product": "major capsid protein L1",
+          "codons": 504,
+          "gc3": 0.251984126984127,
+          "d2b_human": -0.022391333859211215,
+          "d3b_human": 0.10462673551420565,
+          "d2b_ecoli": -0.05393169990487756,
+          "d3b_ecoli": -0.07846250102257724,
+          "human_vs_ecoli_d2b_adv": 0.031540366045666346
+        }
+      ]
+    },
+    {
+      "virus": "Vaccinia_Poxvirus",
+      "accession": "NC_006998.1",
+      "true_host": "Human_T2T",
+      "role": "Large cytoplasmic mammalian DNA poxvirus (~220 ORFs)",
+      "n_genes": 215,
+      "n_genes_ge_80cod": 185,
+      "gc3": 0.3000471360486025,
+      "whole_d2b_on_human": -0.07138966036278571,
+      "whole_d3b_on_human": 0.11453264281307529,
+      "whole_d2b_on_ecoli": -0.04649451553525452,
+      "whole_d3b_on_ecoli": -0.06226699398134983,
+      "genes_pos_d3b_on_human": 180,
+      "genes_pos_d2b_on_human": 0,
+      "top_trojan_genes_on_human": [
+        {
+          "gene": "B7R",
+          "product": "hypothetical protein",
+          "codons": 181,
+          "gc3": 0.20994475138121546,
+          "d2b_human": -0.04293574645229814,
+          "d3b_human": 0.23352798670153607,
+          "d2b_ecoli": -0.03644814327824708,
+          "d3b_ecoli": 0.007652172732136364,
+          "human_vs_ecoli_d2b_adv": -0.00648760317405106
+        },
+        {
+          "gene": "A9L",
+          "product": "IMV membrane protein",
+          "codons": 107,
+          "gc3": 0.2616822429906542,
+          "d2b_human": -0.05311095999460935,
+          "d3b_human": 0.2194804018804959,
+          "d2b_ecoli": -0.04577012478702347,
+          "d3b_ecoli": 0.007728432037935384,
+          "human_vs_ecoli_d2b_adv": -0.007340835207585883
+        },
+        {
+          "gene": "VACWR014",
+          "product": "ankyrin-like protein",
+          "codons": 236,
+          "gc3": 0.25,
+          "d2b_human": -0.03946081768594567,
+          "d3b_human": 0.18952650159870288,
+          "d2b_ecoli": -0.031505727089154334,
+          "d3b_ecoli": 0.01769347645370356,
+          "human_vs_ecoli_d2b_adv": -0.007955090596791337
+        },
+        {
+          "gene": "A53R",
+          "product": "secreted TNF-receptor-like protein",
+          "codons": 102,
+          "gc3": 0.35294117647058826,
+          "d2b_human": -0.005000981931826409,
+          "d3b_human": 0.14704183774878032,
+          "d2b_ecoli": -0.029370566532839426,
+          "d3b_ecoli": -0.04179605069644321,
+          "human_vs_ecoli_d2b_adv": 0.024369584601013017
+        },
+        {
+          "gene": "A20R",
+          "product": "viral DNA polymerase processivity factor",
+          "codons": 425,
+          "gc3": 0.2847058823529412,
+          "d2b_human": -0.04261508586929885,
+          "d3b_human": 0.18064724864787163,
+          "d2b_ecoli": -0.023761620211142365,
+          "d3b_ecoli": -0.05339487149471456,
+          "human_vs_ecoli_d2b_adv": -0.018853465658156487
+        }
+      ]
+    },
+    {
+      "virus": "Bacteriophage_T4",
+      "accession": "NC_000866.4",
+      "true_host": "E.coli",
+      "role": "Classic E. coli bacteriophage control (bacterial host specificity test)",
+      "n_genes": 254,
+      "n_genes_ge_80cod": 200,
+      "gc3": 0.24218389034344678,
+      "whole_d2b_on_human": -0.039214602022732414,
+      "whole_d3b_on_human": 0.12710979286064283,
+      "whole_d2b_on_ecoli": -0.02604219789355433,
+      "whole_d3b_on_ecoli": 0.018334264777553955,
+      "genes_pos_d3b_on_human": 197,
+      "genes_pos_d2b_on_human": 9,
+      "top_trojan_genes_on_human": [
+        {
+          "gene": "46.2",
+          "product": "gp46.2 hypothetical protein",
+          "codons": 86,
+          "gc3": 0.2441860465116279,
+          "d2b_human": 0.018667621228279252,
+          "d3b_human": 0.26152409073547833,
+          "d2b_ecoli": -0.025306507864939043,
+          "d3b_ecoli": 0.10191665804190375,
+          "human_vs_ecoli_d2b_adv": 0.043974129093218295
+        },
+        {
+          "gene": "40",
+          "product": "head vertex assembly chaperone",
+          "codons": 113,
+          "gc3": 0.23893805309734514,
+          "d2b_human": 0.004255648412977653,
+          "d3b_human": 0.2425675362440689,
+          "d2b_ecoli": -0.08909851943863334,
+          "d3b_ecoli": 0.05305226006815644,
+          "human_vs_ecoli_d2b_adv": 0.09335416785161099
+        },
+        {
+          "gene": "frd.2",
+          "product": "hypothetical protein",
+          "codons": 127,
+          "gc3": 0.25196850393700787,
+          "d2b_human": -0.00814748981939939,
+          "d3b_human": 0.23824849857726083,
+          "d2b_ecoli": -0.004716354787229982,
+          "d3b_ecoli": 0.12223205779040658,
+          "human_vs_ecoli_d2b_adv": -0.003431135032169408
+        },
+        {
+          "gene": "nrdC",
+          "product": "NrdC thioredoxin",
+          "codons": 86,
+          "gc3": 0.27906976744186046,
+          "d2b_human": 0.031798462165284036,
+          "d3b_human": 0.1797826923373007,
+          "d2b_ecoli": -0.03493967492361527,
+          "d3b_ecoli": 0.09624085364394919,
+          "human_vs_ecoli_d2b_adv": 0.06673813708889931
+        },
+        {
+          "gene": "pseT.3",
+          "product": "Rz-like spanin",
+          "codons": 116,
+          "gc3": 0.29310344827586204,
+          "d2b_human": -0.0059188502903610996,
+          "d3b_human": 0.21618607918758226,
+          "d2b_ecoli": 0.011420724947060812,
+          "d3b_ecoli": 0.10515975237182396,
+          "human_vs_ecoli_d2b_adv": -0.01733957523742191
+        }
+      ]
+    },
+    {
+      "virus": "Mimivirus",
+      "accession": "NC_014649.1",
+      "true_host": "Eukaryote_Amoeba",
+      "role": "Giant DNA virus (~979 CDSs)",
+      "n_genes": 964,
+      "n_genes_ge_80cod": 919,
+      "gc3": 0.19252198274746232,
+      "whole_d2b_on_human": -0.04400995970689081,
+      "whole_d3b_on_human": 0.17134909204277626,
+      "whole_d2b_on_ecoli": -0.02497010505312769,
+      "whole_d3b_on_ecoli": -0.01790339918153272,
+      "genes_pos_d3b_on_human": 911,
+      "genes_pos_d2b_on_human": 25,
+      "top_trojan_genes_on_human": [
+        {
+          "gene": "R597",
+          "product": "putative ankyrin repeat protein",
+          "codons": 273,
+          "gc3": 0.1575091575091575,
+          "d2b_human": 0.0013225957008895506,
+          "d3b_human": 0.2945325112228714,
+          "d2b_ecoli": -0.01785055002403002,
+          "d3b_ecoli": 0.04800646752574789,
+          "human_vs_ecoli_d2b_adv": 0.01917314572491957
+        },
+        {
+          "gene": "L482b",
+          "product": "hypothetical protein",
+          "codons": 81,
+          "gc3": 0.14814814814814814,
+          "d2b_human": -0.05861492977579719,
+          "d3b_human": 0.33033849802538384,
+          "d2b_ecoli": 0.007526925476715185,
+          "d3b_ecoli": 0.15159991775993387,
+          "human_vs_ecoli_d2b_adv": -0.06614185525251237
+        },
+        {
+          "gene": "L28",
+          "product": "hypothetical protein",
+          "codons": 103,
+          "gc3": 0.18446601941747573,
+          "d2b_human": 0.008757894200979166,
+          "d3b_human": 0.26287922017862275,
+          "d2b_ecoli": -0.03768375172842475,
+          "d3b_ecoli": 0.04331686288044967,
+          "human_vs_ecoli_d2b_adv": 0.04644164592940392
+        },
+        {
+          "gene": "R435b",
+          "product": "hypothetical protein",
+          "codons": 87,
+          "gc3": 0.16091954022988506,
+          "d2b_human": -0.02718461496160618,
+          "d3b_human": 0.2916025542037133,
+          "d2b_ecoli": -0.061620749703601874,
+          "d3b_ecoli": 0.011154766047733133,
+          "human_vs_ecoli_d2b_adv": 0.034436134741995694
+        },
+        {
+          "gene": "R514",
+          "product": "hypothetical protein",
+          "codons": 208,
+          "gc3": 0.1778846153846154,
+          "d2b_human": -0.02103829023772441,
+          "d3b_human": 0.284018950258341,
+          "d2b_ecoli": -0.0426856811694849,
+          "d3b_ecoli": 0.018642031316016272,
+          "human_vs_ecoli_d2b_adv": 0.02164739093176049
+        }
+      ]
+    },
+    {
+      "virus": "Pandoravirus_salinus",
+      "accession": "NC_022098.1",
+      "true_host": "Eukaryote_Amoeba",
+      "role": "Largest Giant DNA virus (~2.47 Mb, high-GC eukaryotic mimic)",
+      "n_genes": 1429,
+      "n_genes_ge_80cod": 1390,
+      "gc3": 0.7548756234351345,
+      "whole_d2b_on_human": -0.11646713448671342,
+      "whole_d3b_on_human": 0.09891392450357994,
+      "whole_d2b_on_ecoli": -0.03510814821378716,
+      "whole_d3b_on_ecoli": -0.06203495436914519,
+      "genes_pos_d3b_on_human": 1283,
+      "genes_pos_d2b_on_human": 2,
+      "top_trojan_genes_on_human": [
+        {
+          "gene": "psal_cds_897",
+          "product": "hypothetical protein",
+          "codons": 140,
+          "gc3": 0.8928571428571429,
+          "d2b_human": 0.00882534013691405,
+          "d3b_human": 0.24281537087597593,
+          "d2b_ecoli": -0.005054236024645498,
+          "d3b_ecoli": 0.02759087602568222,
+          "human_vs_ecoli_d2b_adv": 0.013879576161559548
+        },
+        {
+          "gene": "psal_cds_359",
+          "product": "hypothetical protein",
+          "codons": 292,
+          "gc3": 0.8698630136986302,
+          "d2b_human": -0.02378128634843657,
+          "d3b_human": 0.2593002440348142,
+          "d2b_ecoli": -0.006490589597919261,
+          "d3b_ecoli": 0.016730462970606652,
+          "human_vs_ecoli_d2b_adv": -0.01729069675051731
+        },
+        {
+          "gene": "psal_cds_503",
+          "product": "hypothetical protein",
+          "codons": 322,
+          "gc3": 0.9099378881987578,
+          "d2b_human": -0.07107796623591822,
+          "d3b_human": 0.2888944803301108,
+          "d2b_ecoli": -0.06409832174010344,
+          "d3b_ecoli": -0.0532663717297055,
+          "human_vs_ecoli_d2b_adv": -0.006979644495814785
+        },
+        {
+          "gene": "psal_cds_221",
+          "product": "hypothetical protein",
+          "codons": 549,
+          "gc3": 0.9271402550091075,
+          "d2b_human": -0.06782871107656252,
+          "d3b_human": 0.2849893022501231,
+          "d2b_ecoli": -0.037731227525683586,
+          "d3b_ecoli": -0.021878420504262586,
+          "human_vs_ecoli_d2b_adv": -0.030097483550878934
+        },
+        {
+          "gene": "psal_cds_397",
+          "product": "Nucleoporin FG2 superfamily incomplete domain",
+          "codons": 694,
+          "gc3": 0.9337175792507204,
+          "d2b_human": -0.08796740591869101,
+          "d3b_human": 0.29572384999400025,
+          "d2b_ecoli": -0.029202572420094164,
+          "d3b_ecoli": 0.025062860754462513,
+          "human_vs_ecoli_d2b_adv": -0.05876483349859685
+        }
+      ]
+    }
+  ],
+  "module_b_domesticated_genes": [
+    {
+      "gene": "ERVW-1_Syncytin1",
+      "acc": "NM_014590.4",
+      "codons": 537,
+      "gc3": 0.4208566108007449,
+      "d2b_human": 0.028817567452757764,
+      "d3b_human": 0.03039027640439418,
+      "best_non_mammal_os": "Arabidopsis",
+      "best_non_mammal_d3b": 0.016745672188262617,
+      "best_non_mammal_d2b": -0.013307274708866501,
+      "origin": "Domesticated endogenous retrovirus envelope (human placental trophoblast fusion)"
+    },
+    {
+      "gene": "ARC_Neuronal_Capsid",
+      "acc": "NM_015193.5",
+      "codons": 395,
+      "gc3": 0.959493670886076,
+      "d2b_human": -0.00900022380197063,
+      "d3b_human": 0.31861815187750553,
+      "best_non_mammal_os": "H.salinarum",
+      "best_non_mammal_d3b": 0.3010410471057616,
+      "best_non_mammal_d2b": -0.006705224460965997,
+      "origin": "Domesticated Ty3/gypsy retrotransposon Gag capsid (synaptic memory RNA transfer)"
+    },
+    {
+      "gene": "RAG1_Immune_Recombinase",
+      "acc": "NM_000448.3",
+      "codons": 1042,
+      "gc3": 0.5575815738963532,
+      "d2b_human": 0.07244155725488222,
+      "d3b_human": 0.08369286175827506,
+      "best_non_mammal_os": "Zebrafish",
+      "best_non_mammal_d3b": 0.06742894792402865,
+      "best_non_mammal_d2b": 0.06137400301272766,
+      "origin": "Domesticated Transib DNA transposase (V(D)J adaptive immunity generator)"
+    },
+    {
+      "gene": "TFAM_Mito_Factor",
+      "acc": "NM_003201.3",
+      "codons": 245,
+      "gc3": 0.3306122448979592,
+      "d2b_human": -0.01722128893945163,
+      "d3b_human": 0.07881131890635551,
+      "best_non_mammal_os": "Zebrafish",
+      "best_non_mammal_d3b": 0.04384698929734565,
+      "best_non_mammal_d2b": -0.023643920035382404,
+      "origin": "Nuclear-encoded mitochondrial transcription factor A (endosymbiotic import)"
+    },
+    {
+      "gene": "CS_Citrate_Synthase",
+      "acc": "NM_004077.3",
+      "codons": 465,
+      "gc3": 0.5483870967741935,
+      "d2b_human": 0.08382788358610727,
+      "d3b_human": 0.09244296078343295,
+      "best_non_mammal_os": "Zebrafish",
+      "best_non_mammal_d3b": 0.0841261919396965,
+      "best_non_mammal_d2b": 0.07829369904999872,
+      "origin": "Nuclear-encoded mitochondrial Krebs cycle core enzyme (alphaproteobacterial ancestry)"
+    }
+  ],
+  "module_b_proteome_hgt_scan": {
+    "n_human_genes_scanned": 1500,
+    "best_os_winner_counts_d2b": {
+      "Human_T2T": 739,
+      "Mouse": 587,
+      "Zebrafish": 70,
+      "Yeast": 30,
+      "H.salinarum": 19,
+      "Drosophila": 18,
+      "Arabidopsis": 15,
+      "B.subtilis": 13,
+      "Synechocystis_sp_PCC6803": 5,
+      "Mycobacterium_tuberculosis": 1,
+      "Pseudomonas_aeruginosa": 1,
+      "M.jannaschii": 1,
+      "E.coli": 1
+    },
+    "best_os_winner_counts_d3b": {
+      "Human_T2T": 805,
+      "Mouse": 573,
+      "Arabidopsis": 41,
+      "Zebrafish": 38,
+      "Yeast": 25,
+      "Mycobacterium_tuberculosis": 7,
+      "H.salinarum": 6,
+      "Drosophila": 4,
+      "Synechocystis_sp_PCC6803": 1
+    },
+    "n_foreign_engine_outliers": 0,
+    "top_foreign_engine_genes_in_human": []
+  },
+  "module_c_organelle_endosymbiosis": [
+    {
+      "organelle": "Arabidopsis_Chloroplast",
+      "acc": "NC_000932.1",
+      "transl_table": 11,
+      "n_genes": 67,
+      "gc3": 0.276300943268493,
+      "scores_across_os": {
+        "Arabidopsis": {
+          "d2b": -0.025865295913876096,
+          "d3b": 0.04621765171851422
+        },
+        "Synechocystis_sp_PCC6803": {
+          "d2b": -0.04111615706858096,
+          "d3b": -0.041943894480735544
+        },
+        "B.subtilis": {
+          "d2b": -0.05172366552603247,
+          "d3b": 0.0024477788290040436
+        },
+        "E.coli": {
+          "d2b": -0.05384417260022012,
+          "d3b": -0.09890389075319117
+        },
+        "Human_T2T": {
+          "d2b": -0.04457482960202608,
+          "d3b": 0.04786780824245884
+        },
+        "Yeast": {
+          "d2b": -0.004325292851778961,
+          "d3b": 0.04446032792402477
+        }
+      },
+      "host_vs_bact_gene_split": {
+        "host_os": "Arabidopsis",
+        "bacterial_os": "Synechocystis_sp_PCC6803",
+        "genes_closer_to_host_nucleus": 65,
+        "genes_closer_to_bacteria": 2
+      }
+    },
+    {
+      "organelle": "Human_Mitochondrion_NC",
+      "acc": "NC_012920.1",
+      "transl_table": 2,
+      "n_genes": 13,
+      "gc3": 0.47692307692307695,
+      "scores_across_os": {
+        "Arabidopsis": {
+          "d2b": -0.04689038989297423,
+          "d3b": -0.1634652359235309
+        },
+        "Synechocystis_sp_PCC6803": {
+          "d2b": -0.03705374193279365,
+          "d3b": -0.20420008865203876
+        },
+        "B.subtilis": {
+          "d2b": -0.09129978167001962,
+          "d3b": -0.14796133884541174
+        },
+        "E.coli": {
+          "d2b": -0.10963796401707704,
+          "d3b": -0.2617391571227028
+        },
+        "Human_T2T": {
+          "d2b": -0.015202070520865973,
+          "d3b": -0.1175319073913581
+        },
+        "Yeast": {
+          "d2b": -0.025126566644576798,
+          "d3b": -0.17589362294383903
+        }
+      },
+      "host_vs_bact_gene_split": {
+        "host_os": "Human_T2T",
+        "bacterial_os": "B.subtilis",
+        "genes_closer_to_host_nucleus": 10,
+        "genes_closer_to_bacteria": 3
+      }
+    }
+  ],
+  "module_d_biotech_codon_optimization_crash": [
+    {
+      "gene": "TP53",
+      "codons": 392,
+      "wt_d2b": 0.06769817069646189,
+      "max_cai_d2b": -0.03399119196261591,
+      "wt_d3b": 0.11103531836656266,
+      "max_cai_d3b": 0.23251010068674116,
+      "h0_syn_d3b": 0.043600155682340436,
+      "markov_h2b_d3b": 0.07360133887947296,
+      "wt_codon_entropy_bits": 5.608542752956309,
+      "max_cai_codon_entropy_bits": 4.122671427668335,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "TP63",
+      "codons": 679,
+      "wt_d2b": 0.05986115547525728,
+      "max_cai_d2b": -0.02201505217115285,
+      "wt_d3b": 0.0991312198111558,
+      "max_cai_d3b": 0.24660625818895632,
+      "h0_syn_d3b": 0.046700648326925,
+      "markov_h2b_d3b": 0.08628061346717697,
+      "wt_codon_entropy_bits": 5.662074107427263,
+      "max_cai_codon_entropy_bits": 4.174384805274883,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "TP73",
+      "codons": 635,
+      "wt_d2b": 0.0380270330086927,
+      "max_cai_d2b": -0.04941977181592483,
+      "wt_d3b": 0.23131383005934802,
+      "max_cai_d3b": 0.2755698270400244,
+      "h0_syn_d3b": 0.020996943515987354,
+      "markov_h2b_d3b": 0.09678769672866938,
+      "wt_codon_entropy_bits": 5.349661648288692,
+      "max_cai_codon_entropy_bits": 4.157724922051736,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "BRCA1",
+      "codons": 1862,
+      "wt_d2b": 0.033665842110282895,
+      "max_cai_d2b": -0.04784432439257724,
+      "wt_d3b": 0.102589062694868,
+      "max_cai_d3b": 0.2955949943456728,
+      "h0_syn_d3b": 0.06837975573563337,
+      "markov_h2b_d3b": 0.11175310060375132,
+      "wt_codon_entropy_bits": 5.567436065434103,
+      "max_cai_codon_entropy_bits": 4.083682160742871,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "PTEN",
+      "codons": 402,
+      "wt_d2b": 0.028047941871175652,
+      "max_cai_d2b": -0.04175758875039337,
+      "wt_d3b": 0.11723192483407363,
+      "max_cai_d3b": 0.3267894469306345,
+      "h0_syn_d3b": 0.11611157875755129,
+      "markov_h2b_d3b": 0.11265554865060423,
+      "wt_codon_entropy_bits": 5.532022303603187,
+      "max_cai_codon_entropy_bits": 4.189092338373311,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "RB1",
+      "codons": 927,
+      "wt_d2b": -0.0006228931299618878,
+      "max_cai_d2b": -0.04664687490301178,
+      "wt_d3b": 0.10533117477762932,
+      "max_cai_d3b": 0.27120574240173845,
+      "h0_syn_d3b": 0.07213292802166382,
+      "markov_h2b_d3b": 0.12276349235424089,
+      "wt_codon_entropy_bits": 5.612128350623392,
+      "max_cai_codon_entropy_bits": 4.134855408559807,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "KRAS",
+      "codons": 188,
+      "wt_d2b": 0.027890239646982007,
+      "max_cai_d2b": -0.04471059353256557,
+      "wt_d3b": 0.143492078008856,
+      "max_cai_d3b": 0.3002175332716197,
+      "h0_syn_d3b": 0.09783008868221277,
+      "markov_h2b_d3b": 0.1292266102349764,
+      "wt_codon_entropy_bits": 5.333811156428061,
+      "max_cai_codon_entropy_bits": 4.1024641156223485,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "NRAS",
+      "codons": 188,
+      "wt_d2b": 0.07870738415048617,
+      "max_cai_d2b": -0.06580557222326,
+      "wt_d3b": 0.10128887023657285,
+      "max_cai_d3b": 0.31097522710680625,
+      "h0_syn_d3b": 0.13428843447908534,
+      "markov_h2b_d3b": 0.13398922573989935,
+      "wt_codon_entropy_bits": 5.398278729092196,
+      "max_cai_codon_entropy_bits": 4.121363186532156,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "HRAS",
+      "codons": 188,
+      "wt_d2b": 0.05114812939710589,
+      "max_cai_d2b": -0.07632028163189508,
+      "wt_d3b": 0.24466098645793322,
+      "max_cai_d3b": 0.2762868559238303,
+      "h0_syn_d3b": 0.060677812902094175,
+      "markov_h2b_d3b": 0.14638301834793843,
+      "wt_codon_entropy_bits": 5.100203541172858,
+      "max_cai_codon_entropy_bits": 4.12809899317252,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "GAPDH",
+      "codons": 334,
+      "wt_d2b": 0.1167743169279829,
+      "max_cai_d2b": -0.09044529283606373,
+      "wt_d3b": 0.22582366308096713,
+      "max_cai_d3b": 0.3335868507135542,
+      "h0_syn_d3b": 0.10716899524483203,
+      "markov_h2b_d3b": 0.12266255804191584,
+      "wt_codon_entropy_bits": 5.270073035713972,
+      "max_cai_codon_entropy_bits": 4.102902299529274,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "ACTB",
+      "codons": 374,
+      "wt_d2b": 0.01335602202918551,
+      "max_cai_d2b": -0.07544208182335543,
+      "wt_d3b": 0.2699076680925292,
+      "max_cai_d3b": 0.303055615564904,
+      "h0_syn_d3b": 0.03285076176118018,
+      "markov_h2b_d3b": 0.11431987457102188,
+      "wt_codon_entropy_bits": 5.1021118629004345,
+      "max_cai_codon_entropy_bits": 4.183469530515717,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "HBB",
+      "codons": 146,
+      "wt_d2b": 0.08144045442615822,
+      "max_cai_d2b": -0.11375991752683845,
+      "wt_d3b": 0.19579983776718768,
+      "max_cai_d3b": 0.32977033386932897,
+      "h0_syn_d3b": 0.05125186553892025,
+      "markov_h2b_d3b": 0.14150828109254654,
+      "wt_codon_entropy_bits": 4.826808978653017,
+      "max_cai_codon_entropy_bits": 3.9312767541653586,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "MYC",
+      "codons": 453,
+      "wt_d2b": 0.01640444039008937,
+      "max_cai_d2b": -0.061189400194117116,
+      "wt_d3b": 0.19908636307622496,
+      "max_cai_d3b": 0.29322971680995913,
+      "h0_syn_d3b": 0.06871629142811653,
+      "markov_h2b_d3b": 0.12023366468179919,
+      "wt_codon_entropy_bits": 5.452879372450085,
+      "max_cai_codon_entropy_bits": 4.053281054502973,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    },
+    {
+      "gene": "APOE",
+      "codons": 316,
+      "wt_d2b": -0.013932415680100618,
+      "max_cai_d2b": -0.05589076568528917,
+      "wt_d3b": 0.26806777039866647,
+      "max_cai_d3b": 0.2017171286199373,
+      "h0_syn_d3b": 0.037120105694537386,
+      "markov_h2b_d3b": 0.06855823993809285,
+      "wt_codon_entropy_bits": 4.692203723546916,
+      "max_cai_codon_entropy_bits": 3.7820326574209235,
+      "verdict": "MAX-CAI CRASHES d2b/Ent"
+    }
+  ]
+}

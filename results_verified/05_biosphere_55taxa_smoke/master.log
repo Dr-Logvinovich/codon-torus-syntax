@@ -1,0 +1,307 @@
+============================================================================================
+AUTO CDS PREPARATION (autonomous v14.6)
+============================================================================================
+CDS cache directory: /Volumes/Мои документы/GitHub/cds_cache
+Mitochondrion track: ENABLED (opt-in)
+Virus track        : ENABLED (opt-in)
+Extended panel     : ENABLED (opt-in)
+[CDS] Human_T2T     : existing GCF_009914755.1_T2T-CHM13v2.0_cds_from_genomic.fna.gz (25.3 MB), skip download
+[CDS] Mouse         : existing GCF_000001635.27_GRCm39_cds_from_genomic.fna.gz (22.7 MB), skip download
+[CDS] Chimp         : accession GCF_002880755
+      trying https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/880/755/GCF_002880755.1_Clint_PTRv2/GCF_002880755.1_Clint_PTRv2_cds_from_genomic.fna.gz
+         1.0/    23.0 MB   4.6%         2.1/    23.0 MB   9.1%         3.1/    23.0 MB  13.7%         4.2/    23.0 MB  18.2%         5.2/    23.0 MB  22.8%         6.3/    23.0 MB  27.3%         7.3/    23.0 MB  31.9%         8.4/    23.0 MB  36.4%         9.4/    23.0 MB  41.0%        10.5/    23.0 MB  45.5%        11.5/    23.0 MB  50.1%        12.6/    23.0 MB  54.6%        13.6/    23.0 MB  59.2%        14.7/    23.0 MB  63.8%        15.7/    23.0 MB  68.3%        16.8/    23.0 MB  72.9%        17.8/    23.0 MB  77.4%        18.9/    23.0 MB  82.0%        19.9/    23.0 MB  86.5%        21.0/    23.0 MB  91.1%        22.0/    23.0 MB  95.6%        23.0/    23.0 MB 100.0%
+      OK: GCF_002880755.1_Clint_PTRv2_cds_from_genomic.fna.gz (23.0 MB)
+[CDS] Zebrafish     : existing GCF_000002035.6_GRCz11_cds_from_genomic.fna.gz (25.8 MB), skip download
+[CDS] Chicken       : accession GCF_016699485
+      trying https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/016/699/485/GCF_016699485.2_bGalGal1.mat.broiler.GRCg7b/GCF_016699485.2_bGalGal1.mat.broiler.GRCg7b_cds_from_genomic.fna.gz
+         1.0/    18.2 MB   5.8%         2.1/    18.2 MB  11.6%         3.1/    18.2 MB  17.3%         4.2/    18.2 MB  23.1%         5.2/    18.2 MB  28.9%         6.3/    18.2 MB  34.7%         7.3/    18.2 MB  40.4%         8.4/    18.2 MB  46.2%         9.4/    18.2 MB  52.0%        10.5/    18.2 MB  57.8%        11.5/    18.2 MB  63.5%        12.6/    18.2 MB  69.3%        13.6/    18.2 MB  75.1%        14.7/    18.2 MB  80.9%        15.7/    18.2 MB  86.6%        16.8/    18.2 MB  92.4%        17.8/    18.2 MB  98.2%        18.2/    18.2 MB 100.0%
+      OK: GCF_016699485.2_bGalGal1.mat.broiler.GRCg7b_cds_from_genomic.fna.gz (18.2 MB)
+[CDS] C.elegans     : accession GCF_000002985
+      trying https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/985/GCF_000002985.6_WBcel235/GCF_000002985.6_WBcel235_cds_from_genomic.fna.gz
+         1.0/    11.6 MB   9.0%         2.1/    11.6 MB  18.0%         3.1/    11.6 MB  27.0%         4.2/    11.6 MB  36.0%         5.2/    11.6 MB  45.0%         6.3/    11.6 MB  54.0%         7.3/    11.6 MB  63.0%         8.4/    11.6 MB  72.0%         9.4/    11.6 MB  81.0%        10.5/    11.6 MB  90.0%        11.5/    11.6 MB  99.0%        11.6/    11.6 MB 100.0%
+      OK: GCF_000002985.6_WBcel235_cds_from_genomic.fna.gz (11.6 MB)
+[CDS] Drosophila    : existing GCF_000001215.4_Release_6_plus_ISO1_MT_cds_from_genomic.fna.gz (10.7 MB), skip download
+[CDS] Arabidopsis   : existing GCF_000001735.4_TAIR10.1_cds_from_genomic.fna.gz (14.9 MB), skip download
+[CDS] Yeast         : existing GCF_000146045.2_R64_cds_from_genomic.fna.gz (3.0 MB), skip download
+[CDS] E.coli        : existing GCF_000005845.2_ASM584v2_cds_from_genomic.fna.gz (1.5 MB), skip download
+[CDS] B.subtilis    : existing GCF_000009045.1_ASM904v1_cds_from_genomic.fna.gz (1.5 MB), skip download
+[CDS] M.jannaschii  : existing GCF_000007745.1_ASM774v1_cds_from_genomic.fna.gz (0.7 MB), skip download
+[CDS] H.salinarum   : existing GCF_000015585.1_ASM1558v1_cds_from_genomic.fna.gz (0.8 MB), skip download
+[opt-in] Human_mito    : not available on NCBI at accession GCF_000008895; silent skip (core run unaffected)  [opt-in; if 404, override with --mito-acc/--mito-asm (silent skip otherwise)]
+[opt-in] SARS-CoV-2    : available at accession GCF_009858895; downloaded/used cache
+[opt-in] Rattus_norvegicus: available at accession GCF_015227675; downloaded/used cache
+[opt-in] Macaca_mulatta: available at accession GCF_003339765; downloaded/used cache
+[opt-in] Gorilla_gorilla: available at accession GCF_000151905; downloaded/used cache
+[opt-in] Bos_taurus    : available at accession GCF_002263795; downloaded/used cache
+[opt-in] Sus_scrofa    : available at accession GCF_000003025; downloaded/used cache
+[opt-in] Canis_lupus_familiaris: available at accession GCF_000002285; downloaded/used cache
+[opt-in] Felis_catus   : available at accession GCF_000181335; downloaded/used cache
+[opt-in] Equus_caballus: available at accession GCF_002863925; downloaded/used cache
+[opt-in] Oryctolagus_cuniculus: available at accession GCF_000003625; downloaded/used cache
+[opt-in] Xenopus_tropicalis: available at accession GCF_000004195; downloaded/used cache
+[opt-in] Takifugu_rubripes: available at accession GCF_901000725; downloaded/used cache
+[opt-in] Anopheles_gambiae: available at accession GCF_000005575; downloaded/used cache
+[opt-in] Apis_mellifera: available at accession GCF_003254395; downloaded/used cache
+[opt-in] Bombyx_mori   : available at accession GCF_014905235; downloaded/used cache
+[opt-in] Caenorhabditis_briggsae: available at accession GCF_000004555; downloaded/used cache
+[opt-in] Oryza_sativa  : available at accession GCF_001433935; downloaded/used cache
+[opt-in] Zea_mays      : available at accession GCF_000005005; downloaded/used cache
+[opt-in] Solanum_lycopersicum: available at accession GCF_000188115; downloaded/used cache
+[opt-in] Glycine_max   : available at accession GCF_000004515; downloaded/used cache
+[opt-in] Populus_trichocarpa: available at accession GCF_000002775; downloaded/used cache
+[opt-in] Schizosaccharomyces_pombe: available at accession GCF_000002945; downloaded/used cache
+[opt-in] Candida_albicans: available at accession GCF_000182965; downloaded/used cache
+[opt-in] Aspergillus_nidulans: available at accession GCF_000149205; downloaded/used cache
+[opt-in] Neurospora_crassa: available at accession GCF_000182925; downloaded/used cache
+[opt-in] Plasmodium_falciparum: available at accession GCF_000002765; downloaded/used cache
+[opt-in] Trypanosoma_brucei: available at accession GCF_000002445; downloaded/used cache
+[opt-in] Leishmania_major: available at accession GCF_000002725; downloaded/used cache
+[opt-in] Toxoplasma_gondii: available at accession GCF_000006565; downloaded/used cache
+[opt-in] Dictyostelium_discoideum: available at accession GCF_000004695; downloaded/used cache
+[opt-in] Chlamydomonas_reinhardtii: available at accession GCF_000002595; downloaded/used cache
+[CDS] Pseudomonas_aeruginosa: existing GCF_000006765.1_ASM676v1_cds_from_genomic.fna.gz (1.9 MB), skip download
+[opt-in] Pseudomonas_aeruginosa: available at accession GCF_000006765; using cache
+[opt-in] Staphylococcus_aureus: available at accession GCF_000013425; downloaded/used cache
+[opt-in] Streptococcus_pyogenes: available at accession GCF_000006785; downloaded/used cache
+[CDS] Mycobacterium_tuberculosis: existing GCF_000195955.2_ASM19595v2_cds_from_genomic.fna.gz (1.4 MB), skip download
+[opt-in] Mycobacterium_tuberculosis: available at accession GCF_000195955; using cache
+[opt-in] Salmonella_enterica: available at accession GCF_000006945; downloaded/used cache
+[opt-in] Lactococcus_lactis: available at accession GCF_000006865; downloaded/used cache
+[opt-in] Helicobacter_pylori: available at accession GCF_000008525; downloaded/used cache
+[opt-in] Bacteroides_fragilis: available at accession GCF_000025985; downloaded/used cache
+[opt-in] Clostridioides_difficile: available at accession GCF_000009205; downloaded/used cache
+[CDS] Synechocystis_sp_PCC6803: existing GCF_000009725.1_ASM972v1_cds_from_genomic.fna.gz (1.2 MB), skip download
+[opt-in] Synechocystis_sp_PCC6803: available at accession GCF_000009725; using cache
+[opt-in] Thermus_thermophilus: available at accession GCF_000008125; downloaded/used cache
+
+Downloaded CDS for: ['Chimp', 'Chicken', 'C.elegans', 'SARS-CoV-2', 'Rattus_norvegicus', 'Macaca_mulatta', 'Gorilla_gorilla', 'Bos_taurus', 'Sus_scrofa', 'Canis_lupus_familiaris', 'Felis_catus', 'Equus_caballus', 'Oryctolagus_cuniculus', 'Xenopus_tropicalis', 'Takifugu_rubripes', 'Anopheles_gambiae', 'Apis_mellifera', 'Bombyx_mori', 'Caenorhabditis_briggsae', 'Oryza_sativa', 'Zea_mays', 'Solanum_lycopersicum', 'Glycine_max', 'Populus_trichocarpa', 'Schizosaccharomyces_pombe', 'Candida_albicans', 'Aspergillus_nidulans', 'Neurospora_crassa', 'Plasmodium_falciparum', 'Trypanosoma_brucei', 'Leishmania_major', 'Toxoplasma_gondii', 'Dictyostelium_discoideum', 'Chlamydomonas_reinhardtii', 'Staphylococcus_aureus', 'Streptococcus_pyogenes', 'Salmonella_enterica', 'Lactococcus_lactis', 'Helicobacter_pylori', 'Bacteroides_fragilis', 'Clostridioides_difficile', 'Thermus_thermophilus']
+Skipped existing CDS for: ['Human_T2T', 'Mouse', 'Zebrafish', 'Drosophila', 'Arabidopsis', 'Yeast', 'E.coli', 'B.subtilis', 'M.jannaschii', 'H.salinarum', 'Pseudomonas_aeruginosa', 'Mycobacterium_tuberculosis', 'Synechocystis_sp_PCC6803']
+Opt-in unavailable (silent skip, core unaffected): ['Human_mito']
+    -> to force a working accession: --mito-acc/--mito-asm or --virus-acc/--virus-asm
+
+============================================================================================
+RUNNING STAGE: SMOKE (files=55, max_records=400)
+============================================================================================
+
+[Drosophila] (insect) loading GCF_000001215.4_Release_6_plus_ISO1_MT_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Drosophila] train=321 test=79 trans=46614 GC3=0.634 A/B=1.07 | d0=+0.0551 d2b=+0.0326 d3b=+0.1615 dH5=+0.0600 dH6=+0.0946 dH7=+0.0739 (7.9s)
+
+[Mouse] (mammal) loading GCF_000001635.27_GRCm39_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Mouse] train=320 test=79 trans=33876 GC3=0.564 A/B=0.96 | d0=+0.0593 d2b=+0.0472 d3b=+0.0874 dH5=+0.0830 dH6=+0.1265 dH7=+0.1097 (13.8s)
+
+[Arabidopsis] (plant) loading GCF_000001735.4_TAIR10.1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Arabidopsis] train=320 test=79 trans=32675 GC3=0.412 A/B=1.05 | d0=+0.0305 d2b=+0.0228 d3b=+0.0882 dH5=+0.0362 dH6=+0.0705 dH7=+0.0538 (9.0s)
+
+[Zebrafish] (vertebrate) loading GCF_000002035.6_GRCz11_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Zebrafish] train=321 test=79 trans=49596 GC3=0.536 A/B=1.07 | d0=+0.0540 d2b=+0.0443 d3b=+0.0921 dH5=+0.0803 dH6=+0.1283 dH7=+0.1087 (12.4s)
+
+[Canis_lupus_familiaris] (mammal) loading GCF_000002285.5_Dog10K_Boxer_Tasha_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Canis_lupus_familiaris] train=320 test=80 trans=43125 GC3=0.670 A/B=1.03 | d0=+0.0806 d2b=+0.0413 d3b=+0.1443 dH5=+0.1100 dH6=+0.1277 dH7=+0.1112 (10.2s)
+
+[Trypanosoma_brucei] (protist) loading GCF_000002445.2_ASM244v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Trypanosoma_brucei] train=384 test=16 trans=5482 GC3=0.506 A/B=0.97 | d0=+0.0397 d2b=+0.0144 d3b=+0.0798 dH5=+0.0279 dH6=+0.0548 dH7=+0.0453 (1.4s)
+
+[Chlamydomonas_reinhardtii] (plant-like protist) loading GCF_000002595.2_Chlamydomonas_reinhardtii_v5.5_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Chlamydomonas_reinhardtii] train=320 test=80 trans=63463 GC3=0.804 A/B=1.03 | d0=+0.1057 d2b=+0.0434 d3b=+0.1951 dH5=+0.0658 dH6=+0.1402 dH7=+0.1132 (7.2s)
+
+[Leishmania_major] (protist) loading GCF_000002725.2_ASM272v2_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Leishmania_major] train=397 test=3 trans=988 GC3=0.743 A/B=0.77 | d0=+0.0511 d2b=+0.0390 d3b=+0.1496 dH5=+0.0304 dH6=+0.0914 dH7=+0.0672 (1.4s)
+
+[Plasmodium_falciparum] (protist) loading GCF_000002765.6_GCA_000002765_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Plasmodium_falciparum] train=363 test=37 trans=26584 GC3=0.164 A/B=1.00 | d0=+0.0326 d2b=+0.0095 d3b=+0.2066 dH5=+0.0291 dH6=+0.0359 dH7=+0.0434 (3.7s)
+
+[Populus_trichocarpa] (plant) loading GCF_000002775.5_P.trichocarpa_v4.1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Populus_trichocarpa] train=320 test=80 trans=45398 GC3=0.386 A/B=1.01 | d0=+0.0312 d2b=+0.0304 d3b=+0.0835 dH5=+0.0531 dH6=+0.0775 dH7=+0.0646 (9.0s)
+
+[Schizosaccharomyces_pombe] (fungus) loading GCF_000002945.2_ASM294v3_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Schizosaccharomyces_pombe] train=320 test=80 trans=38706 GC3=0.320 A/B=1.02 | d0=+0.0124 d2b=+0.0087 d3b=+0.1293 dH5=+0.0197 dH6=+0.0310 dH7=+0.0240 (3.9s)
+
+[C.elegans] (nematode) loading GCF_000002985.6_WBcel235_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [C.elegans] train=317 test=81 trans=37163 GC3=0.396 A/B=0.97 | d0=+0.0401 d2b=+0.0255 d3b=+0.0749 dH5=+0.0353 dH6=+0.0884 dH7=+0.0721 (5.6s)
+
+[Sus_scrofa] (mammal) loading GCF_000003025.6_Sscrofa11.1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Sus_scrofa] train=320 test=80 trans=45732 GC3=0.659 A/B=1.02 | d0=+0.0726 d2b=+0.0428 d3b=+0.1306 dH5=+0.0927 dH6=+0.1220 dH7=+0.1019 (10.8s)
+
+[Oryctolagus_cuniculus] (mammal) loading GCF_000003625.3_OryCun2.0_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Oryctolagus_cuniculus] train=320 test=79 trans=49579 GC3=0.609 A/B=1.01 | d0=+0.0617 d2b=+0.0345 d3b=+0.1085 dH5=+0.0555 dH6=+0.1122 dH7=+0.0984 (7.9s)
+
+[Xenopus_tropicalis] (vertebrate) loading GCF_000004195.4_UCB_Xtro_10.0_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Xenopus_tropicalis] train=320 test=80 trans=46382 GC3=0.479 A/B=1.03 | d0=+0.0416 d2b=+0.0360 d3b=+0.0753 dH5=+0.0721 dH6=+0.1016 dH7=+0.0851 (8.5s)
+
+[Glycine_max] (plant) loading GCF_000004515.6_Glycine_max_v4.0_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Glycine_max] train=320 test=80 trans=33090 GC3=0.437 A/B=1.07 | d0=+0.0355 d2b=+0.0263 d3b=+0.0903 dH5=+0.0365 dH6=+0.0858 dH7=+0.0735 (11.8s)
+
+[Caenorhabditis_briggsae] (nematode) loading GCF_000004555.2_CB4_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Caenorhabditis_briggsae] train=316 test=79 trans=31952 GC3=0.428 A/B=1.17 | d0=+0.0368 d2b=+0.0256 d3b=+0.0916 dH5=+0.0393 dH6=+0.0832 dH7=+0.0727 (5.2s)
+
+[Dictyostelium_discoideum] (protist) loading GCF_000004695.1_dicty_2.7_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Dictyostelium_discoideum] train=320 test=80 trans=36194 GC3=0.144 A/B=1.03 | d0=+0.0845 d2b=+0.0228 d3b=+0.2871 dH5=+0.0374 dH6=+0.0854 dH7=+0.0939 (4.5s)
+
+[Zea_mays] (plant) loading GCF_000005005.2_B73_RefGen_v4_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Zea_mays] train=320 test=80 trans=36107 GC3=0.605 A/B=1.02 | d0=+0.0691 d2b=+0.0141 d3b=+0.1417 dH5=+0.0068 dH6=+0.0950 dH7=+0.0653 (7.4s)
+
+[Anopheles_gambiae] (insect) loading GCF_000005575.2_AgamP3_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Anopheles_gambiae] train=320 test=80 trans=41266 GC3=0.701 A/B=1.07 | d0=+0.0734 d2b=+0.0385 d3b=+0.1786 dH5=+0.0580 dH6=+0.1295 dH7=+0.0979 (5.4s)
+
+[E.coli] (bacterium) loading GCF_000005845.2_ASM584v2_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [E.coli] train=312 test=78 trans=24067 GC3=0.546 A/B=1.12 | d0=+0.0488 d2b=+0.0340 d3b=+0.1683 dH5=+0.0315 dH6=+0.1435 dH7=+0.0978 (2.9s)
+
+[Toxoplasma_gondii] (protist) loading GCF_000006565.2_TGA4_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Toxoplasma_gondii] train=393 test=7 trans=4358 GC3=0.655 A/B=0.90 | d0=+0.0477 d2b=+0.0124 d3b=+0.0824 dH5=+0.0658 dH6=+0.0818 dH7=+0.0823 (1.9s)
+
+[Pseudomonas_aeruginosa] (bacterium) loading GCF_000006765.1_ASM676v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Pseudomonas_aeruginosa] train=320 test=80 trans=26270 GC3=0.880 A/B=1.12 | d0=+0.0870 d2b=+0.0638 d3b=+0.3344 dH5=+0.1442 dH6=+0.2058 dH7=+0.1311 (3.4s)
+
+[Streptococcus_pyogenes] (bacterium) loading GCF_000006785.2_ASM678v2_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Streptococcus_pyogenes] train=320 test=79 trans=23181 GC3=0.321 A/B=1.07 | d0=+0.0291 d2b=+0.0256 d3b=+0.1470 dH5=+0.0213 dH6=+0.0865 dH7=+0.0647 (3.1s)
+
+[Lactococcus_lactis] (bacterium) loading GCF_000006865.1_ASM686v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Lactococcus_lactis] train=320 test=80 trans=21742 GC3=0.249 A/B=1.10 | d0=+0.0307 d2b=+0.0242 d3b=+0.1932 dH5=+0.0424 dH6=+0.0972 dH7=+0.0660 (3.0s)
+
+[Salmonella_enterica] (bacterium) loading GCF_000006945.2_ASM694v2_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Salmonella_enterica] train=320 test=80 trans=23832 GC3=0.600 A/B=1.06 | d0=+0.0619 d2b=+0.0460 d3b=+0.1841 dH5=+0.0688 dH6=+0.1502 dH7=+0.0979 (3.1s)
+
+[M.jannaschii] (archaeon) loading GCF_000007745.1_ASM774v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [M.jannaschii] train=320 test=80 trans=24118 GC3=0.416 A/B=1.06 | d0=+0.0794 d2b=+0.0570 d3b=+0.1988 dH5=+0.0985 dH6=+0.1914 dH7=+0.1386 (3.3s)
+
+[Thermus_thermophilus] (bacterium) loading GCF_000008125.1_ASM812v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Thermus_thermophilus] train=320 test=80 trans=25784 GC3=0.914 A/B=0.98 | d0=+0.1738 d2b=+0.1113 d3b=+0.3543 dH5=+0.2672 dH6=+0.3858 dH7=+0.2920 (2.6s)
+
+[Helicobacter_pylori] (bacterium) loading GCF_000008525.1_ASM852v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Helicobacter_pylori] train=320 test=80 trans=26365 GC3=0.427 A/B=0.94 | d0=+0.1608 d2b=+0.0850 d3b=+0.2560 dH5=+0.1935 dH6=+0.3789 dH7=+0.2850 (2.9s)
+
+[B.subtilis] (bacterium) loading GCF_000009045.1_ASM904v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [B.subtilis] train=321 test=79 trans=22446 GC3=0.448 A/B=1.09 | d0=+0.0518 d2b=+0.0355 d3b=+0.1334 dH5=+0.0533 dH6=+0.1308 dH7=+0.1024 (3.2s)
+
+[Clostridioides_difficile] (bacterium) loading GCF_000009205.2_ASM920v2_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Clostridioides_difficile] train=320 test=80 trans=24739 GC3=0.168 A/B=1.10 | d0=+0.0089 d2b=+0.0132 d3b=+0.1955 dH5=+0.0153 dH6=+0.0547 dH7=+0.0393 (3.1s)
+
+[Synechocystis_sp_PCC6803] (cyanobacterium) loading GCF_000009725.1_ASM972v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Synechocystis_sp_PCC6803] train=320 test=80 trans=26284 GC3=0.483 A/B=1.24 | d0=+0.0831 d2b=+0.0563 d3b=+0.1880 dH5=+0.1053 dH6=+0.2068 dH7=+0.1697 (3.5s)
+
+[Staphylococcus_aureus] (bacterium) loading GCF_000013425.1_ASM1342v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Staphylococcus_aureus] train=393 test=7 trans=2301 GC3=0.198 A/B=1.07 | d0=+0.0056 d2b=+0.0138 d3b=+0.2414 dH5=+0.0681 dH6=+0.0368 dH7=+0.0192 (0.6s)
+
+[H.salinarum] (archaeon) loading GCF_000015585.1_ASM1558v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [H.salinarum] train=320 test=80 trans=24297 GC3=0.877 A/B=1.31 | d0=+0.0393 d2b=+0.0317 d3b=+0.2899 dH5=+0.0812 dH6=+0.1043 dH7=+0.0782 (3.0s)
+
+[Bacteroides_fragilis] (bacterium) loading GCF_000025985.1_ASM2598v1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Bacteroides_fragilis] train=320 test=80 trans=25444 GC3=0.462 A/B=1.03 | d0=+0.0457 d2b=+0.0338 d3b=+0.1472 dH5=+0.0531 dH6=+0.1116 dH7=+0.0875 (3.2s)
+
+[Yeast] (fungus) loading GCF_000146045.2_R64_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Yeast] train=320 test=79 trans=43964 GC3=0.374 A/B=1.09 | d0=+0.0095 d2b=+0.0075 d3b=+0.1070 dH5=+0.0022 dH6=+0.0268 dH7=+0.0244 (4.8s)
+
+[Aspergillus_nidulans] (fungus) loading GCF_000149205.2_ASM14920v2_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Aspergillus_nidulans] train=320 test=80 trans=43297 GC3=0.591 A/B=1.07 | d0=+0.0121 d2b=+0.0096 d3b=+0.0861 dH5=+0.0158 dH6=+0.0361 dH7=+0.0306 (5.3s)
+
+[Gorilla_gorilla] (mammal) loading GCF_000151905.2_gorGor4_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Gorilla_gorilla] train=320 test=80 trans=44795 GC3=0.604 A/B=1.01 | d0=+0.0736 d2b=+0.0484 d3b=+0.1157 dH5=+0.0957 dH6=+0.1287 dH7=+0.1151 (9.1s)
+
+[Felis_catus] (mammal) loading GCF_000181335.3_Felis_catus_9.0_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Felis_catus] train=320 test=80 trans=48596 GC3=0.638 A/B=1.00 | d0=+0.0635 d2b=+0.0379 d3b=+0.1017 dH5=+0.0745 dH6=+0.1113 dH7=+0.0949 (10.6s)
+
+[Neurospora_crassa] (fungus) loading GCF_000182925.2_NC12_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Neurospora_crassa] train=320 test=80 trans=35507 GC3=0.651 A/B=1.02 | d0=+0.0318 d2b=+0.0155 d3b=+0.1157 dH5=+0.0221 dH6=+0.0618 dH7=+0.0529 (4.7s)
+
+[Candida_albicans] (fungus) loading GCF_000182965.3_ASM18296v3_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Candida_albicans] train=320 test=80 trans=41156 GC3=0.266 A/B=1.07 | d0=+0.0398 d2b=+0.0257 d3b=+0.1605 dH5=+0.0524 dH6=+0.0800 dH7=+0.0646 (4.4s)
+
+[Solanum_lycopersicum] (plant) loading GCF_000188115.5_SL3.1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Solanum_lycopersicum] train=320 test=80 trans=32000 GC3=0.370 A/B=1.00 | d0=+0.0254 d2b=+0.0215 d3b=+0.0865 dH5=+0.0318 dH6=+0.0622 dH7=+0.0541 (6.6s)
+
+[Mycobacterium_tuberculosis] (bacterium) loading GCF_000195955.2_ASM19595v2_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Mycobacterium_tuberculosis] train=320 test=80 trans=27372 GC3=0.800 A/B=1.14 | d0=+0.0500 d2b=+0.0431 d3b=+0.1753 dH5=+0.0886 dH6=+0.1177 dH7=+0.0946 (3.8s)
+
+[Oryza_sativa] (plant) loading GCF_001433935.1_IRGSP-1.0_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Oryza_sativa] train=320 test=80 trans=33361 GC3=0.624 A/B=1.03 | d0=+0.1057 d2b=+0.0164 d3b=+0.1836 dH5=+0.0480 dH6=+0.1339 dH7=+0.0903 (7.7s)
+
+[Bos_taurus] (mammal) loading GCF_002263795.3_ARS-UCD2.0_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Bos_taurus] train=320 test=80 trans=48874 GC3=0.592 A/B=1.07 | d0=+0.0619 d2b=+0.0348 d3b=+0.1168 dH5=+0.0497 dH6=+0.1109 dH7=+0.0976 (10.9s)
+
+[Equus_caballus] (mammal) loading GCF_002863925.1_EquCab3.0_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Equus_caballus] train=320 test=80 trans=50440 GC3=0.526 A/B=1.01 | d0=+0.0661 d2b=+0.0373 d3b=+0.0881 dH5=+0.0438 dH6=+0.1143 dH7=+0.0973 (11.2s)
+
+[Chimp] (mammal) loading GCF_002880755.1_Clint_PTRv2_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Chimp] train=320 test=80 trans=42628 GC3=0.606 A/B=1.06 | d0=+0.0732 d2b=+0.0504 d3b=+0.1108 dH5=+0.0930 dH6=+0.1336 dH7=+0.1173 (13.6s)
+
+[Apis_mellifera] (insect) loading GCF_003254395.2_Amel_HAv3.1_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Apis_mellifera] train=320 test=80 trans=52751 GC3=0.368 A/B=1.02 | d0=+0.0575 d2b=+0.0124 d3b=+0.1351 dH5=-0.0072 dH6=+0.0612 dH7=+0.0512 (7.6s)
+
+[Macaca_mulatta] (mammal) loading GCF_003339765.1_Mmul_10_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Macaca_mulatta] train=320 test=80 trans=51012 GC3=0.604 A/B=1.01 | d0=+0.0739 d2b=+0.0476 d3b=+0.1076 dH5=+0.0889 dH6=+0.1357 dH7=+0.1178 (13.0s)
+
+[SARS-CoV-2] (virus) loading GCF_009858895.2_ASM985889v3_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [SARS-CoV-2] train=9 test=2 trans=1491 GC3=0.285 A/B=0.99 | d0=-0.2211 d2b=-0.0165 d3b=-0.1408 dH5=-0.2442 dH6=+0.1123 dH7=+0.0742 (0.4s)
+
+[Human_T2T] (mammal) loading GCF_009914755.1_T2T-CHM13v2.0_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Human_T2T] train=316 test=78 trans=39926 GC3=0.602 A/B=1.01 | d0=+0.0669 d2b=+0.0408 d3b=+0.1115 dH5=+0.0773 dH6=+0.1281 dH7=+0.1101 (18.1s)
+
+[Bombyx_mori] (insect) loading GCF_014905235.1_Bmori_2016v1.0_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Bombyx_mori] train=320 test=80 trans=45406 GC3=0.541 A/B=1.03 | d0=+0.0434 d2b=+0.0095 d3b=+0.1175 dH5=+0.0198 dH6=+0.0473 dH7=+0.0321 (7.1s)
+
+[Rattus_norvegicus] (mammal) loading GCF_015227675.2_mRatBN7.2_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Rattus_norvegicus] train=320 test=80 trans=47528 GC3=0.586 A/B=1.07 | d0=+0.0588 d2b=+0.0489 d3b=+0.0937 dH5=+0.0844 dH6=+0.1255 dH7=+0.1063 (12.1s)
+
+[Chicken] (vertebrate) loading GCF_016699485.2_bGalGal1.mat.broiler.GRCg7b_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Chicken] train=320 test=80 trans=44106 GC3=0.574 A/B=0.98 | d0=+0.0761 d2b=+0.0406 d3b=+0.1107 dH5=+0.0735 dH6=+0.1328 dH7=+0.1163 (12.9s)
+
+[Takifugu_rubripes] (vertebrate) loading GCF_901000725.3_fTakRub1.3_cds_from_genomic.fna.gz ...
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [Takifugu_rubripes] train=320 test=80 trans=45831 GC3=0.638 A/B=1.05 | d0=+0.0551 d2b=+0.0394 d3b=+0.1240 dH5=+0.0698 dH6=+0.1181 dH7=+0.1029 (9.8s)
+
+[SMOKE] Saved JSON: /Volumes/Мои документы/GitHub/results_verified/05_biosphere_55taxa_smoke/results_smoke.json
+[SMOKE] Saved MD  : /Volumes/Мои документы/GitHub/results_verified/05_biosphere_55taxa_smoke/report_smoke.md

@@ -1,0 +1,228 @@
+
+============================================================================================================
+SUPER CODON v14.8 — HORIZONTAL GENE TRANSFER (HGT), VIRAL TROJAN, ORGANELLE OS & BIOTECH CRASH AUDIT
+============================================================================================================
+============================================================================================
+AUTO CDS PREPARATION (autonomous v14.6)
+============================================================================================
+CDS cache directory: /Volumes/Мои документы/GitHub/cds_cache
+Mitochondrion track: off (--include-mito)
+Virus track        : off (--include-virus)
+Extended panel     : ENABLED (opt-in)
+[CDS] Human_T2T     : existing GCF_009914755.1_T2T-CHM13v2.0_cds_from_genomic.fna.gz (25.3 MB), skip download
+[CDS] Mouse         : existing GCF_000001635.27_GRCm39_cds_from_genomic.fna.gz (22.7 MB), skip download
+[CDS] Zebrafish     : accession GCF_000002035
+      trying https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/035/GCF_000002035.6_GRCz11/GCF_000002035.6_GRCz11_cds_from_genomic.fna.gz
+         1.0/    25.8 MB   4.1%         2.1/    25.8 MB   8.1%         3.1/    25.8 MB  12.2%         4.2/    25.8 MB  16.3%         5.2/    25.8 MB  20.3%         6.3/    25.8 MB  24.4%         7.3/    25.8 MB  28.5%         8.4/    25.8 MB  32.5%         9.4/    25.8 MB  36.6%        10.5/    25.8 MB  40.7%        11.5/    25.8 MB  44.7%        12.6/    25.8 MB  48.8%        13.6/    25.8 MB  52.9%        14.7/    25.8 MB  56.9%        15.7/    25.8 MB  61.0%        16.8/    25.8 MB  65.1%        17.8/    25.8 MB  69.1%        18.9/    25.8 MB  73.2%        19.9/    25.8 MB  77.3%        21.0/    25.8 MB  81.3%        22.0/    25.8 MB  85.4%        23.1/    25.8 MB  89.5%        24.1/    25.8 MB  93.5%        25.2/    25.8 MB  97.6%        25.8/    25.8 MB 100.0%
+      OK: GCF_000002035.6_GRCz11_cds_from_genomic.fna.gz (25.8 MB)
+[CDS] Drosophila    : existing GCF_000001215.4_Release_6_plus_ISO1_MT_cds_from_genomic.fna.gz (10.7 MB), skip download
+[CDS] Arabidopsis   : existing GCF_000001735.4_TAIR10.1_cds_from_genomic.fna.gz (14.9 MB), skip download
+[CDS] Yeast         : existing GCF_000146045.2_R64_cds_from_genomic.fna.gz (3.0 MB), skip download
+[CDS] E.coli        : existing GCF_000005845.2_ASM584v2_cds_from_genomic.fna.gz (1.5 MB), skip download
+[CDS] B.subtilis    : existing GCF_000009045.1_ASM904v1_cds_from_genomic.fna.gz (1.5 MB), skip download
+[CDS] M.jannaschii  : existing GCF_000007745.1_ASM774v1_cds_from_genomic.fna.gz (0.7 MB), skip download
+[CDS] H.salinarum   : existing GCF_000015585.1_ASM1558v1_cds_from_genomic.fna.gz (0.8 MB), skip download
+[opt-in] Pseudomonas_aeruginosa: available at accession GCF_000006765; downloaded/used cache
+[opt-in] Mycobacterium_tuberculosis: available at accession GCF_000195955; downloaded/used cache
+[opt-in] Synechocystis_sp_PCC6803: available at accession GCF_000009725; downloaded/used cache
+
+Downloaded CDS for: ['Zebrafish', 'Pseudomonas_aeruginosa', 'Mycobacterium_tuberculosis', 'Synechocystis_sp_PCC6803']
+Skipped existing CDS for: ['Human_T2T', 'Mouse', 'Drosophila', 'Arabidopsis', 'Yeast', 'E.coli', 'B.subtilis', 'M.jannaschii', 'H.salinarum']
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+  [code] file transl_table=1 -> using 1 (exact_map)
+
+------------------------------------------------------------------------------------------------------------
+LOADED 13 REFERENCE GENOMIC 'OPERATING SYSTEM' KERNELS (64x64 MARKOV MATRICES):
+------------------------------------------------------------------------------------------------------------
+  [OS Kernel] Drosophila                 | clade=insect         | GC3=0.6304 | native_d2b=+0.0340 | native_d3b=+0.1640
+  [OS Kernel] Mouse                      | clade=mammal         | GC3=0.5710 | native_d2b=+0.0533 | native_d3b=+0.1052
+  [OS Kernel] Arabidopsis                | clade=plant          | GC3=0.4170 | native_d2b=+0.0250 | native_d3b=+0.1013
+  [OS Kernel] Zebrafish                  | clade=vertebrate     | GC3=0.5350 | native_d2b=+0.0479 | native_d3b=+0.1078
+  [OS Kernel] E.coli                     | clade=bacterium      | GC3=0.5604 | native_d2b=+0.0438 | native_d3b=+0.2128
+  [OS Kernel] Pseudomonas_aeruginosa     | clade=bacterium      | GC3=0.8795 | native_d2b=+0.0673 | native_d3b=+0.3673
+  [OS Kernel] M.jannaschii               | clade=archaeon       | GC3=0.4191 | native_d2b=+0.0600 | native_d3b=+0.2122
+  [OS Kernel] B.subtilis                 | clade=bacterium      | GC3=0.4448 | native_d2b=+0.0418 | native_d3b=+0.1579
+  [OS Kernel] Synechocystis_sp_PCC6803   | clade=cyanobacterium | GC3=0.4895 | native_d2b=+0.0665 | native_d3b=+0.2200
+  [OS Kernel] H.salinarum                | clade=archaeon       | GC3=0.8608 | native_d2b=+0.0354 | native_d3b=+0.2965
+  [OS Kernel] Yeast                      | clade=fungus         | GC3=0.3783 | native_d2b=+0.0096 | native_d3b=+0.1176
+  [OS Kernel] Mycobacterium_tuberculosis | clade=bacterium      | GC3=0.7984 | native_d2b=+0.0438 | native_d3b=+0.1849
+  [OS Kernel] Human_T2T                  | clade=mammal         | GC3=0.5813 | native_d2b=+0.0495 | native_d3b=+0.1168
+
+############################################################################################################
+MODULE A: VIRAL 'GENETIC TROJAN' & HOST-RIBOSOME MIMICRY SCANNER (VIRUSES vs HUMAN & E. COLI OS)
+############################################################################################################
+  [NCBI-Entrez] Fetching CDS FASTA for Epstein_Barr_Virus_HHV4 (NC_007605.1)...
+
+  [Virus] Epstein_Barr_Virus_HHV4 (NC_007605.1) | True_Host=Human_T2T | Genes=84 | GC3=0.6819
+    -> Scored on HUMAN_T2T OS : d2b=+0.0183 | d3b=+0.0989 | Genes with d3b>0 on Human: 76/82
+    -> Scored on E. COLI OS   : d2b=-0.0699 | d3b=-0.0791
+    -> Top 'Genetic Trojan' Genes Mimicking Human Ribosomal Syntax:
+       Gene_ID          | Codons |    GC3 | d2b_Human | d3b_Human | d2b_Ecoli | Product
+       BaRF1            |    301 | 0.7309 |   +0.0517 |   +0.1960 |   -0.0499 | ribonucleotide reductase subunit 2
+       BALF5            |   1014 | 0.8195 |   +0.0326 |   +0.2106 |   -0.0548 | DNA polymerase catalytic subunit
+       BALF2            |   1127 | 0.8350 |   +0.0387 |   +0.1950 |   -0.0508 | single-stranded DNA-binding protein
+       BBRF3            |    404 | 0.8069 |   +0.0519 |   +0.1686 |   -0.0160 | envelope glycoprotein M
+       BLLF3            |    277 | 0.7726 |   +0.0538 |   +0.1537 |   -0.1018 | deoxyuridine triphosphatase
+  [NCBI-Entrez] Fetching CDS FASTA for Human_Adenovirus_C2 (AC_000008.1)...
+
+  [Virus] Human_Adenovirus_C2 (AC_000008.1) | True_Host=Human_T2T | Genes=36 | GC3=0.6476
+    -> Scored on HUMAN_T2T OS : d2b=-0.0127 | d3b=+0.1105 | Genes with d3b>0 on Human: 33/33
+    -> Scored on E. COLI OS   : d2b=-0.0377 | d3b=-0.0377
+    -> Top 'Genetic Trojan' Genes Mimicking Human Ribosomal Syntax:
+       Gene_ID          | Codons |    GC3 | d2b_Human | d3b_Human | d2b_Ecoli | Product
+       AP_000207.1      |    197 | 0.7665 |   -0.0238 |   +0.2309 |   +0.0130 | pVII
+       AP_000211.1      |    951 | 0.5668 |   +0.0270 |   +0.1468 |   -0.0336 | hexon
+       AP_000206.1      |    570 | 0.7491 |   +0.0062 |   +0.1621 |   -0.0493 | III
+       AP_000222.1      |     90 | 0.5333 |   +0.0958 |   +0.0720 |   -0.0352 | E3 RID-alpha
+       AP_000205.1      |    584 | 0.7808 |   -0.0228 |   +0.1739 |   -0.0300 | pIIIa
+  [NCBI-Entrez] Fetching CDS FASTA for Human_Papillomavirus_16 (NC_001526.4)...
+
+  [Virus] Human_Papillomavirus_16 (NC_001526.4) | True_Host=Human_T2T | Genes=8 | GC3=0.2534
+    -> Scored on HUMAN_T2T OS : d2b=-0.0266 | d3b=+0.0970 | Genes with d3b>0 on Human: 7/8
+    -> Scored on E. COLI OS   : d2b=-0.0366 | d3b=-0.0952
+    -> Top 'Genetic Trojan' Genes Mimicking Human Ribosomal Syntax:
+       Gene_ID          | Codons |    GC3 | d2b_Human | d3b_Human | d2b_Ecoli | Product
+       E7               |     97 | 0.3814 |   +0.0327 |   +0.0682 |   -0.0762 | transforming protein E7
+       L2               |    472 | 0.1568 |   -0.0312 |   +0.1308 |   -0.0135 | minor capsid protein L2
+       E1               |    648 | 0.2346 |   -0.0278 |   +0.1142 |   -0.0459 | replication protein E1
+       E2               |    364 | 0.2995 |   -0.0210 |   +0.1055 |   -0.0323 | regulatory protein E2
+       L1               |    504 | 0.2520 |   -0.0224 |   +0.1046 |   -0.0539 | major capsid protein L1
+  [NCBI-Entrez] Fetching CDS FASTA for Vaccinia_Poxvirus (NC_006998.1)...
+
+  [Virus] Vaccinia_Poxvirus (NC_006998.1) | True_Host=Human_T2T | Genes=215 | GC3=0.3000
+    -> Scored on HUMAN_T2T OS : d2b=-0.0714 | d3b=+0.1145 | Genes with d3b>0 on Human: 180/185
+    -> Scored on E. COLI OS   : d2b=-0.0465 | d3b=-0.0623
+    -> Top 'Genetic Trojan' Genes Mimicking Human Ribosomal Syntax:
+       Gene_ID          | Codons |    GC3 | d2b_Human | d3b_Human | d2b_Ecoli | Product
+       B7R              |    181 | 0.2099 |   -0.0429 |   +0.2335 |   -0.0364 | hypothetical protein
+       A9L              |    107 | 0.2617 |   -0.0531 |   +0.2195 |   -0.0458 | IMV membrane protein
+       VACWR014         |    236 | 0.2500 |   -0.0395 |   +0.1895 |   -0.0315 | ankyrin-like protein
+       A53R             |    102 | 0.3529 |   -0.0050 |   +0.1470 |   -0.0294 | secreted TNF-receptor-like protein
+       A20R             |    425 | 0.2847 |   -0.0426 |   +0.1806 |   -0.0238 | viral DNA polymerase processivity factor
+  [NCBI-Entrez] Fetching CDS FASTA for Bacteriophage_T4 (NC_000866.4)...
+
+  [Virus] Bacteriophage_T4 (NC_000866.4) | True_Host=E.coli | Genes=254 | GC3=0.2422
+    -> Scored on HUMAN_T2T OS : d2b=-0.0392 | d3b=+0.1271 | Genes with d3b>0 on Human: 197/200
+    -> Scored on E. COLI OS   : d2b=-0.0260 | d3b=+0.0183
+    -> Top 'Genetic Trojan' Genes Mimicking Human Ribosomal Syntax:
+       Gene_ID          | Codons |    GC3 | d2b_Human | d3b_Human | d2b_Ecoli | Product
+       46.2             |     86 | 0.2442 |   +0.0187 |   +0.2615 |   -0.0253 | gp46.2 hypothetical protein
+       40               |    113 | 0.2389 |   +0.0043 |   +0.2426 |   -0.0891 | head vertex assembly chaperone
+       frd.2            |    127 | 0.2520 |   -0.0081 |   +0.2382 |   -0.0047 | hypothetical protein
+       nrdC             |     86 | 0.2791 |   +0.0318 |   +0.1798 |   -0.0349 | NrdC thioredoxin
+       pseT.3           |    116 | 0.2931 |   -0.0059 |   +0.2162 |   +0.0114 | Rz-like spanin
+  [NCBI-Entrez] Fetching CDS FASTA for Mimivirus (NC_014649.1)...
+
+  [Virus] Mimivirus (NC_014649.1) | True_Host=Eukaryote_Amoeba | Genes=964 | GC3=0.1925
+    -> Scored on HUMAN_T2T OS : d2b=-0.0440 | d3b=+0.1713 | Genes with d3b>0 on Human: 911/919
+    -> Scored on E. COLI OS   : d2b=-0.0250 | d3b=-0.0179
+    -> Top 'Genetic Trojan' Genes Mimicking Human Ribosomal Syntax:
+       Gene_ID          | Codons |    GC3 | d2b_Human | d3b_Human | d2b_Ecoli | Product
+       R597             |    273 | 0.1575 |   +0.0013 |   +0.2945 |   -0.0179 | putative ankyrin repeat protein
+       L482b            |     81 | 0.1481 |   -0.0586 |   +0.3303 |   +0.0075 | hypothetical protein
+       L28              |    103 | 0.1845 |   +0.0088 |   +0.2629 |   -0.0377 | hypothetical protein
+       R435b            |     87 | 0.1609 |   -0.0272 |   +0.2916 |   -0.0616 | hypothetical protein
+       R514             |    208 | 0.1779 |   -0.0210 |   +0.2840 |   -0.0427 | hypothetical protein
+  [NCBI-Entrez] Fetching CDS FASTA for Pandoravirus_salinus (NC_022098.1)...
+
+  [Virus] Pandoravirus_salinus (NC_022098.1) | True_Host=Eukaryote_Amoeba | Genes=1429 | GC3=0.7549
+    -> Scored on HUMAN_T2T OS : d2b=-0.1165 | d3b=+0.0989 | Genes with d3b>0 on Human: 1283/1390
+    -> Scored on E. COLI OS   : d2b=-0.0351 | d3b=-0.0620
+    -> Top 'Genetic Trojan' Genes Mimicking Human Ribosomal Syntax:
+       Gene_ID          | Codons |    GC3 | d2b_Human | d3b_Human | d2b_Ecoli | Product
+       psal_cds_897     |    140 | 0.8929 |   +0.0088 |   +0.2428 |   -0.0051 | hypothetical protein
+       psal_cds_359     |    292 | 0.8699 |   -0.0238 |   +0.2593 |   -0.0065 | hypothetical protein
+       psal_cds_503     |    322 | 0.9099 |   -0.0711 |   +0.2889 |   -0.0641 | hypothetical protein
+       psal_cds_221     |    549 | 0.9271 |   -0.0678 |   +0.2850 |   -0.0377 | hypothetical protein
+       psal_cds_397     |    694 | 0.9337 |   -0.0880 |   +0.2957 |   -0.0292 | Nucleoporin FG2 superfamily incomplete domain
+
+############################################################################################################
+MODULE B: HUMAN PROTEOME HGT 'TORRENT NETWORK' & DOMESTICATED VIRAL/TRANSPOSON GENE FORENSICS
+############################################################################################################
+  [B1] Scoring Famous Domesticated Retroviral, Transposon & Endosymbiotic Genes Inside Human Genome:
+    Gene_Symbol             | Acc           | Codons |    GC3 | d2b_Human | d3b_Human | Best_NonMammal_OS (d3b)          | Origin
+    ------------------------+---------------+--------+--------+-----------+-----------+----------------------------------+----------------------------------------
+  [NCBI-Entrez] Fetching CDS FASTA for ERVW-1_Syncytin1 (NM_014590.4)...
+    ERVW-1_Syncytin1        | NM_014590.4   |    537 | 0.4209 |   +0.0288 |   +0.0304 | Arabidopsis (+0.0167)            | Domesticated endogenous retrovirus envelop
+  [NCBI-Entrez] Fetching CDS FASTA for ARC_Neuronal_Capsid (NM_015193.5)...
+    ARC_Neuronal_Capsid     | NM_015193.5   |    395 | 0.9595 |   -0.0090 |   +0.3186 | H.salinarum (+0.3010)            | Domesticated Ty3/gypsy retrotransposon Gag
+  [NCBI-Entrez] Fetching CDS FASTA for RAG1_Immune_Recombinase (NM_000448.3)...
+    RAG1_Immune_Recombinase | NM_000448.3   |   1042 | 0.5576 |   +0.0724 |   +0.0837 | Zebrafish (+0.0674)              | Domesticated Transib DNA transposase (V(D)
+  [NCBI-Entrez] Fetching CDS FASTA for TFAM_Mito_Factor (NM_003201.3)...
+    TFAM_Mito_Factor        | NM_003201.3   |    245 | 0.3306 |   -0.0172 |   +0.0788 | Zebrafish (+0.0438)              | Nuclear-encoded mitochondrial transcriptio
+  [NCBI-Entrez] Fetching CDS FASTA for CS_Citrate_Synthase (NM_004077.3)...
+    CS_Citrate_Synthase     | NM_004077.3   |    465 | 0.5484 |   +0.0838 |   +0.0924 | Zebrafish (+0.0841)              | Nuclear-encoded mitochondrial Krebs cycle 
+
+  [B2] Whole-Genome 'Torrent Network' Scan Across 1500 Human Genes (>=150 codons):
+    -> Best OS Kernel by Synonymous Syntax (d2b) : {'Human_T2T': 739, 'Mouse': 587, 'Zebrafish': 70, 'Yeast': 30, 'H.salinarum': 19, 'Drosophila': 18}
+    -> Best OS Kernel by Trigram-Corrected (d3b) : {'Human_T2T': 805, 'Mouse': 573, 'Arabidopsis': 41, 'Zebrafish': 38, 'Yeast': 25, 'Mycobacterium_tuberculosis': 7}
+    -> Human Genes Running Stronger on Non-Vertebrate (Prokaryotic/Archaeal/Fungal/Plant) OS: 0 loci
+
+############################################################################################################
+MODULE C: ENDOSYMBIOTIC ORGANELLE OS REWRITING (CHLOROPLAST & MITOCHONDRIA vs ANCESTOR & HOST NUCLEUS)
+############################################################################################################
+  [NCBI-Entrez] Fetching CDS FASTA for Arabidopsis_Chloroplast (NC_000932.1)...
+
+  [Organelle] Arabidopsis_Chloroplast (NC_000932.1, Table=11) | Genes=67 | GC3=0.2763
+    -> Scored under Arabidopsis                : d2b=-0.0259 | d3b=+0.0462
+    -> Scored under Synechocystis_sp_PCC6803   : d2b=-0.0411 | d3b=-0.0419
+    -> Scored under B.subtilis                 : d2b=-0.0517 | d3b=+0.0024
+    -> Scored under E.coli                     : d2b=-0.0538 | d3b=-0.0989
+    -> Scored under Human_T2T                  : d2b=-0.0446 | d3b=+0.0479
+    -> Scored under Yeast                      : d2b=-0.0043 | d3b=+0.0445
+    -> Gene-by-Gene OS Split (Arabidopsis Nucleus vs Synechocystis_sp_PCC6803 Bacteria): 65 genes assimilated by Host vs 2 retaining Bacterial syntax!
+  [NCBI-Entrez] Fetching CDS FASTA for Human_Mitochondrion_NC (NC_012920.1)...
+
+  [Organelle] Human_Mitochondrion_NC (NC_012920.1, Table=2) | Genes=13 | GC3=0.4769
+    -> Scored under Arabidopsis                : d2b=-0.0469 | d3b=-0.1635
+    -> Scored under Synechocystis_sp_PCC6803   : d2b=-0.0371 | d3b=-0.2042
+    -> Scored under B.subtilis                 : d2b=-0.0913 | d3b=-0.1480
+    -> Scored under E.coli                     : d2b=-0.1096 | d3b=-0.2617
+    -> Scored under Human_T2T                  : d2b=-0.0152 | d3b=-0.1175
+    -> Scored under Yeast                      : d2b=-0.0251 | d3b=-0.1759
+    -> Gene-by-Gene OS Split (Human_T2T Nucleus vs B.subtilis Bacteria): 10 genes assimilated by Host vs 3 retaining Bacterial syntax!
+
+############################################################################################################
+MODULE D: THE BIOTECH SHOCK TEST — NATURAL GENES vs INDUSTRY 'MAX-CAI CODON OPTIMIZATION' CRASH
+############################################################################################################
+  Testing 100% identical human proteins across 4 coding designs:
+    (1) WT_Natural     : Real human spliced exons from NCBI RefSeqGene
+    (2) Biotech_MaxCAI : Standard industry 'Codon Optimization' (every AA -> most frequent human codon)
+    (3) Random_Syn_H0  : Independent marginal human codon usage (no Markov memory)
+    (4) Markov_H2b     : Generated by our 1st-order conditional codon-pair Markov operator P(c_{i+1}|c_i)
+------------------------------------------------------------------------------------------------------------
+  Gene   | Codons | WT_d2b  | MaxCAI_d2b | WT_d3b  | MaxCAI_d3b | H0_Syn_d3b | Markov_d3b | WT_Ent(b) | MaxCAI_Ent | Verdict
+  -------+--------+---------+------------+---------+------------+------------+------------+-----------+------------+-------------------
+  TP53   |    392 | +0.0677 |    -0.0340 | +0.1110 |    +0.2325 |    +0.0436 |    +0.0736 |    5.6085 |     4.1227 | MAX-CAI CRASHES d2b/Ent
+  TP63   |    679 | +0.0599 |    -0.0220 | +0.0991 |    +0.2466 |    +0.0467 |    +0.0863 |    5.6621 |     4.1744 | MAX-CAI CRASHES d2b/Ent
+  TP73   |    635 | +0.0380 |    -0.0494 | +0.2313 |    +0.2756 |    +0.0210 |    +0.0968 |    5.3497 |     4.1577 | MAX-CAI CRASHES d2b/Ent
+  BRCA1  |   1862 | +0.0337 |    -0.0478 | +0.1026 |    +0.2956 |    +0.0684 |    +0.1118 |    5.5674 |     4.0837 | MAX-CAI CRASHES d2b/Ent
+  PTEN   |    402 | +0.0280 |    -0.0418 | +0.1172 |    +0.3268 |    +0.1161 |    +0.1127 |    5.5320 |     4.1891 | MAX-CAI CRASHES d2b/Ent
+  RB1    |    927 | -0.0006 |    -0.0466 | +0.1053 |    +0.2712 |    +0.0721 |    +0.1228 |    5.6121 |     4.1349 | MAX-CAI CRASHES d2b/Ent
+  KRAS   |    188 | +0.0279 |    -0.0447 | +0.1435 |    +0.3002 |    +0.0978 |    +0.1292 |    5.3338 |     4.1025 | MAX-CAI CRASHES d2b/Ent
+  NRAS   |    188 | +0.0787 |    -0.0658 | +0.1013 |    +0.3110 |    +0.1343 |    +0.1340 |    5.3983 |     4.1214 | MAX-CAI CRASHES d2b/Ent
+  HRAS   |    188 | +0.0511 |    -0.0763 | +0.2447 |    +0.2763 |    +0.0607 |    +0.1464 |    5.1002 |     4.1281 | MAX-CAI CRASHES d2b/Ent
+  GAPDH  |    334 | +0.1168 |    -0.0904 | +0.2258 |    +0.3336 |    +0.1072 |    +0.1227 |    5.2701 |     4.1029 | MAX-CAI CRASHES d2b/Ent
+  ACTB   |    374 | +0.0134 |    -0.0754 | +0.2699 |    +0.3031 |    +0.0329 |    +0.1143 |    5.1021 |     4.1835 | MAX-CAI CRASHES d2b/Ent
+  HBB    |    146 | +0.0814 |    -0.1138 | +0.1958 |    +0.3298 |    +0.0513 |    +0.1415 |    4.8268 |     3.9313 | MAX-CAI CRASHES d2b/Ent
+  MYC    |    453 | +0.0164 |    -0.0612 | +0.1991 |    +0.2932 |    +0.0687 |    +0.1202 |    5.4529 |     4.0533 | MAX-CAI CRASHES d2b/Ent
+  APOE   |    316 | -0.0139 |    -0.0559 | +0.2681 |    +0.2017 |    +0.0371 |    +0.0686 |    4.6922 |     3.7820 | MAX-CAI CRASHES d2b/Ent
+------------------------------------------------------------------------------------------------------------
+  PANEL MEAN (14 HUMAN GENES): WT_d2b=+0.0427 vs MaxCAI_d2b=-0.0589 | WT_d3b=+0.1725 vs MaxCAI_d3b=+0.2855 vs H0_Random_d3b=+0.0684 vs Markov_H2b_d3b=+0.1129 | Entropy: 5.322b -> 4.091b
+
+============================================================================================================
+[v14.8 Chimera Audit Saved] JSON : /Volumes/Мои документы/GitHub/results_verified/04_viral_trojan_and_maxcai_crash_v14_8/chimera_hgt_trojan_audit.json
+[v14.8 Chimera Audit Saved] MD   : /Volumes/Мои документы/GitHub/results_verified/04_viral_trojan_and_maxcai_crash_v14_8/chimera_hgt_trojan_audit.md
+[v14.8 Chimera Audit Saved] LOG  : /Volumes/Мои документы/GitHub/results_verified/04_viral_trojan_and_maxcai_crash_v14_8/chimera_hgt_trojan_audit.log
+============================================================================================================
