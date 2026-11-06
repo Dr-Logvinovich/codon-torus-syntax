@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use these verification pipelines or preprints in your research, please cite them as below."
+authors:
+  - family-names: "Logvinovich"
+    given-names: "Victor"
+    orcid: "https://orcid.org/0009-0007-2040-6955"
+    affiliation: "Master of Physical and Mathematical Sciences; Researcher in Pedagogical Sciences (Mathematics), Kobrin, Belarus"
+  - family-names: "Perez"
+    given-names: "Jean-Claude"
+    orcid: "https://orcid.org/0000-0001-6446-2042"
+    affiliation: "PhD in Mathematics and Computer Science, Retired IBM AI European Research Centre, Montpellier; Luc Montagnier Foundation"
+title: "From Form to Program & The Double-Stranded Codon Torus: Conditional Codon Syntax, Markovian Lumpability, and Synthetic mRNA Duplex Forensics"
+version: "v14.8-v3.5"
+date-released: 2026-10-27
+url: "https://github.com/Dr-Logvinovich/codon-torus-syntax"
+repository-code: "https://github.com/Dr-Logvinovich/codon-torus-syntax"
+license: MIT
+keywords:
+  - "Codon Torus"
+  - "Conditional Codon Syntax"
+  - "Markov Lumpability"
+  - "Chargaff Mirror Symmetry"
+  - "Max-CAI Codon Optimization"
+  - "BNT162b2"
+  - "mRNA-1273"
+  - "Viterbi Compiler"
+  - "RefSeq Genomics"
