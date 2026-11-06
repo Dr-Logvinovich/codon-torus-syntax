@@ -1,0 +1,578 @@
+LOCUS       NG_007161              14518 bp    DNA     linear   PRI 15-JUN-2026
+DEFINITION  Homo sapiens MYC proto-oncogene, bHLH transcription factor (MYC),
+            RefSeqGene (LRG_1397) on chromosome 8.
+ACCESSION   NG_007161
+VERSION     NG_007161.2
+KEYWORDS    RefSeq; RefSeqGene.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 14518)
+  AUTHORS   Hann,S.R., King,M.W., Bentley,D.L., Anderson,C.W. and Eisenman,R.N.
+  TITLE     A non-AUG translational initiation in c-myc exon 1 generates an
+            N-terminally distinct protein whose synthesis is disrupted in
+            Burkitt's lymphomas
+  JOURNAL   Cell 52 (2), 185-195 (1988)
+   PUBMED   3277717
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff in
+            collaboration with Zahra Jalali, Liz Starks, Djamel Harbi. The
+            reference sequence was derived from AC103819.3.
+            This sequence is a reference standard in the RefSeqGene project.
+            
+            On Sep 20, 2017 this sequence version replaced NG_007161.1.
+            
+            Summary: This gene is a proto-oncogene and encodes a nuclear
+            phosphoprotein that plays a role in cell cycle progression,
+            apoptosis and cellular transformation. The encoded protein forms a
+            heterodimer with the related transcription factor MAX. This complex
+            binds to the E box DNA consensus sequence and regulates the
+            transcription of specific target genes. Amplification of this gene
+            is frequently observed in numerous human cancers. Translocations
+            involving this gene are associated with Burkitt lymphoma and
+            multiple myeloma in human patients. There is evidence to show that
+            translation initiates both from an upstream, in-frame non-AUG (CUG)
+            and a downstream AUG start site, resulting in the production of two
+            isoforms with distinct N-termini. [provided by RefSeq, Aug 2017].
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-14518             AC103819.3         82018-96535
+FEATURES             Location/Qualifiers
+     source          1..14518
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="8"
+                     /map="8q24.21"
+     gene            complement(<1..3534)
+                     /gene="CASC11"
+                     /gene_synonym="CARLo-7; CARLO7; LINC00990; MYMLR;
+                     TCONS_00014535"
+                     /note="cancer susceptibility 11"
+                     /db_xref="GeneID:100270680"
+                     /db_xref="HGNC:HGNC:48939"
+                     /db_xref="MIM:617704"
+     ncRNA           complement(join(<1..489,3392..3534))
+                     /ncRNA_class="lncRNA"
+                     /gene="CASC11"
+                     /gene_synonym="CARLo-7; CARLO7; LINC00990; MYMLR;
+                     TCONS_00014535"
+                     /product="cancer susceptibility 11, transcript variant 1"
+                     /inference="similar to RNA sequence (same
+                     species):RefSeq:NR_117101.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NR_117101.1"
+                     /db_xref="GeneID:100270680"
+                     /db_xref="HGNC:HGNC:48939"
+                     /db_xref="MIM:617704"
+     ncRNA           complement(<3392..3534)
+                     /ncRNA_class="lncRNA"
+                     /gene="CASC11"
+                     /gene_synonym="CARLo-7; CARLO7; LINC00990; MYMLR;
+                     TCONS_00014535"
+                     /product="cancer susceptibility 11, transcript variant 2"
+                     /inference="similar to RNA sequence (same
+                     species):RefSeq:NR_117102.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NR_117102.1"
+                     /db_xref="GeneID:100270680"
+                     /db_xref="HGNC:HGNC:48939"
+                     /db_xref="MIM:617704"
+     gene            5798..12518
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="MYC proto-oncogene, bHLH transcription factor"
+                     /db_xref="GeneID:4609"
+                     /db_xref="HGNC:HGNC:7553"
+                     /db_xref="MIM:190080"
+     mRNA            join(5798..6190,7815..8586,9963..12518)
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /product="MYC proto-oncogene, bHLH transcription factor,
+                     transcript variant 1"
+                     /transcript_id="NM_002467.6"
+                     /db_xref="GeneID:4609"
+                     /db_xref="LRG:t1"
+                     /db_xref="HGNC:HGNC:7553"
+                     /db_xref="MIM:190080"
+     exon            5798..6190
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /inference="alignment:Splign:2.1.0"
+                     /number=1
+     CDS             join(6161..6190,7815..8586,9963..10525)
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="isoform 1 is encoded by transcript variant 1;
+                     non-AUG (CUG) translation initiation codon; avian
+                     myelocytomatosis viral oncogene homolog; myc
+                     proto-oncogene protein; myc-related
+                     translation/localization regulatory factor; proto-oncogene
+                     c-Myc; transcription factor p64; class E basic
+                     helix-loop-helix protein 39; v-myc avian myelocytomatosis
+                     viral oncogene homolog; v-myc myelocytomatosis viral
+                     oncogene homolog"
+                     /codon_start=1
+                     /product="myc proto-oncogene protein isoform 1"
+                     /protein_id="NP_002458.2"
+                     /db_xref="CCDS:CCDS6359.2"
+                     /db_xref="GeneID:4609"
+                     /db_xref="LRG:p1"
+                     /db_xref="HGNC:HGNC:7553"
+                     /db_xref="MIM:190080"
+                     /translation="MDFFRVVENQQPPATMPLNVSFTNRNYDLDYDSVQPYFYCDEEE
+                     NFYQQQQQSELQPPAPSEDIWKKFELLPTPPLSPSRRSGLCSPSYVAVTPFSLRGDND
+                     GGGGSFSTADQLEMVTELLGGDMVNQSFICDPDDETFIKNIIIQDCMWSGFSAAAKLV
+                     SEKLASYQAARKDSGSPNPARGHSVCSTSSLYLQDLSAAASECIDPSVVFPYPLNDSS
+                     SPKSCASQDSSAFSPSSDSLLSSTESSPQGSPEPLVLHEETPPTTSSDSEEEQEDEEE
+                     IDVVSVEKRQAPGKRSESGSPSAGGHSKPPHSPLVLKRCHVSTHQHNYAAPPSTRKDY
+                     PAAKRVKLDSVRVLRQISNNRKCTSPRSSDTEENVKRRTHNVLERQRRNELKRSFFAL
+                     RDQIPELENNEKAPKVVILKKATAYILSVQAEEQKLISEEDLLRKRREQLKHKLEQLR
+                     NSCA"
+     misc_feature    7845..7847
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0007744|PubMed:20068231,
+                     ECO:0007744|PubMed:23186163; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    7851..7853
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphothreonine, by RAF, in vitro.
+                     /evidence=ECO:0000269|PubMed:9315742; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    8001..8003
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="O-linked (GlcNAc) threonine, alternate.
+                     /evidence=ECO:0000269|PubMed:7642555. /id=CAR_000033;
+                     propagated from UniProtKB/Swiss-Prot (P01106.2);
+                     glycosylation site"
+     misc_feature    8001..8003
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphothreonine, by GSK3, alternate.
+                     /evidence=ECO:0000269|PubMed:15103331,
+                     ECO:0000269|PubMed:17558397, ECO:0000269|PubMed:30158517,
+                     ECO:0000269|PubMed:8386367, ECO:0007744|PubMed:17081983,
+                     ECO:0007744|PubMed:18669648, ECO:0007744|PubMed:21406692,
+                     ECO:0007744|PubMed:23186163; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    8013..8015
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine, by DYRK2, GSK3 and CDK2.
+                     /evidence=ECO:0000269|PubMed:15103331,
+                     ECO:0000269|PubMed:17558397, ECO:0000269|PubMed:19966300,
+                     ECO:0000269|PubMed:20713526, ECO:0000269|PubMed:22307329,
+                     ECO:0000269|PubMed:25438055, ECO:0000269|PubMed:25803737,
+                     ECO:0000269|PubMed:30158517, ECO:0000269|PubMed:8386367,
+                     ECO:0007744|PubMed:18669648, ECO:0007744|PubMed:21406692,
+                     ECO:0007744|PubMed:23186163; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    8040..8042
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30158517,
+                     ECO:0007744|PubMed:18669648, ECO:0007744|PubMed:23186163;
+                     propagated from UniProtKB/Swiss-Prot (P01106.2);
+                     phosphorylation site"
+     misc_feature    8070..8072
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30158517; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    8127..8153
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="propagated from UniProtKB/Swiss-Prot (P01106.2);
+                     Region: 9aaTAD. /evidence=ECO:0000269|PubMed:34342803"
+     misc_feature    8256..8258
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="N6-acetyllysine, by PCAF, alternate.
+                     /evidence=ECO:0000269|PubMed:16126174; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); acetylation site"
+     misc_feature    8271..8273
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="N6-acetyllysine, alternate.
+                     /evidence=ECO:0007744|PubMed:19608861; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); acetylation site"
+     misc_feature    8280..8282
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30158517; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    8298..8300
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="N6-acetyllysine, by PCAF.
+                     /evidence=ECO:0000269|PubMed:16126174; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); acetylation site"
+     misc_feature    8304..8306
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30158517; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    8310..8312
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30158517,
+                     ECO:0007744|PubMed:20068231; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    join(8439..8586,9963..10090)
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="propagated from UniProtKB/Swiss-Prot (P01106.2);
+                     Region: Disordered. /evidence=ECO:0000256|SAM:MobiDB-lite"
+     misc_feature    10028..10030
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="N6-acetyllysine, by PCAF.
+                     /evidence=ECO:0000269|PubMed:16126174; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); acetylation site"
+     misc_feature    10082..10084
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0007744|PubMed:23186163; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    10145..10147
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30158517; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    10148..10150
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphothreonine.
+                     /evidence=ECO:0000269|PubMed:30158517; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    10154..10156
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="N6-acetyllysine, by PCAF.
+                     /evidence=ECO:0000269|PubMed:16126174; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); acetylation site"
+     misc_feature    10172..10174
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="N6-acetyllysine, by PCAF.
+                     /evidence=ECO:0000269|PubMed:16126174; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); acetylation site"
+     misc_feature    10190..10192
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine, by PIM2, in vitro.
+                     /evidence=ECO:0000250|UniProtKB:P01108; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    10235..10237
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30158517; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    10244..10246
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30158517; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    10247..10249
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30158517; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); phosphorylation site"
+     misc_feature    10265..10306
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="propagated from UniProtKB/Swiss-Prot (P01106.2);
+                     Region: Basic motif.
+                     /evidence=ECO:0000255|PROSITE-ProRule:PRU00981"
+     misc_feature    10268..10297
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="propagated from UniProtKB/Swiss-Prot (P01106.2);
+                     Region: UBR5-degron.
+                     /evidence=ECO:0000269|PubMed:37478862"
+     misc_feature    10307..10423
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="propagated from UniProtKB/Swiss-Prot (P01106.2);
+                     Region: Helix-loop-helix motif.
+                     /evidence=ECO:0000255|PROSITE-ProRule:PRU00981"
+     misc_feature    10316..10318
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="N6-acetyllysine, by PCAF.
+                     /evidence=ECO:0000269|PubMed:16126174; propagated from
+                     UniProtKB/Swiss-Prot (P01106.2); acetylation site"
+     misc_feature    10442..10507
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /note="propagated from UniProtKB/Swiss-Prot (P01106.2);
+                     Region: Leucine-zipper"
+     exon            7815..8586
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /inference="alignment:Splign:2.1.0"
+                     /number=2
+     exon            9963..12518
+                     /gene="MYC"
+                     /gene_synonym="bHLHe39; c-Myc; MRTL; MYCC"
+                     /inference="alignment:Splign:2.1.0"
+                     /number=3
+ORIGIN      
+        1 cctatgaatt agtgatgccg aatttcattt tctcatctgc tgaagagctt tcctgtgttc
+       61 ctctcgttgg aacacatgct tggcattaaa atgcttgtga gaacttctct tcctttaacg
+      121 ttccctggct agcttggttt ttaatctaac agcccttctt tcaaaatgat ccttccactg
+      181 gagatagata tttatcattc tcttccttca cctcatctct tgacaggccg cacgtgactt
+      241 gaaggaattt ttcaaatagc agctcagcca ccctgagggg cttcagtctc acccctaagt
+      301 tcgctggctt tttcttcacc acgtccagtt gctttccatc ttattaactg ctcttttcac
+      361 tagaggacca actcagtagg aaattttttg agaggtggag aaagagatgt tcaaagaagg
+      421 tgttggggtc gggggaaact ggttttattt tatacaagtc acacattctg aatcttccct
+      481 tttgtgtctc tggggagaaa ggagaaagtt tgatcaaatc gctcattatt tctgcacttc
+      541 tttctttttt cctaagtata aaaatatatg actactacta ctgtgagact atgtgattgt
+      601 gagaatgaat gattcttttt tttttttttt tttttttgaa acggagtctc tcgctgtcac
+      661 ccaggctgga gtgcagtagc acgatcttgg ctcactgcaa catctgcctc ccgggttcaa
+      721 gcaattctcc tgcctcagcc tcctgagtag ctgggactac aggtgcgctc caccaccccc
+      781 agctaatttt tgtattttta gtggagacgg ggtttcacca tgttggtcag gctggtcttg
+      841 aactcctgac ctcatgatcc tctcacctcg gcctcacaaa gtgctaggat tacaggcgca
+      901 tggccaagaa tgaatgatta tttgtgcctt cctatgtgaa aaaaaaatgt ttcctctagc
+      961 tacacactat tctgttctgt gaggccgccc catcagactg ttgacctaga gtcccaaccc
+     1021 cggccctcca ggagacctgc ctgttcttag aagcccaacc cactcagcag cagctccaaa
+     1081 taacaggggg agccaacaaa aaagagtgct gctagagcaa caagcaaggg gcaattagtc
+     1141 agaaggcaac ttccatggtc ttccaaaaaa aattgaggtg aaagaccaaa gatgtcccta
+     1201 aaatgtcttc ctaaaagata aacttcatca actacctctg actggtcagt attaagaacc
+     1261 actttcaggc caggtgtcat ggttcacgcc tgtaactcca tctactccag aggctgaggc
+     1321 aggacaattg cttcaggccg gaggattgct tgaggccagg agctggagac caagcctgag
+     1381 caacacagtg agacctcatc tctaccaaaa atgtacctct attaaaaaac aaaaaagaag
+     1441 aagaagaaga agaagaagga gaggaggctg ggtatggtgg ctaatgcctt tgtaatccca
+     1501 gaactttgga aggctgaggc aggagaatca cttaggctga ggcaggagaa tcaccagagt
+     1561 ctaggagttt gagaccagcc tgggcaacat agtgagaccc ccatctctac aaaaaaaaaa
+     1621 attcaaaaat tagccaagcg tggggtttgt gcctgtagac ccaactactc aggaggctca
+     1681 ggtaggagga tcacctgagt ccagggaggt cgaggctgca gtgagtcatg attattccac
+     1741 tgccttccag cctagactac agggtgagac cctgtcttaa aaaaaaaatt aaagaagaaa
+     1801 aaactctctt ttcttttctt tctttcttct tcttcttttc tttttttttt tttctttttt
+     1861 tttttttaga gatggcacgt caccacattg cccaggctgt tgtcgaactc ctggcctcaa
+     1921 acgatgctcc cacttgagcc tcccaaagtg ctgggactac aagcataagc caccacacac
+     1981 ggccttttcc tttctttttc tatttctcaa tggatttttc caatggacac gtatcacttt
+     2041 ggtagttata catgatacta gttgtaatct cagccatttt tcaacccagc aaatgtctat
+     2101 tctaggtcaa atatgtctca aaaattacta aaagaaaatc agttatgtcc tttaacctgg
+     2161 ctgaggtctg gctttgtttt ctctcatgta aaaatggaga tggcacaaaa caactccaag
+     2221 ctgttacttg aaagtaacac ctcaggtgat gtcaccagcc tgagggagag tgaggttaag
+     2281 ttctgaaccc acaggcatta tatctgcctg gggttcacat gccctacact ggactggcat
+     2341 aatttgagag tcagatccga agatgtggta tatccgccat ctttagcaac tttcaaaaac
+     2401 taccctatga ggtcaagctg gacctacttt tggttttgcc attgttgttt gtttgttgtt
+     2461 gagggttttc tttgaggggc ggggagtgca tgcccctgtg gagagcactc atttagcttc
+     2521 aattagagta atgccaaaag tgccagattc ctgggaaatc agcctacaag gctcctgcgg
+     2581 gaaggaacct ccactgccag aagtccttag ggcatctaag tgatcagaca ccgtcaggga
+     2641 ttctttgccc cgtaaaaacc tacttgacca gggacacgtg ccaggtaaat ttccttcaca
+     2701 tttacttcaa ccttattgca tactcatttt agtattaaaa cctttaataa aatgctccta
+     2761 ttccttcaca ctttttttct atgagatctc aaatacccct tcttgctatt aaaaaaaatc
+     2821 acttattatt caccagccca atattttaaa agtaaaaata ataagccaag gccaggagcg
+     2881 atgactcgca cttgtattcc cagcagtttc agaggcaaag gccgaaggat cgctttaacc
+     2941 gaggagtttg agaccagcct gggcaacatg accagactgc ctctctacaa aaagtttaaa
+     3001 aaattaaccg ggtgtggtgg tgcactgcac tcccagctac tgggctgggg tatcaggctg
+     3061 aggtaggagg tttgctttga gcccgggggg atcgaggctg cagtgagctt tgattgtgcc
+     3121 actgcactcc agcctgggtg acagaaggag accctgtctc aaaaataata agaataataa
+     3181 ttaataataa taggccaaac caaataccca tcaccttctg ctgtgcctcc cctttcccca
+     3241 ataaatccag tgtcttgctt tcaaattttg tggttaaaaa agatgatgag tttctaagac
+     3301 gtgggggcta aagcttgttt ggccgtttta gggtttgttg gaattttttt ttcgtctatg
+     3361 tacttgtgaa ttatttcacg tttgccatta ccggttctcc atagggtgat gttcattagc
+     3421 agtggtgata ggttaatttt caccatctct tatgcggttg aatagtcacc tctgaaccac
+     3481 tttttcctcc agtaactcct ctttcttcgg accttctgca gccaacctga aagaataaca
+     3541 aggaggtggc tggaaacttg ttttaaggaa ccgcctgtcc ttcccccgct ggaaaccttg
+     3601 cacctcggac gctcctgctc ctgcccccac ctgacccccg ccctcgttga catccaggcg
+     3661 cgatgatctc tgctgccagt agagggcaca cttactttac tttcgcaaac ctgaacgcgg
+     3721 gtgctgccca gagagggggc ggagggaaag acgctttgca gcaaaatcca gcatagcgat
+     3781 tggttgctcc ccgcgtttgc ggcaaaggcc tggaggcagg agtaatttgc aatccttaaa
+     3841 gctgaattgt gcagtgcatc ggatttggaa gctactatat tcacttaaca cttgaacgct
+     3901 gagctgcaaa ctcaacgggt aataacccat cttgaacagc gtacatgcta tacacgcacc
+     3961 cctttccccc gaattgtttt ctcttttgga ggtggtggag ggagagaaaa gtttacttaa
+     4021 aatgcctttg ggtgagggac caaggatgag aagaatgttt tttgtttttc atgccgtgga
+     4081 ataacacaaa ataaaaaatc ccgagggaat atacattata tattaaatat agatcatttc
+     4141 agggagcaaa caaatcatgt gtggggctgg gcaactagct aagtcgaagc gtaaataaaa
+     4201 tgtgaataca cgtttgcggg ttacatacag tgcactttca ctagtattca gaaaaaattg
+     4261 tgagtcagtg aactaggaaa ttaatgcctg gaaggcagcc aaattttaat tagctcaaga
+     4321 ctcccccccc cccaaaaaaa ggcacggaag taatactcct ctcctcttct ttgatcagaa
+     4381 tcgatgcatt ttttgtgcat gaccgcattt ccaataataa aaggggaaag aggacctgga
+     4441 aaggaattaa acgtccggtt tgtccgggga ggaaagagtt aacggttttt ttcacaaggg
+     4501 tctctgctga ctcccccggc tcggtccaca agctctccac ttgccccttt taggaagtcc
+     4561 ggtcccgcgg ttcgggtacc ccctgcccct cccatattct cccgtctagc acctttgatt
+     4621 tctcccaaac ccggcagccc gagactgttg caaaccggcg ccacagggcg caaaggggat
+     4681 ttgtctcttc tgaaacctgg ctgagaaatt gggaactccg tgtgggaggc gtgggggtgg
+     4741 gacggtgggg tacagactgg cagagagcag gcaacctccc tctcgcccta gcccagctct
+     4801 ggaacaggca gacacatctc agggctaaac agacgcctcc cgcacggggc cccacggaag
+     4861 cctgagcagg cggggcagga ggggcggtat ctgctgcttt ggcagcaaat tgggggactc
+     4921 agtctgggtg gaaggtatcc aatccagata gctgtgcata cataatgcat aatacatgac
+     4981 tccccccaac aaatgcaatg ggagtttatt cataacgcgc tctccaagta tacgtggcaa
+     5041 tgcgttgctg ggttatttta atcattctag gcatcgtttt cctccttatg cctctatcat
+     5101 tcctccctat ctacactaac atcccacgct ctgaacgcgc gcccattaat acccttcttt
+     5161 cctccactct ccctgggact cttgatcaaa gcgcggccct ttccccagcc ttagcgaggc
+     5221 gccctgcagc ctggtacgcg cgtggcgtgg cggtgggcgc gcagtgcgtt ctcggtgtgg
+     5281 agggcagctg ttccgcctgc gatgatttat actcacagga caaggatgcg gtttgtcaaa
+     5341 cagtactgct acggaggagc agcagagaaa gggagagggt ttgagaggga gcaaaagaaa
+     5401 atggtaggcg cgcgtagtta attcatgcgg ctctcttact ctgtttacat cctagagcta
+     5461 gagtgctcgg ctgcccggct gagtctcctc cccaccttcc ccaccctccc caccctcccc
+     5521 ataagcgccc ctcccgggtt cccaaagcag agggcgtggg ggaaaagaaa aaagatcctc
+     5581 tctcgctaat ctccgcccac cggcccttta taatgcgagg gtctggacgg ctgaggaccc
+     5641 ccgagctgtg ctgctcgcgg ccgccaccgc cgggccccgg ccgtccctgg ctcccctcct
+     5701 gcctcgagaa gggcagggct tctcagaggc ttggcgggaa aaagaacgga gggagggatc
+     5761 gcgctgagta taaaagccgg ttttcggggc tttatctaac tcgctgtagt aattccagcg
+     5821 agaggcagag ggagcgagcg ggcggccggc tagggtggaa gagccgggcg agcagagctg
+     5881 cgctgcgggc gtcctgggaa gggagatccg gagcgaatag ggggcttcgc ctctggccca
+     5941 gccctcccgc tgatccccca gccagcggtc cgcaaccctt gccgcatcca cgaaactttg
+     6001 cccatagcag cgggcgggca ctttgcactg gaacttacaa cacccgagca aggacgcgac
+     6061 tctcccgacg cggggaggct attctgccca tttggggaca cttccccgcc gctgccagga
+     6121 cccgcttctc tgaaaggctc tccttgcagc tgcttagacg ctggattttt ttcgggtagt
+     6181 ggaaaaccag gtaagcaccg aagtccactt gccttttaat ttattttttt atcactttaa
+     6241 tgctgagatg agtcgaatgc ctaaataggg tgtcttttct cccattcctg cgctattgac
+     6301 acttttctca gagtagttat ggtaactggg gctggggtgg ggggtaatcc agaactggat
+     6361 cggggtaaag tgacttgtca agatgggaga ggagaaggca gagggaaaac gggaatggtt
+     6421 tttaagacta ccctttcgag atttctgcct tatgaatata ttcacgctga ctcccggccg
+     6481 gtcggacatt cctgctttat tgtgttaatt gctctctggg ttttgggggg ctgggggttg
+     6541 ctttgcggtg ggcagaaagc cccttgcatc ctgagctcct tggagtaggg accgcatatc
+     6601 gcctgtgtga gccagatcgc tccgcagccg ctgacttgtc cccgtctccg ggagggcatt
+     6661 taaatttcgg ctcaccgcat ttctgacagc cggagacgga cactgcggcg cgtcccgccc
+     6721 gcctgtcccc gcggcgattc caacccgccc tgatcctttt aagaagttgg catttggctt
+     6781 tttaaaaagc aataatacaa tttaaaacct gggtctctag aggtgttagg acgtggtgtt
+     6841 gggtaggcgc aggcagggga aaagggaggc gaggatgtgt ccgattctcc tggaatcgtt
+     6901 gacttggaaa aaccagggcg aatctccgca cccagccctg actcccctgc cgcggccgcc
+     6961 ctcgggtgtc ctcgcgcccg agatgcggag gaactgcgag gagcggggct ctgggcggtt
+     7021 ccagaacagc tgctaccctt ggtggggtgg ctccggggga ggtatcgcag cggggtctct
+     7081 ggcgcagttg catctccgta ttgagtgcga agggaggtgc ccctattatt atttgacacc
+     7141 ccccttgtat ttatggaggg gtgttaaagc ccgcggctga gctcgccact ccagccggcg
+     7201 agagaaagaa gaaaagctgg caaaaggagt gttggacggg ggcggtactg ggggtgggga
+     7261 cgggggcggt ggagagggaa ggttgggagg ggctgcggtg ccggcggggg taggagagcg
+     7321 gctagggcgc gagtgggaac agccgcagcg gaggggcccc ggcgcggagc ggggttcacg
+     7381 cagccgctag cgcccaggcg cctctcgcct tctccttcag gtggcgcaaa actttgtgcc
+     7441 ttggattttg gcaaattgtt ttcctcaccg ccacctcccg cggcttctta agggcgccag
+     7501 ggccgatttc gattcctctg ccgctgcggg gccgactccc gggctttgcg ctccgggctc
+     7561 ccgggggagc gggggctcgg cgggcaccaa gccgctggtt cactaagtgc gtctccgaga
+     7621 tagcagggga ctgtccaaag ggggtgaaag ggtgctccct ttattccccc accaagacca
+     7681 cccagccgct ttaggggata gctctgcaag gggagaggtt cgggactgtg gcgcgcactg
+     7741 cgcgctgcgc caggtttccg caccaagacc cctttaactc aagactgcct cccgctttgt
+     7801 gtgccccgct ccagcagcct cccgcgacga tgcccctcaa cgttagcttc accaacagga
+     7861 actatgacct cgactacgac tcggtgcagc cgtatttcta ctgcgacgag gaggagaact
+     7921 tctaccagca gcagcagcag agcgagctgc agcccccggc gcccagcgag gatatctgga
+     7981 agaaattcga gctgctgccc accccgcccc tgtcccctag ccgccgctcc gggctctgct
+     8041 cgccctccta cgttgcggtc acacccttct cccttcgggg agacaacgac ggcggtggcg
+     8101 ggagcttctc cacggccgac cagctggaga tggtgaccga gctgctggga ggagacatgg
+     8161 tgaaccagag tttcatctgc gacccggacg acgagacctt catcaaaaac atcatcatcc
+     8221 aggactgtat gtggagcggc ttctcggccg ccgccaagct cgtctcagag aagctggcct
+     8281 cctaccaggc tgcgcgcaaa gacagcggca gcccgaaccc cgcccgcggc cacagcgtct
+     8341 gctccacctc cagcttgtac ctgcaggatc tgagcgccgc cgcctcagag tgcatcgacc
+     8401 cctcggtggt cttcccctac cctctcaacg acagcagctc gcccaagtcc tgcgcctcgc
+     8461 aagactccag cgccttctct ccgtcctcgg attctctgct ctcctcgacg gagtcctccc
+     8521 cgcagggcag ccccgagccc ctggtgctcc atgaggagac accgcccacc accagcagcg
+     8581 actctggtaa gcgaagcccg cccaggcctg tcaaaagtgg gcggctggat acctttccca
+     8641 ttttcattgg cagcttattt aacgggccac tcttattagg aaggagagat agcagatctg
+     8701 gagagatttg ggagctcatc acctctgaaa ccttgggctt tagcgtttcc tcccatccct
+     8761 tccccttaga ctgcccatgt ttgcagcccc cctccccgtt tgtctcccac ccctcaggaa
+     8821 tttcatttag gtttttaaac cttctggctt atcttacaac tcaatccact tcttcttacc
+     8881 tcccgttaac attttaattg ccctggggcg gggtggcagg gagtgtatga atgaggataa
+     8941 gagaggattg atctctgaga gtgaatgaat tgcttccctc ttaacttccg agaagtggtg
+     9001 ggatttaatg aactatctac aaaaatgagg ggctgtgttt agaggctagg cagggcctgc
+     9061 ctgagtgcgg gagccagtga actgcctcaa gagtgggtgg gctgaggagc tgggatcttc
+     9121 tcagcctatt ttgaacactg aaaagcaaat ccttgccaaa gttggacttt tttttttctt
+     9181 ttattccttc ccccgccctc ttggactttt ggcaaaactg caattttttt ttttttattt
+     9241 ttcatttcca gtaaaatagg gagttgctaa agtcatacca agcaatttgc agctatcatt
+     9301 tgcaacacct gaagtgttct tggtaaagtc cctcaaaaat aggaggtgct tgggaatgtg
+     9361 ctttgctttg ggtgtgtcca aagcctcatt aagtcttagg taagaattgg catcaatgtc
+     9421 ctatcctggg aagttgcact tttcttgtcc atgccataac ccagctgtct ttccctttat
+     9481 gagactctta ccttcatggt gagaggagta agggtggctg gctagattgg ttcttttttt
+     9541 ttttttttcc ttttttaaga cggagtctca ctctgtcact aggctggagt gcagtggcgc
+     9601 aatcaacctc caaccccctg gttcaagaga ttctcctgcc tcagcctccc aagtagctgg
+     9661 gactacaggt gcacaccacc atgccaggct aatttttgta attttagtag agatggggtt
+     9721 tcatcgtgtt ggccaggatg gtctctcctg acctcacgat ccgcccacct cggcctccca
+     9781 aagtgctggg attacaggtg tgagccaggg caccaggctt agatgtggct ctttggggag
+     9841 ataattttgt ccagagacct ttctaacgta ttcatgcctt gtatttgtac agcattaatc
+     9901 tggtaattga ttattttaat gtaaccttgc taaaggagtg atttctattt cctttcttaa
+     9961 agaggaggaa caagaagatg aggaagaaat cgatgttgtt tctgtggaaa agaggcaggc
+    10021 tcctggcaaa aggtcagagt ctggatcacc ttctgctgga ggccacagca aacctcctca
+    10081 cagcccactg gtcctcaaga ggtgccacgt ctccacacat cagcacaact acgcagcgcc
+    10141 tccctccact cggaaggact atcctgctgc caagagggtc aagttggaca gtgtcagagt
+    10201 cctgagacag atcagcaaca accgaaaatg caccagcccc aggtcctcgg acaccgagga
+    10261 gaatgtcaag aggcgaacac acaacgtctt ggagcgccag aggaggaacg agctaaaacg
+    10321 gagctttttt gccctgcgtg accagatccc ggagttggaa aacaatgaaa aggcccccaa
+    10381 ggtagttatc cttaaaaaag ccacagcata catcctgtcc gtccaagcag aggagcaaaa
+    10441 gctcatttct gaagaggact tgttgcggaa acgacgagaa cagttgaaac acaaacttga
+    10501 acagctacgg aactcttgtg cgtaaggaaa agtaaggaaa acgattcctt ctaacagaaa
+    10561 tgtcctgagc aatcacctat gaacttgttt caaatgcatg atcaaatgca acctcacaac
+    10621 cttggctgag tcttgagact gaaagattta gccataatgt aaactgcctc aaattggact
+    10681 ttgggcataa aagaactttt ttatgcttac catctttttt ttttctttaa cagatttgta
+    10741 tttaagaatt gtttttaaaa aattttaaga tttacacaat gtttctctgt aaatattgcc
+    10801 attaaatgta aataacttta ataaaacgtt tatagcagtt acacagaatt tcaatcctag
+    10861 tatatagtac ctagtattat aggtactata aaccctaatt ttttttattt aagtacattt
+    10921 tgctttttaa agttgatttt tttctattgt ttttagaaaa aataaaataa ctggcaaata
+    10981 tatcattgag ccaaatctta agttgtgaat gttttgtttc gtttcttccc cctcccaacc
+    11041 accaccatcc ctgtttgttt tcatcaattg ccccttcaga gggtggtctt aagaaaggca
+    11101 agagttttcc tctgttgaaa tgggtctggg ggccttaagg tctttaagtt cttggaggtt
+    11161 ctaagatgct tcctggagac tatgataaca gccagagttg acagttagaa ggaatggcag
+    11221 aaggcaggtg agaaggtgag aggtaggcaa aggagataca agaggtcaaa ggtagcagtt
+    11281 aagtacacaa agaggcataa ggactgggga gttgggagga aggtgaggaa gaaactcctg
+    11341 ttactttagt taaccagtgc cagtcccctg ctcactccaa acccaggaat tctgcccagt
+    11401 tgatggggac acggtgggaa ccagcttctg ctgccttcac aaccaggcgc cagtcctgtc
+    11461 catgggttat ctcgcaaacc ccagaggatc tctgggagga atgctactat taaccctatt
+    11521 tcacaaacaa ggaaatagaa gagctcaaag aggttatgta acttatctgt agccacgcag
+    11581 ataatacaaa gcagcaatct ggacccattc tgttcaaaac acttaaccct tcgctatcat
+    11641 gccttggttc atctgggtct aatgtgctga gatcaagaag gtttaggacc taatggacag
+    11701 actcaagtca taacaatgct aagctctatt tgtgtcccaa gcactcctaa gcattttatc
+    11761 cctaactcta catcaacccc atgaaggaga tactgttgat ttccccatat tagaagtaga
+    11821 gagggaagct gaggcacaca aagactcatc cacatgccca agattcactg atagggaaaa
+    11881 gtggaagcga gatttgaacc caggctgttt actcctaacc tgtccaagcc acctctcaga
+    11941 cgacggtagg aatcagctgg ctgcttgtga gtacaggagt tacagtccag tgggttatgt
+    12001 tttttaagtc tcaacatcta agcctggtca ggcatcagtt cccctttttt tgtgatttat
+    12061 tttgttttta ttttgttgtt cattgtttaa tttttccttt tacaatgaga aggtcaccat
+    12121 cttgactcct accttagcca tttgttgaat cagactcatg acggctcctg ggaagaagcc
+    12181 agttcagatc ataaaataaa acatatttat tctttgtcat gggagtcatt attttagaaa
+    12241 ctacaaactc tccttgcttc catccttttt tacatactca tgacacatgc tcatcctgag
+    12301 tccttgaaaa ggtatttttg aacatgtgta ttaattataa gcctctgaaa acctatggcc
+    12361 caaaccagaa atgatgttga ttatataggt aaatgaagga tgctattgct gttctaatta
+    12421 cctcattgtc tcagtctcaa agtaggtctt cagctccctg tactttggga ttttaatcta
+    12481 ccaccaccca taaatcaata aataattact ttctttgact ctgactccta gaataatcta
+    12541 ttcaaaacct taatgtcttt ttcttgatcc ttcttttgag tcctaagtac cgccattaca
+    12601 gcttcaaatt ggcacgtcat ataggcgaat ttcaaaggga gatgcaatcc acagaagtat
+    12661 agtagttcaa agggttacaa aagcaaggcg ctcttaaaca gctcagtctt tgcccctttg
+    12721 tggcctaggg ctggagtgca gctctggggt gactcacttg ggaatcggga aggtgttagt
+    12781 ctgaatcact aagtccaggc aagccctcag aataggagag agtgttccta gcaaggaaaa
+    12841 caactctcca ttccaaataa tcaggaaaga actttaggga tgtggagctt ggctatggga
+    12901 atagaaagga accattccaa gtgcctatta ggccgctctt acctttactg agccagagaa
+    12961 tggctctgaa aacaggacag atgccaactt ccttcccgaa agtcaggctg atcttgacca
+    13021 caatacaaat tggcccttag agcctataca gggagtccca ggggtctctg ccattgtgca
+    13081 acctattttg tagataataa tcaagaatcg gacgtgaagg ggaggagttt gcaacttggt
+    13141 caggaatgta taagaaggaa taagctaatt ctgactatgc cctttatcca tgacactatc
+    13201 caggaattaa tgactctccc agaggattcc tggaatgatt ttgttgaggg atggaatgta
+    13261 taaagaggaa ggaagtgtta ttttatgctg ccatttggaa gcaacaaagg agatcaacag
+    13321 tatgaaaaca atcaatcaaa tttgaaaatg aacaaagttt tcacaatccc agcctaatac
+    13381 ttagagagct cacagcttgg atgcataagt aaagagttct ctgctggtct ttaagacaaa
+    13441 ctctcacaca aaacttggga aaaaggacaa aaatgttgca ttagggggtt ttctgtggtt
+    13501 tgtttgcaat aactataatt ggctcaatca ataattattt tttagtatac acactaaggg
+    13561 cccctgtagc attttttccc atcgataaat aatccttagt ctagaaaatg ccgagggatg
+    13621 ttctccaccc ttgtctataa atgcacttct agatgacttt ataaaaggct cctccttcaa
+    13681 gtttatagaa tattataaga ctacattaaa ggagaagaga ggccggtcga ggtagctcac
+    13741 acctgtaatc ccagcacttt gggaggccga agtgggcgga tcatgaggtc aggagatgga
+    13801 gaccatcctg gctaaaacag tgaaaccccg tctctactaa aaatacaaaa aattagccgg
+    13861 gcgtggtggc acagcctgca gtcccagcta ctcaggaggc tgaggcagga gaatcgcttg
+    13921 aacctgggag gcagaggtta cagtgagctg agattgtgcc actgcattcc agcctggatg
+    13981 acacagcgag actccgtctc aaaaataaat aaataataaa taaataaata aataaaggag
+    14041 aaaaagtaaa aacaaagcca gtaggatggg agcaaggact tatttttaaa aataaaacta
+    14101 aaaagactct gctacctacc tccaaagcct tagcaaaaag tcttttttct agctccttca
+    14161 ggagagaact tacaccaact ctccatttag aggaaaacac ccagaaatgc tggctttgcc
+    14221 aaactggttg gagacgactg taaatgactg taagttgatt tcatttttaa ttttatttta
+    14281 ttcactatta gcttatacta agctttttcg gaagacagag ttgagggaaa caagtgttca
+    14341 tgggacgtag atcttctgag gttgaaagga atgctctttg ttttcaaaga atgcctggga
+    14401 cctcagccac agtccccaac actttctttc cattgtcatc cccgtcagcg ctttaaggga
+    14461 taaaatagtc cagtgcaatc tgaggtctat gggggtggga aaggagagag ctcagaga
+//
+

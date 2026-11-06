@@ -1,0 +1,796 @@
+LOCUS       NG_007572              19438 bp    DNA     linear   PRI 11-SEP-2026
+DEFINITION  Homo sapiens NRAS proto-oncogene, GTPase (NRAS), RefSeqGene
+            (LRG_92) on chromosome 1.
+ACCESSION   NG_007572
+VERSION     NG_007572.1
+KEYWORDS    RefSeq; RefSeqGene.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 19438)
+  AUTHORS   Roberts,A.E.
+  TITLE     Noonan Syndrome
+  JOURNAL   (in) Adam MP, Bick S, Mirzaa GM, Wallace SE and Amemiya A (Eds.);
+            GENEREVIEWS(R);
+            (1993)
+   PUBMED   20301303
+REFERENCE   2  (bases 1 to 19438)
+  AUTHORS   Hall,A. and Brown,R.
+  TITLE     Human N-ras: cDNA cloning and gene structure
+  JOURNAL   Nucleic Acids Res 13 (14), 5255-5268 (1985)
+   PUBMED   2991860
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff in
+            collaboration with Jouni Valiaho, Mauno Vihinen. The reference
+            sequence was derived from AL096773.6.
+            This sequence is a reference standard in the RefSeqGene project.
+            
+            Summary: This is an N-ras oncogene encoding a membrane protein that
+            shuttles between the Golgi apparatus and the plasma membrane. This
+            shuttling is regulated through palmitoylation and depalmitoylation
+            by the ZDHHC9-GOLGA7 complex. The encoded protein, which has
+            intrinsic GTPase activity, is activated by a guanine
+            nucleotide-exchange factor and inactivated by a GTPase activating
+            protein. Mutations in this gene have been associated with somatic
+            rectal cancer, follicular thyroid cancer, autoimmune
+            lymphoproliferative syndrome, Noonan syndrome, and juvenile
+            myelomonocytic leukemia. [provided by RefSeq, Jun 2011].
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-19438             AL096773.6         83215-102652
+FEATURES             Location/Qualifiers
+     source          1..19438
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="1"
+                     /map="1p13.2"
+     gene            <1..4979
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /note="cold shock domain containing E1"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+     mRNA            join(<1178..1356,2153..2316,3150..3282,3679..4979)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /product="cold shock domain containing E1, transcript
+                     variant 1"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_001007553.3"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NM_001007553.3"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+     mRNA            join(<1178..1356,2153..2316,3150..3282,3679..4979)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /product="cold shock domain containing E1, transcript
+                     variant 2"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_007158.6"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NM_007158.6"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+     mRNA            join(<1178..1356,2153..2316,3150..3282,3679..4979)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /product="cold shock domain containing E1, transcript
+                     variant 3"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_001130523.3"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NM_001130523.3"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+     mRNA            join(<1178..1356,2153..2316,3150..3282,3679..4979)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /product="cold shock domain containing E1, transcript
+                     variant 6"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_001242893.2"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NM_001242893.2"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+     mRNA            join(<1178..1356,2153..2316,3150..3282,3679..4979)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /product="cold shock domain containing E1, transcript
+                     variant 5"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_001242892.2"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NM_001242892.2"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+     mRNA            join(<1178..1356,2153..2316,3150..3282,3679..4979)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /product="cold shock domain containing E1, transcript
+                     variant 4"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_001242891.2"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NM_001242891.2"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+     CDS             join(<1178..1356,2153..2316,3150..3282,3679..3726)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /inference="similar to AA sequence (same
+                     species):RefSeq:NP_001123995.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="isoform 3 is encoded by transcript variant 3;
+                     upstream of NRAS; NRAS-related; cold shock
+                     domain-containing protein E1; cold shock domain containing
+                     E1, RNA binding; N-ras upstream gene protein"
+                     /codon_start=3
+                     /product="cold shock domain-containing protein E1 isoform
+                     3"
+                     /protein_id="NP_001123995.1"
+                     /db_xref="CCDS:CCDS44197.1"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+                     /translation="MENVFTVSSDPHPSPAAPPSLSLPLSSSSTSSGTKKQKRTPTYQ
+                     RSMSFDPNLLHNNGHNGYPNGTSAALRETGVIEKLLTSYGFIQCSERQARLFFHCSQY
+                     NGNLQDLKVGDDVEFEVSSDRRTGKPIAVKLVKIKQEILPEERMNGQEVFYLTYTPED
+                     VEGNVQLETGDKINFVIDNNKHTGAVSARNIMLLKKKQARCQGVVCAMKEAFGFIERG
+                     DVVKEIFFHYSEFKGDLETLQPGDDVEFTIKDRNGKEVATDVRLLPQGTVIFEDISIE
+                     HFEGTVTKVIPKVPSKNQNDPLPGRIKVDFVIPKELPFGDKDTKSKVTLLEGDHVRFN
+                     ISTDRRDKLERATNIEVLSNTFQFTNEAREMGVIAAMRDGFGFIKCVDRDVRMFFHFS
+                     EILDGNQLHIADEVEFTVVPDMLSAQRNHAIRIKKLPKGTVSFHSHSDHRFLGTVEKE
+                     ATFSNPKTTSPNKGKEKEAEDGIIAYDDCGVKLTIAFQAKDVEGSTSPQIGDKVEFSI
+                     SDKQRPGQQVATCVRLLGRNSNSKRLLGYVATLKDNFGFIETANHDKEIFFHYSEFSG
+                     DVDSLELGDMVEYSLSKGKGNKVSAEKVNKTHSVNGITEEADPTIYSGKVIRPLRSVD
+                     PTQTEYQGMIEIVEEGDMKGEVYPFGIVGMANKGDCLQKGESVKFQLCVLGQNAQTMA
+                     YNITPLRRATVECVKDQFGFINYEVGDSKKLFFHVKEVQDGIELQAGDEVEFSVILNQ
+                     RTGKCSACNVWRVCEGPKAVAAPRPDRLVNRLKNITLDDASAPRLMVLRQPRGPDNSM
+                     GFGAERKIRQAGVID"
+     CDS             join(<1178..1356,2153..2316,3150..3282,3679..3726)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /inference="similar to AA sequence (same
+                     species):RefSeq:NP_001229820.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="isoform 4 is encoded by transcript variant 4;
+                     upstream of NRAS; NRAS-related; cold shock
+                     domain-containing protein E1; cold shock domain containing
+                     E1, RNA binding; N-ras upstream gene protein"
+                     /codon_start=3
+                     /product="cold shock domain-containing protein E1 isoform
+                     4"
+                     /protein_id="NP_001229820.1"
+                     /db_xref="CCDS:CCDS55626.1"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+                     /translation="MENVFTVSSDPHPSPAAPPSLSLPLSSSSTSSGTKKQKRTPTYQ
+                     RSMSFDPNLLHNNGHNGYPNGTSAALRETGVIEKLLTSYGFIQCSERQARLFFHCSQY
+                     NGNLQDLKVGDDVEFEVSSDRRTGKPIAVKLVKIKQEILPEERMNGQVVCAVPHNLES
+                     KSPAAPGQSPTGSVCYERNGEVFYLTYTPEDVEGNVQLETGDKINFVIDNNKHTGAVS
+                     ARNIMLLKKKQARCQGVVCAMKEAFGFIERGDVVKEIFFHYSEFKGDLETLQPGDDVE
+                     FTIKDRNGKEVATDVRLLPQGTVIFEDISIEHFEGTVTKVIPKVPSKNQNDPLPGRIK
+                     VDFVIPKELPFGDKDTKSKVTLLEGDHVRFNISTDRRDKLERATNIEVLSNTFQFTNE
+                     AREMGVIAAMRDGFGFIKCVDRDVRMFFHFSEILDGNQLHIADEVEFTVVPDMLSAQR
+                     NHAIRIKKLPKGTVSFHSHSDHRFLGTVEKEATFSNPKTTSPNKGKEKEAEDGIIAYD
+                     DCGVKLTIAFQAKDVEGSTSPQIGDKVEFSISDKQRPGQQVATCVRLLGRNSNSKRLL
+                     GYVATLKDNFGFIETANHDKEIFFHYSEFSGDVDSLELGDMVEYSLSKGKGNKVSAEK
+                     VNKTHSVNGITEEADPTIYSGKVIRPLRSVDPTQTEYQGMIEIVEEGDMKGEVYPFGI
+                     VGMANKGDCLQKGESVKFQLCVLGQNAQTMAYNITPLRRATVECVKDQFGFINYEVGD
+                     SKKLFFHVKEVQDGIELQAGDEVEFSVILNQRTGKCSACNVWRVCEGPKAVAAPRPDR
+                     LVNRLKNITLDDASAPRLMVLRQPRGPDNSMGFGAERKIRQAGVID"
+     CDS             join(<1178..1356,2153..2316,3150..3282,3679..3726)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /inference="similar to AA sequence (same
+                     species):RefSeq:NP_001229821.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="isoform 1 is encoded by transcript variant 5;
+                     upstream of NRAS; NRAS-related; cold shock
+                     domain-containing protein E1; cold shock domain containing
+                     E1, RNA binding; N-ras upstream gene protein"
+                     /codon_start=3
+                     /product="cold shock domain-containing protein E1 isoform
+                     1"
+                     /protein_id="NP_001229821.1"
+                     /db_xref="CCDS:CCDS30812.1"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+                     /translation="MSFDPNLLHNNGHNGYPNGTSAALRETGVIEKLLTSYGFIQCSE
+                     RQARLFFHCSQYNGNLQDLKVGDDVEFEVSSDRRTGKPIAVKLVKIKQEILPEERMNG
+                     QVVCAVPHNLESKSPAAPGQSPTGSVCYERNGEVFYLTYTPEDVEGNVQLETGDKINF
+                     VIDNNKHTGAVSARNIMLLKKKQARCQGVVCAMKEAFGFIERGDVVKEIFFHYSEFKG
+                     DLETLQPGDDVEFTIKDRNGKEVATDVRLLPQGTVIFEDISIEHFEGTVTKVIPKVPS
+                     KNQNDPLPGRIKVDFVIPKELPFGDKDTKSKVTLLEGDHVRFNISTDRRDKLERATNI
+                     EVLSNTFQFTNEAREMGVIAAMRDGFGFIKCVDRDVRMFFHFSEILDGNQLHIADEVE
+                     FTVVPDMLSAQRNHAIRIKKLPKGTVSFHSHSDHRFLGTVEKEATFSNPKTTSPNKGK
+                     EKEAEDGIIAYDDCGVKLTIAFQAKDVEGSTSPQIGDKVEFSISDKQRPGQQVATCVR
+                     LLGRNSNSKRLLGYVATLKDNFGFIETANHDKEIFFHYSEFSGDVDSLELGDMVEYSL
+                     SKGKGNKVSAEKVNKTHSVNGITEEADPTIYSGKVIRPLRSVDPTQTEYQGMIEIVEE
+                     GDMKGEVYPFGIVGMANKGDCLQKGESVKFQLCVLGQNAQTMAYNITPLRRATVECVK
+                     DQFGFINYEVGDSKKLFFHVKEVQDGIELQAGDEVEFSVILNQRTGKCSACNVWRVCE
+                     GPKAVAAPRPDRLVNRLKNITLDDASAPRLMVLRQPRGPDNSMGFGAERKIRQAGVID
+                     "
+     misc_feature    1180..1182
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /note="N-acetylmethionine.
+                     /evidence=ECO:0000269|PubMed:37316325; propagated from
+                     UniProtKB/Swiss-Prot (O75534.2); acetylation site"
+     misc_feature    2216..2218
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /note="N6-acetyllysine.
+                     /evidence=ECO:0007744|PubMed:19608861; propagated from
+                     UniProtKB/Swiss-Prot (O75534.2); acetylation site"
+     misc_feature    3175..3177
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0007744|PubMed:18669648,
+                     ECO:0007744|PubMed:23186163; propagated from
+                     UniProtKB/Swiss-Prot (O75534.2); phosphorylation site"
+     CDS             join(<1178..1356,2153..2316,3150..3282,3679..3726)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /inference="similar to AA sequence (same
+                     species):RefSeq:NP_001229822.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="isoform 2 is encoded by transcript variant 6;
+                     upstream of NRAS; NRAS-related; cold shock
+                     domain-containing protein E1; cold shock domain containing
+                     E1, RNA binding; N-ras upstream gene protein"
+                     /codon_start=3
+                     /product="cold shock domain-containing protein E1 isoform
+                     2"
+                     /protein_id="NP_001229822.1"
+                     /db_xref="CCDS:CCDS30811.1"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+                     /translation="MSFDPNLLHNNGHNGYPNGTSAALRETGVIEKLLTSYGFIQCSE
+                     RQARLFFHCSQYNGNLQDLKVGDDVEFEVSSDRRTGKPIAVKLVKIKQEILPEERMNG
+                     QEVFYLTYTPEDVEGNVQLETGDKINFVIDNNKHTGAVSARNIMLLKKKQARCQGVVC
+                     AMKEAFGFIERGDVVKEIFFHYSEFKGDLETLQPGDDVEFTIKDRNGKEVATDVRLLP
+                     QGTVIFEDISIEHFEGTVTKVIPKVPSKNQNDPLPGRIKVDFVIPKELPFGDKDTKSK
+                     VTLLEGDHVRFNISTDRRDKLERATNIEVLSNTFQFTNEAREMGVIAAMRDGFGFIKC
+                     VDRDVRMFFHFSEILDGNQLHIADEVEFTVVPDMLSAQRNHAIRIKKLPKGTVSFHSH
+                     SDHRFLGTVEKEATFSNPKTTSPNKGKEKEAEDGIIAYDDCGVKLTIAFQAKDVEGST
+                     SPQIGDKVEFSISDKQRPGQQVATCVRLLGRNSNSKRLLGYVATLKDNFGFIETANHD
+                     KEIFFHYSEFSGDVDSLELGDMVEYSLSKGKGNKVSAEKVNKTHSVNGITEEADPTIY
+                     SGKVIRPLRSVDPTQTEYQGMIEIVEEGDMKGEVYPFGIVGMANKGDCLQKGESVKFQ
+                     LCVLGQNAQTMAYNITPLRRATVECVKDQFGFINYEVGDSKKLFFHVKEVQDGIELQA
+                     GDEVEFSVILNQRTGKCSACNVWRVCEGPKAVAAPRPDRLVNRLKNITLDDASAPRLM
+                     VLRQPRGPDNSMGFGAERKIRQAGVID"
+     CDS             join(<1178..1356,2153..2316,3150..3282,3679..3726)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /inference="similar to AA sequence (same
+                     species):RefSeq:NP_009089.4"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="isoform 2 is encoded by transcript variant 2;
+                     upstream of NRAS; NRAS-related; cold shock
+                     domain-containing protein E1; cold shock domain containing
+                     E1, RNA binding; N-ras upstream gene protein"
+                     /codon_start=3
+                     /product="cold shock domain-containing protein E1 isoform
+                     2"
+                     /protein_id="NP_009089.4"
+                     /db_xref="CCDS:CCDS30811.1"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+                     /translation="MSFDPNLLHNNGHNGYPNGTSAALRETGVIEKLLTSYGFIQCSE
+                     RQARLFFHCSQYNGNLQDLKVGDDVEFEVSSDRRTGKPIAVKLVKIKQEILPEERMNG
+                     QEVFYLTYTPEDVEGNVQLETGDKINFVIDNNKHTGAVSARNIMLLKKKQARCQGVVC
+                     AMKEAFGFIERGDVVKEIFFHYSEFKGDLETLQPGDDVEFTIKDRNGKEVATDVRLLP
+                     QGTVIFEDISIEHFEGTVTKVIPKVPSKNQNDPLPGRIKVDFVIPKELPFGDKDTKSK
+                     VTLLEGDHVRFNISTDRRDKLERATNIEVLSNTFQFTNEAREMGVIAAMRDGFGFIKC
+                     VDRDVRMFFHFSEILDGNQLHIADEVEFTVVPDMLSAQRNHAIRIKKLPKGTVSFHSH
+                     SDHRFLGTVEKEATFSNPKTTSPNKGKEKEAEDGIIAYDDCGVKLTIAFQAKDVEGST
+                     SPQIGDKVEFSISDKQRPGQQVATCVRLLGRNSNSKRLLGYVATLKDNFGFIETANHD
+                     KEIFFHYSEFSGDVDSLELGDMVEYSLSKGKGNKVSAEKVNKTHSVNGITEEADPTIY
+                     SGKVIRPLRSVDPTQTEYQGMIEIVEEGDMKGEVYPFGIVGMANKGDCLQKGESVKFQ
+                     LCVLGQNAQTMAYNITPLRRATVECVKDQFGFINYEVGDSKKLFFHVKEVQDGIELQA
+                     GDEVEFSVILNQRTGKCSACNVWRVCEGPKAVAAPRPDRLVNRLKNITLDDASAPRLM
+                     VLRQPRGPDNSMGFGAERKIRQAGVID"
+     CDS             join(<1178..1356,2153..2316,3150..3282,3679..3726)
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /inference="similar to AA sequence (same
+                     species):RefSeq:NP_001007554.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="isoform 1 is encoded by transcript variant 1;
+                     upstream of NRAS; NRAS-related; cold shock
+                     domain-containing protein E1; cold shock domain containing
+                     E1, RNA binding; N-ras upstream gene protein"
+                     /codon_start=3
+                     /product="cold shock domain-containing protein E1 isoform
+                     1"
+                     /protein_id="NP_001007554.1"
+                     /db_xref="CCDS:CCDS30812.1"
+                     /db_xref="GeneID:7812"
+                     /db_xref="HGNC:HGNC:29905"
+                     /db_xref="MIM:191510"
+                     /translation="MSFDPNLLHNNGHNGYPNGTSAALRETGVIEKLLTSYGFIQCSE
+                     RQARLFFHCSQYNGNLQDLKVGDDVEFEVSSDRRTGKPIAVKLVKIKQEILPEERMNG
+                     QVVCAVPHNLESKSPAAPGQSPTGSVCYERNGEVFYLTYTPEDVEGNVQLETGDKINF
+                     VIDNNKHTGAVSARNIMLLKKKQARCQGVVCAMKEAFGFIERGDVVKEIFFHYSEFKG
+                     DLETLQPGDDVEFTIKDRNGKEVATDVRLLPQGTVIFEDISIEHFEGTVTKVIPKVPS
+                     KNQNDPLPGRIKVDFVIPKELPFGDKDTKSKVTLLEGDHVRFNISTDRRDKLERATNI
+                     EVLSNTFQFTNEAREMGVIAAMRDGFGFIKCVDRDVRMFFHFSEILDGNQLHIADEVE
+                     FTVVPDMLSAQRNHAIRIKKLPKGTVSFHSHSDHRFLGTVEKEATFSNPKTTSPNKGK
+                     EKEAEDGIIAYDDCGVKLTIAFQAKDVEGSTSPQIGDKVEFSISDKQRPGQQVATCVR
+                     LLGRNSNSKRLLGYVATLKDNFGFIETANHDKEIFFHYSEFSGDVDSLELGDMVEYSL
+                     SKGKGNKVSAEKVNKTHSVNGITEEADPTIYSGKVIRPLRSVDPTQTEYQGMIEIVEE
+                     GDMKGEVYPFGIVGMANKGDCLQKGESVKFQLCVLGQNAQTMAYNITPLRRATVECVK
+                     DQFGFINYEVGDSKKLFFHVKEVQDGIELQAGDEVEFSVILNQRTGKCSACNVWRVCE
+                     GPKAVAAPRPDRLVNRLKNITLDDASAPRLMVLRQPRGPDNSMGFGAERKIRQAGVID
+                     "
+     misc_feature    1180..1182
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /note="N-acetylmethionine.
+                     /evidence=ECO:0000269|PubMed:37316325; propagated from
+                     UniProtKB/Swiss-Prot (O75534.2); acetylation site"
+     misc_feature    2216..2218
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /note="N6-acetyllysine.
+                     /evidence=ECO:0007744|PubMed:19608861; propagated from
+                     UniProtKB/Swiss-Prot (O75534.2); acetylation site"
+     misc_feature    3175..3177
+                     /gene="CSDE1"
+                     /gene_synonym="D1S155E; UNR"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0007744|PubMed:18669648,
+                     ECO:0007744|PubMed:23186163; propagated from
+                     UniProtKB/Swiss-Prot (O75534.2); phosphorylation site"
+     gene            5001..17438
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /note="NRAS proto-oncogene, GTPase"
+                     /db_xref="GeneID:4893"
+                     /db_xref="HGNC:HGNC:7989"
+                     /db_xref="MIM:164790"
+     mRNA            join(5001..5237,5718..5845,7917..8095,12167..12326,
+                     13241..13364,13703..13741,13845..17438)
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /product="NRAS proto-oncogene, GTPase"
+                     /transcript_id="NM_002524.3"
+                     /db_xref="GeneID:4893"
+                     /db_xref="LRG:t1"
+                     /db_xref="HGNC:HGNC:7989"
+                     /db_xref="MIM:164790"
+     exon            5001..5237
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=1
+     exon            5718..5845
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=2
+     CDS             join(5735..5845,7917..8095,12167..12326,13241..13360)
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /EC_number="3.6.5.2"
+                     /note="v-ras neuroblastoma RAS viral oncogene homolog;
+                     N-ras protein part 4; neuroblastoma RAS viral (v-ras)
+                     oncogene homolog; transforming protein N-Ras;
+                     proto-oncogene GTPase"
+                     /codon_start=1
+                     /product="GTPase NRas"
+                     /protein_id="NP_002515.1"
+                     /db_xref="CCDS:CCDS877.1"
+                     /db_xref="GeneID:4893"
+                     /db_xref="LRG:p1"
+                     /db_xref="HGNC:HGNC:7989"
+                     /db_xref="MIM:164790"
+                     /translation="MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQV
+                     VIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNSKSFADINLYREQIKR
+                     VKDSDDVPMVLVGNKCDLPTRTVDTKQAHELAKSYGIPFIETSAKTRQGVEDAFYTLV
+                     REIRQYRMKKLNSSDDGTQGCMGLPCVVM"
+     misc_feature    join(5828..5845,7917..7925)
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /note="propagated from UniProtKB/Swiss-Prot (P01111.1);
+                     Region: Effector region"
+     misc_feature    5837..5839
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /note="(Microbial infection) O-linked (Glc) threonine, by
+                     P.sordellii toxin TcsL.
+                     /evidence=ECO:0000269|PubMed:19744486; propagated from
+                     UniProtKB/Swiss-Prot (P01111.1); glycosylation site"
+     misc_feature    8070..8072
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /note="Phosphoserine.
+                     /evidence=ECO:0000269|PubMed:30712867; propagated from
+                     UniProtKB/Swiss-Prot (P01111.1); phosphorylation site"
+     misc_feature    13286..13345
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /note="propagated from UniProtKB/Swiss-Prot (P01111.1);
+                     Region: Hypervariable region"
+     exon            7917..8095
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=3
+     exon            12167..12326
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=4
+     exon            13241..13364
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=5
+     exon            13703..13741
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=6
+     exon            13845..17438
+                     /gene="NRAS"
+                     /gene_synonym="ALPS4; CMNS; N-ras; NCMS; NRAS1; NS6;
+                     RALD1"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=7
+ORIGIN      
+        1 aaaaaaaaaa gtcaggtgtg gtggctcaca cctgtaaacc caacacttcg ggaggccaag
+       61 gtgggcagat cacttgagcc caggagtttg agaccagcct gggcaacatg gcaaaaccct
+      121 gtctctacaa aaaatgcaaa aattagccag tcatggtgtg tgcctgtagt cccagcgact
+      181 caggagctga ggtgggagga tcacccgagc ccaggaaatc aaggctgcag tgagccgttg
+      241 atcgccactg cactccagcc tgggtagcag agcgagaccc tgtctcaaca ataacaatga
+      301 caaaaattct tcacttaccc tgtaatcatc aagaggatgg ttagaagctt ctgcttccca
+      361 cctgtttttc tcatgttttc cactattgtt gactgagtac atttgcctgg atgctgaaaa
+      421 ttgttaggca gctgaattct ttggcatagt ttttatctgt agcctgcacc gggctccagg
+      481 caacttcata ctgtagggca gggctcagca tatatggtgg ccttttcttg tgatcacagc
+      541 cacaaccatt tgtttacata ttgtttttcg ttgctttctc actacaacag cagagttggt
+      601 tagacaggat gacttgcaaa cctaaaataa tactctccgg ccctttagga aaatggtttt
+      661 tggtctctga tctggaaaaa ggaacctatg tgagggagcc agaattcgaa caaaaaaaaa
+      721 ggaggtgggg tgtcaaattt atctaaattg tttttgcctg tgcccgccta gttgtttact
+      781 ggctcattga gtatgggaca aaagtatttt tggttggctc atattgtgaa cttgggaaga
+      841 agatagtcct gtgaatattg gcaacccata gtgcttaaaa tttaggcaat gggattgtaa
+      901 atgacagtat tttttgtttt aatttataaa tgcagtttaa aattgttcat cagctaataa
+      961 agtactgatg ggagctgtga cattctcatt tggttccatg gtagtattta acatttagga
+     1021 tttcatttaa gctttaaggt gaaacttctg agtactgaaa atgtaaatat attttaagta
+     1081 acataacaca tttttagcag ttatataaac ttcctagggt catcagcaga ggactgttgt
+     1141 gaaatactag cttttagact ttgtacctgt tttacaggcg atatgaaagg tgaggtctat
+     1201 ccatttggca tcgttgggat ggccaacaaa ggggattgcc tgcagaaagg ggagagcgtc
+     1261 aagttccaat tgtgtgtcct gggccaaaat gcacaaacta tggcttacaa catcacaccc
+     1321 ctgcgcaggg ccacagtgga atgtgtgaaa gatcaggtaa gtgccagcat ctctgtatct
+     1381 gaatttgatc cttctatgag ttggtaacca aaaccttcaa atattttcag ccaaggggaa
+     1441 atcatcaaca ttcattcgtt tttttatttc tacttcacct tttttcagtc atttgaggta
+     1501 gcttaataaa aacagaaaac tacacaaaaa gtgactatat tagcaatgag aaagtaagat
+     1561 tggtattagt aactaatatt atgcaatggg gaaaataagt taggggtgag atttccagaa
+     1621 tagaaggact atatggtttt gtacactttt gcttagagct tcttttgcat atcacacaaa
+     1681 cacagaaacc acgttcaaaa gtacttaaaa aataagctta gggcaaacaa acttagtctt
+     1741 actcctgaga tctcagggaa atctgagtcc tcagaatgtt tttcatcagt acagagaata
+     1801 ataacatttt gtatggctgc tactataacc cagcttaatt ctagagggga tccaaacaat
+     1861 atatatgttg aagtaacagc ttcctgatga gtttgcttaa ttcaaaaagc ttagttcata
+     1921 atatacgaag gaacaaggca agttttattt gtttggttca agtttgtgat atagtgaatg
+     1981 gcactttcag agatacattt cttccctgac aggttttgcc acaggcagct ggactggagt
+     2041 atcaacatta ataccatgtt ttatacatcc ttttagatag gggcaggcat tgtgcttcat
+     2101 tcagagtgag gtgtggcatg ccctctcttt tttacctact tttttttttc agtttggctt
+     2161 cattaactat gaagtaggag atagcaagaa gctctttttc catgtgaaag aagttcagga
+     2221 tggcattgag ctacaggcag gagatgaggt ggagttctca gtgattctta atcagcgcac
+     2281 tggcaagtgc agcgcctgta atgtttggcg agtctggtga gttttgttgt tgtggtttga
+     2341 ttagtaacta ccctggagtg tctcaacttt atagtctctg ttttgtcaca tcacttttct
+     2401 gtgccttgtc ttctgccact tattatttct tgatacttcc tacttctagt tgaatacaaa
+     2461 aagattgttt agtacatgtt ttttaaaatt tttgccaaat tcttcttctt ccattaagtc
+     2521 atttctaggt tatatgctac ttaaaattct aatagtttag ccatgctgat tcataatgcc
+     2581 gctttgcttc cccagagaca gtctcacagt ctgattcggt tacccaggcg ctatcacgac
+     2641 tcactgcaga ctcaaccccc tgggcctaag caattctccc acgtcagctt ccccagtagc
+     2701 tgggactaca agcatgcgcc accacatgca gccaatttta ttttttgtag agacatggtc
+     2761 ccactgtttt gcccaggctg atctcgaact tctgggctca agtgttcctc ctgccctgtc
+     2821 ctctcaaagc gctgggatta caggtgttag ctaccacatc tgctaccttg tttttttatg
+     2881 catctgtgga actggtcact cttgattgca ttcaagtcta gggtctgcaa atgattcctt
+     2941 ccattcctat taagttggga ccttgagttg gggataataa tacataaaca aacttgtctg
+     3001 tcctgtcttt ctagctaggt atatgaggca agagtcccat cataaaaagt gagtcatttg
+     3061 ggcagttagg tggaaaacac actcctttgc aagtgcttgc tgtctgccca ccaagtgtgg
+     3121 tttcttctca tcttttgact taattacagt gagggcccca aggctgttgc agctcctcga
+     3181 cctgatcggt tggtcaatcg cttgaagaat atcactctgg atgatgccag tgctcctcgc
+     3241 ctaatggttc ttcgtcagcc aaggggacca gataactcaa tggtatgagg gcatacaagg
+     3301 cttgggggag gccaactgat agaccaacat aaaatatgtg gtcctattta aacaataggt
+     3361 caggaaactt aatgaagcag ggagacttcc atattgctta taactagtta ggactttcta
+     3421 cacattggtt cagcccccta acctaatggt tgcttacagt aagaagcaca tttcttttct
+     3481 tgatgctttg aagacagttt aggtaatgaa tgggtcagga gtgcttactg tggattttct
+     3541 cctctaggaa agaattagta ctgcataaga tgattaaaaa taatgctttt gtagtttcat
+     3601 ttcggaatag tgaatgtact atgattgttg tgcgctcaaa tcattaactg cagggttttt
+     3661 tttttctccc ccccacaggg gtttggtgca gaaagaaaga tccgtcaagc tggtgtcatt
+     3721 gactaaccac atccacaaag cacaccatta atccactatg atcaagttgg ggggaatctg
+     3781 gtgaagggtt ctgaatatct ccctcttcat ccctcccgaa atctggaata cttattctat
+     3841 tgagctatta caccagtttt aacaccttcc tcgtgttatg tttaaaaaaa taaataaatt
+     3901 taagaaaacc attttaaata atgcacagtt gcagcctgga aaaacttaag gtggcgcctt
+     3961 atagtatcaa ttttaggagc tttatttggt gcatttaacg caactggtaa ttgcagaatc
+     4021 cactttgcct gtgtaagtga aaaatataga ctgttatctt gttggcccta tgaaattctg
+     4081 cacttttcat tatatactct accttcatta attacttctg gcaagatgtt ctgccttagc
+     4141 actcagttgc attcttttcc tttttcttcc tgttcattat gctttaattc tgaggaccat
+     4201 atgagggtag aatatattat cttttaaaaa ttacaaaaat ttgtataggc aaaccatttc
+     4261 ttaaagttga tggccaaatt ttaaaatgtt atttttcata tcatttataa tcttgtcaca
+     4321 atccacttaa agaagtttgg ttatatttca gtgaaaattt tcttccagag taggtttttt
+     4381 ttcgtgggtt ggggggtaac tttactacaa ttagtaagta tggtgcagaa tttcatgcaa
+     4441 atgaggagtg ccagcagtgt gataatttaa acatatttaa acaaaaacaa aaaaaatgaa
+     4501 tgcacaaact tgctgctgct tagatcactg cagcttctag gacccggttt cttttactga
+     4561 tttaaaaaca aaacaaaaaa aaataaaaaa gttgtgcctg aaatgaatct tgtttttttt
+     4621 tataagtagc cgcctggtta ctgtgtcctg taaaatacag acacttgacc cttggtgtag
+     4681 cttctgttca actttatatc acgggaatgg atgggtctga tttcttggcc ctcttcttga
+     4741 attggccata tacagggtcc ctggccagtg gactgaaggc tttgtctaag atgacaaggg
+     4801 tcagctcagg ggatgtgggg gagggcggtt ttatcttccc ccttgtcgtt tgaggttttg
+     4861 atctctgggt aaagaggccg tttatctttg taaacacgaa acatttttgc tttctccagt
+     4921 tttctgttaa tggcgaaaga atggaagcga ataaagtttt actgattttt gagacactag
+     4981 cacctagcgc tttcattatt gaaacgtccc gtgtgggagg ggcgggtctg ggtgcggcct
+     5041 gccgcatgac tcgtggttcg gaggcccacg tggccggggc ggggactcag gcgcctgggg
+     5101 cgccgactga ttacgtagcg ggcggggccg gaagtgccgc tccttggtgg gggctgttca
+     5161 tggcggttcc ggggtctcca acatttttcc cggctgtggt cctaaatctg tccaaagcag
+     5221 aggcagtgga gcttgaggta agtttatctc atgcatagtg ttcggctttg ggctgtggaa
+     5281 tgttcaggcg tttcactgat gccagaaatg gagcagaatc tatcagctgg agacaaaggc
+     5341 cttgggcggg ggtccttcca tttggtgcct acgtggggag atctttggag acagaaggga
+     5401 gaatgggaag gagttgcggc ctggaggctt cctgctagag ctgagaagcc ttcggggagt
+     5461 aataggaagg gggatttcca ttgcttaggc tgagggcggg gcccaaggac tgttgaaaaa
+     5521 tagctaagga tgggggttgc tagaaaacta ctccagaagt gtgaggccga tattaatccg
+     5581 gtgtttttgc gttctctagt cactttaaga accaaatgga aggtcacact agggttttca
+     5641 tttccattga ttatagaaag ctttaaagta ctgtagatgt ggctcgccaa ttaaccctga
+     5701 ttactggttt ccaacaggtt cttgctggtg tgaaatgact gagtacaaac tggtggtggt
+     5761 tggagcaggt ggtgttggga aaagcgcact gacaatccag ctaatccaga accactttgt
+     5821 agatgaatat gatcccacca tagaggtgag gcccagtggt agcccgctga cctgatcctg
+     5881 tctctcactt gtcggatcat ctttacccat attctgtatt aaaggaataa gaggagagaa
+     5941 agtaaaaagt tattttgggt atacattcag ttatgcaata agcttaacgt gtttatagag
+     6001 aacagttcat ttttattagc tgctgaagtt tctaaaacct gtccagtttt taacagttct
+     6061 gtaaactatt gcaaactcag tgttgagttc attcatgagt ttcttcatat ataacagctc
+     6121 tattacatga gaaacacagg ccatagtagc gagactgtct gattgtatgg gagataatag
+     6181 gatggagata aaggattcag agatgagtgt tcttcaatat ttatttatta gctagttgaa
+     6241 gcagctgaga ccagatgatt ggagtagcaa gaacttgaga tttttagtct ttatgcctag
+     6301 gattttggtc cctgtttgca gtttatttag ttgtgtgata ttgagcaact gaatctctcc
+     6361 caacctcatt ttcctcatgt tttaaattac cataaacttg tcctgcctac cacacaggga
+     6421 tgttatggaa agttaaataa tatatttaag ttatttatga atggtaaagc actatgtaat
+     6481 agtacttagg gattctattg ttattatgag agttcatggt acagattgtc ttcagtaagt
+     6541 ggcacctaag gctctttaaa taaagggttt tgccggacac ggtggctcac gcctgtaatc
+     6601 ccagcacttt gggaggctga ggcaggcgga tcacaaggtc aggagttcaa gaccagcctg
+     6661 atcaacatgg tgaaaccccg tctctactaa aaatacaaaa attagctggg tgtggtggca
+     6721 ggcacctgta atcccagcta ctcaggaggc tgaggcagga gaatcgcttg aaccagaggc
+     6781 agagggtgca gtgagccgag atcacaccac agacctccag cctgggcaac agagcgagac
+     6841 ttcgtctcaa aaaataaata aatagataaa taaataaagg gttttgtaat tttgttcagt
+     6901 ttagaaatgc ctaactttag agattatttt aatcaacacc tggcctccct accatctggc
+     6961 tactcgtgtt taattgatga aaactaactc taatgtagcc actataaaaa attggttgct
+     7021 aacccttggc aaaatcttta ttttgagctt aacagcttta atattttaca tgaaatgttt
+     7081 aatattttaa ttaaatattt ttaaatgttt gatttattga gcaatttaca taagtaaaat
+     7141 acataaattt tatgtctaca gcccagtgct ttttgcgttt ctatatagtc atgtagctac
+     7201 cacccagata acagtataga gcacttccag tactccagag agttctccaa gtgtgatgac
+     7261 attaaaatac aagtaaaagt cctgttgcca taaaaccaaa atgaaagtat tttttatatg
+     7321 atctatgcat gtttgtcttc ctgagaaatt aaacataact ataccttgtt tggaaccttt
+     7381 aagaatttga ttcaggaata tttcccaaag gtacatctgt catgataaaa aaaaaacctt
+     7441 ctctgaaaca aaggtatttg tatatttagt cataaacaca aatgatgtat atagggccag
+     7501 gttataattg gtggaggtat gtttagattt ctttaagtaa aataaacagc acaaataaaa
+     7561 cagtccagtt catagcttag tgaaatacac tgggtactta atctgtagcc tcctggctgc
+     7621 agtagagttg tcatttgagt tactgtgttt tcttaatctt ttccaggaac acagtgacca
+     7681 tatttctttt ctgcaggcat atagaatttg gtgggttttc ttttatgtag ggtgatattg
+     7741 gatacttttt gtttgtgatt atatattagc aatttgaggg acaaaccaga taggcagaaa
+     7801 tgggcttgaa tagttagatg cttatttaac cttggcaata gcattgcatt ccctgtggtt
+     7861 tttaataaaa attgaacttc cctccctccc tgccccctta ccctccacac ccccaggatt
+     7921 cttacagaaa acaagtggtt atagatggtg aaacctgttt gttggacata ctggatacag
+     7981 ctggacaaga agagtacagt gccatgagag accaatacat gaggacaggc gaaggcttcc
+     8041 tctgtgtatt tgccatcaat aatagcaagt catttgcgga tattaacctc tacaggtact
+     8101 aggagcatta ttttctctga aaggatgatc tttgtgttct gaatctttat ggggaaatga
+     8161 ggttaccaca ctagggaaga tagagctttt taattatggg aagagttggt tttaggttgt
+     8221 ttgacattga gaatctaggg taattactga aagttaatac tggaatttat tttacataat
+     8281 atactgttac tataaagttt gataatacat aagtgaagct tgctactggg aatgacttgg
+     8341 aaccagagtt gttgtaatta gagatcacga aggaatttca gagaggaaaa catctccaag
+     8401 aaacatcttt cagtatgtaa tggaaaagat aggccaggca cagtggctca cacctggaat
+     8461 gtcagtgctt tgggaggcca aggcgggagg atcactttca gcccaggagt tggagaccag
+     8521 cctgggcaac agagcaagac cctgtctcta caaaaataaa aataaaaaaa ttagtcacac
+     8581 atggtggcag ctactcggga ggcagaggtg ggaggatcac gtgagctcag gaggtcgagg
+     8641 catgctcact ccactgcact gctgcactcc agcctaatca acagagcaag attctgtctc
+     8701 caaaaaaaat aaaaaataaa atgataggag taagcaaata ggaagtccat aaagatgaaa
+     8761 acaaagcaag ggaacataaa gatagacttt gtccatagaa ccataaagtt tcaaagctag
+     8821 attggaccat aaaaattcta gtacaatatt cttattttgc agaatcagaa acagagttca
+     8881 gaatgtcgtt tgttaggttt tggagtcagg attgttatta gtagcagagc caggaccaaa
+     8941 aacccaaagc tcctttttct tagcacagtg ttcttaaaca gaataatata atggttaaga
+     9001 atgagaactc tgcctggatt gaaacctagc tctgtttatt agcgacgtga ctcaggggct
+     9061 atgtggcttt cctaacctat aatatggaaa taataatacc tacctcatag agttgtgaag
+     9121 attacagttt taataaatac gcaaatcact cagaatagtg cctggcacac agtaaatgct
+     9181 acttaagtgt tctgcctaaa ggcttgagtc ttggcttatt ttctatccat gtgaagatgt
+     9241 ctgctctcaa aagcagattg gtccaacact gaattcaagt gttcttttcc taacctgttg
+     9301 tacttcccat tttttttttg tctaaaagta atagcagtac ttaataaaat gcccacactt
+     9361 ggcatgcatc taataaatgt tttttgaatt tctagaagtc atttttcttc tttcttacaa
+     9421 gaaatttatt catttttcta tatgccttag ctcaaaccaa agagtattta aaacatctta
+     9481 tgaaaatgca tatagtagag caagataaga ttaatgaaaa ataggcttaa gtgagaccaa
+     9541 aaaaataagg gtaaaataaa caaatttagg agtgagcata ttctgtgatt gtgcatgaag
+     9601 ttccagtggc tttctaaagg tggactacaa atttggtcac tgttgtgaaa aggaaagtag
+     9661 ccagctgaaa gattcagtat ctgtatgctg aaagccgtta agttgctcgg actagaagga
+     9721 aattttccca tggatcctca aagaggcttg tttaatgtaa aaatcagtag taacctgaca
+     9781 gtgacatggt ccaggtactt taggctgtct tatcccttaa tgtaggctat taccatcaag
+     9841 cacagttttg caaatagcca gtggaatgta gttcagatac atgactttgt gggtaatcca
+     9901 ggggtagaga ctaaaacagt actgtgcagt atgtggttat ttacagttaa ttaagattaa
+     9961 ataaaattta aaaattagtt ccttgactac caaatgctca atagccacta gtaggtacca
+    10021 tgttgaacag tacagatata gaccatttcc atcatcacat aaagtactgt tggattgtgt
+    10081 tggtcaagac aatctaaagc aattgtttcc caggtgtgct gtgtggtgtg ccttacatgt
+    10141 cattgaaagg ggtgctgtca ggagttctag atgcttcagc ctccctttac taagagcagt
+    10201 tcttatgttt tctattttat cgcttgggct tccagataca atgttttgtt ttaggtttgt
+    10261 tttttttgtt tgtttgtttt tttttttttg agacggagtt ttgctctggt tgcccaagct
+    10321 ggatggagta cggtggtgcg atcgcggctc actgcaacct ccgcctcccg ggttcgagag
+    10381 attctcctgc ctcagcttcc cgagtagctg gaattacagg cgtccaccac catgcctgac
+    10441 taattttttt tgtattttta gtagacttgg ggtttcacca tgttggccgg gctggtttca
+    10501 aactcctgac ctcaggtgat ccacccgcct cggcctccca gagggctggg attacaggtg
+    10561 tgaaccaccg tgcccggcct gttttagttt tttagagatg gagtctccct ctgttgccca
+    10621 agccagagtg cggtggcatg acactctcag ggttcaacct ctcagggatc aagggatcct
+    10681 cccacctcag cttcctgagt agctggaacc acaggcacat gtgccaccat gcccagctaa
+    10741 tttttgtatt ttttgtagaa gcaaggtttc accatgttgc ccaggctggt ctcggactcc
+    10801 taggtcaagt gatcctccca cctcaatctc ctagagtgct aagactatag gcgggagtca
+    10861 ccatgcccag cttcatctac aatttatttg aagaaaatgt ttgagcacca cccatcttga
+    10921 aaagtgatag actgccttcc attaaatact gtcacaccta gttatttagc agcagtgagc
+    10981 ttcacttttt atactttaga ccttaatcta aagggtgatt tctagttgcc agttaaatcc
+    11041 agagccaagc tctttggaga atccaggagc ctcactaggt catgtatcag gataaaatac
+    11101 ccatccactc ccattagaag gtgagcttgt acttatggct tcctgatggc tgctgcaaca
+    11161 agtctaaagc agtctcctta gtatacaatg tcttctctaa gtggtagaaa aaagcaaaaa
+    11221 tactacaagt taatagggct acataaaatt tgctagtttc ttttttgccc tagccattta
+    11281 ttccttcctg aaatcttgtc tctctctcgc tctctctttc tctcgctctc actttctttc
+    11341 tctttttctt ttctcttttc ttttctttct tccctttctt ttctttcttt tttcctgttg
+    11401 cccaggctgg agtgcagtgg aacaattatg gctcactgca gccttgacct ttctggaccc
+    11461 aggtgatcct cccacctcag tctcccaatt agctgggact acaggcatgc gccaccacac
+    11521 ccagctataa tatatattgt atatatattt tttatttata aatatatata aatatatatt
+    11581 tatatgtgta aattatatat atttatatat tataaattat atataaatat atatttatat
+    11641 ataatatata taatatatat ttatttttat atattttata tatatttttt ggggggggtt
+    11701 gggggggatg gagtctcact ctgtcgccca ggctagagtg tagtggcgtg atcttggctc
+    11761 actgcaatct tcgcctccca ggttcaagcg attctcctgc ctcagcttcc cgagtagctg
+    11821 ggactatagg cgcctgccac cacacctggc taatttttgt atttttagta gagatggggt
+    11881 ttcaccatat tggccaggct ggtcttcaac tcctgacctt gtgatctgcc cacctcaacc
+    11941 tcccaaagtg ctgggaatac aggcatgagc cactgcaccc agcctaatct ttgtattttt
+    12001 ttgtagagac cgggttttgc catgttgccc aggctaatct caaactcctg ggttcaagca
+    12061 gtctgccctc ctcagcctcc caaagtgctg agattgcagg catgagccac tgtacccagc
+    12121 ctaatcttgt ttttcttatg ttctgataat atattcccgt ttttagggag cagattaagc
+    12181 gagtaaaaga ctcggatgat gtacctatgg tgctagtggg aaacaagtgt gatttgccaa
+    12241 caaggacagt tgatacaaaa caagcccacg aactggccaa gagttacggg attccattca
+    12301 ttgaaacctc agccaagacc agacaggtat ggtacagctt tcagcatttg tgcaagagtt
+    12361 tgcatcagtt gattaactct ggtagagatg tgatccatat tcatattctt tgttgttatg
+    12421 catttttttc atttttattt ttttattttt tatttttttt taggcagagt ctcactctat
+    12481 cttctaagct ggagtgcagt ggtgtgatct cagctcactg cagcctctgt ctcttgggtt
+    12541 caagtgattc tcctgcctca gcctcccaag tagctgggac tacgggcaca tcatcatgcc
+    12601 cggctaattt ttgtactttt agtagagaca gggttttacc atgttgccca ggctggtctc
+    12661 gaactcctgg cctcaagcaa tcctcccacc tgggcctccc agagtgctgg gattacaggt
+    12721 gtgagccacc acgcccagcc tgttgttagg catttttagt agtgttcttt ttcttaacgc
+    12781 ttgtttaaac ccaaaatgaa cttactaata ttctgttatg gcatgtttac tcctgcatta
+    12841 acatccacaa atatttcttg ggaagatcct tgactaaaaa tatttataaa cattagttat
+    12901 ttctctgtca acaccagccc gtttatggct taagcctcct gaatggagtc tttagtttaa
+    12961 tgtagttttg ttccgtgttt ctcacattac ccttttcctt tgcatgaatg tttatttggc
+    13021 aaaatgtgcc atttttatat cagcctgttc ttgtgattca ataggaatgt gaaatttagt
+    13081 gttctcttcc ttaaatcacc atattttatt ttatcagcta ttcgtttagt aattggaatc
+    13141 ttatgtccac ataaagagat acaaatgcaa gagagcttat aatttggatt gtgtccgttg
+    13201 agctagctct ctcatttttt ttcatttttt ccttttatag ggtgttgaag atgcttttta
+    13261 cacactggta agagaaatac gccagtaccg aatgaaaaaa ctcaacagca gtgatgatgg
+    13321 gactcagggt tgtatgggat tgccatgtgt ggtgatgtaa caaggtgagc atatggtttc
+    13381 ttggcataat tacaaatctt agtatatagt attgggcaat ttggaggagt gctggtgtta
+    13441 ttgtctatat gttttttgag tttctgccta tcctcttctg cacattttcc atatgacacc
+    13501 ctttctgaaa gtactgaggt ctaaagtgtt taaaacattt gattattcca caggtatctt
+    13561 tatatttttg gtaacattag aaattataag acattattta tgaaatgtag gcatacccta
+    13621 ttcctggcaa tgaccaggaa tttgaaggat cactactttg aaactagtta ataaggacat
+    13681 ggtttctgtt ctttttttac agatactttt aaagttttgt cagaaaagag ccactttcaa
+    13741 ggtaggacaa gtttggaaat gtattctcat tcctgttaat tttgtatatt tgtttttctt
+    13801 atactctgaa tgtgtcactt atacaaattc tgtttctatt tcagctgcac tgacaccctg
+    13861 gtcctgactt ccctggagga gaagtattcc tgttgctgtc ttcagtctca cagagaagct
+    13921 cctgctactt ccccagctct cagtagttta gtacaataat ctctatttga gaagttctca
+    13981 gaataactac ctcctcactt ggctgtctga ccagagaatg cacctcttgt tactccctgt
+    14041 tatttttctg ccctgggttc ttccacagca caaacacacc tctgccaccc caggtttttc
+    14101 atctgaaaag cagttcatgt ctgaaacaga gaaccaaacc gcaaacgtga aattctattg
+    14161 aaaacagtgt cttgagctct aaagtagcaa ctgctggtga tttttttttt ctttttactg
+    14221 ttgaacttag aactatgcta atttttggag aaatgtcata aattactgtt ttgccaagaa
+    14281 tatagttatt attgctgttt ggtttgttta taatgttatc ggctctattc tctaaactgg
+    14341 catctgctct agattcataa atacaaaaat gaatactgaa ttttgagtct atcctagtct
+    14401 tcacaacttt gacgtaatta aatccaactt tcacagtgaa gtgccttttt cctagaagtg
+    14461 gtttgtagac ttcctttata atatttcagt ggaatagatg tctcaaaaat ccttatgcat
+    14521 gaaatgaatg tctgagatac gtctgtgact tatctaccat tgaaggaaag ctatatctat
+    14581 ttgagagcag atgccatttt gtacatgtat gaaattggtt ttccagaggc ctgttttggg
+    14641 gctttcccag gagaaagatg aaactgaaag cacatgaata atttcactta ataattttta
+    14701 cctaatctcc acttttttca taggttacta cctatacaat gtatgtaatt tgtttcccct
+    14761 agcttactga taaacctaat attcaatgaa cttccatttg tattcaaatt tgtgtcatac
+    14821 cagaaagctc tacatttgca gatgttcaaa tattgtaaaa ctttggtgca ttgttattta
+    14881 atagctgtga tcagtgattt tcaaacctca aatatagtat attaacaaat tacattttca
+    14941 ctgtatatca tggtatctta atgatgtata taattgcctt caatcccctt ctcaccccac
+    15001 cctctacagc ttcccccaca gcaatagggg cttgattatt tcagttgagt aaagcatggt
+    15061 gctaatggac cagggtcaca gtttcaaaac ttgaacaatc cagttagcat cacagagaaa
+    15121 gaaattcttc tgcatttgct cattgcacca gtaactccag ctagtaattt tgctaggtag
+    15181 ctgcagttag ccctgcaagg aaagaagagg tcagttagca caaacccttt accatgactg
+    15241 gaaaactcag tatcacgtat ttaaacattt ttttttcttt tagccatgta gaaactctaa
+    15301 attaagccaa tattctcatt tgagaatgag gatgtctcag ctgagaaacg ttttaaattc
+    15361 tctttattca taatgttctt tgaagggttt aaaacaagat gttgataaat ctaagctgat
+    15421 gagtttgctc aaaacaggaa gttgaaattg ttgagacagg aatggaaaat ataattaatt
+    15481 gatacctatg aggatttgga ggcttggcat tttaatttgc agataatacc ctggtaattc
+    15541 tcatgaaaaa tagacttgga taacttttga taaaagacta attccaaaat ggccactttg
+    15601 ttcctgtctt taatatctaa atacttactg aggtcctcca tcttctatat tatgaatttt
+    15661 catttattaa gcaaatgtca tattaccttg aaattcagaa gagaagaaac atatactgtg
+    15721 tccagagtat aatgaacctg cagagttgtg cttcttactg ctaattctgg gagctttcac
+    15781 agtactgtca tcatttgtaa atggaaattc tgcttttctg tttctgctcc ttctggagca
+    15841 gtgctactct gtaattttcc tgaggcttat cacctcagtc atttcttttt taaatgtctg
+    15901 tgactggcag tgattctttt tcttaaaaat ctattaaatt tgatgtcaaa ttagggagaa
+    15961 agatagttac tcatcttggg ctcttgtgcc aatagccctt gtatgtatgt acttagagtt
+    16021 ttccaagtat gttctaagca cagaagtttc taaatggggc caaaattcag acttgagtat
+    16081 gttctttgaa taccttaaga agttacaatt agccgggcat ggtggcccgt gcctgtagtc
+    16141 ccagctactt gagaggctga ggcaggagaa tcacttcaac ccaggaggtg gaggttacag
+    16201 tgagcagaga tcgtgccact gcactccagc ctgggtgaca agagagactt gtctccaaaa
+    16261 aaaaagttac acctaggtgt gaattttggc acaaaggagt gacaaactta tagttaaaag
+    16321 ctgaataact tcagtgtggt ataaaacgtg gtttttaggc tatgtttgtg attgctgaaa
+    16381 agaattctag tttacctcaa aatccttctc tttccccaaa ttaagtgcct ggccagctgt
+    16441 cataaattac atattccttt tggttttttt aaaggttaca tgttcaagag tgaaaataag
+    16501 atgttctgtc tgaaggctac catgccggat ctgtaaatga acctgttaaa tgctgtattt
+    16561 gctccaacgg cttactatag aatgttactt aatacaatat catacttatt acaattttta
+    16621 ctataggagt gtaataggta aaattaatct ctattttagt gggcccatgt ttagtctttc
+    16681 accatccttt aaactgctgt gaattttttt gtcatgactt gaaagcaagg atagagaaac
+    16741 actttagaga tatgtggggt ttttttacca ttccagagct tgtgagcata atcatatttg
+    16801 ctttatattt atagtcatga actcctaagt tggcagctac aaccaagaac caaaaaatgg
+    16861 tgcgttctgc ttcttgtaat tcatctctgc taataaatta taagaagcaa ggaaaattag
+    16921 ggaaaatatt ttatttggat ggtttctata aacaagggac tataattctt gtacattatt
+    16981 tttcatcttt gctgtttctt tgagcagtct aatgtgccac acaattatct aaggtatttg
+    17041 ttttctataa gaattgtttt aaaagtattc ttgttaccag agtagttgta ttatatttca
+    17101 aaacgtaaga tgatttttaa aagcctgagt actgacctaa gatggaattg tatgaactct
+    17161 gctctggagg gaggggagga tgtccgtgga agttgtaaga cttttatttt tttgtgccat
+    17221 caaatatagg taaaaataat tgtgcaattc tgctgtttaa acaggaacta ttggcctcct
+    17281 tggccctaaa tggaagggcc gatattttaa gttgattatt ttattgtaaa ttaatccaac
+    17341 ctagttcttt ttaatttggt tgaatgtttt ttcttgttaa atgatgttta aaaaataaaa
+    17401 actggaagtt cttggcttag tcataattct tatattcact gaagtgcctt tatagaatgc
+    17461 taatattaat ttcaaacttt tggatgtgac atttggaagt gttggaatat ctgagttcct
+    17521 catttcatca taacatcaaa tatatcaaag cctgctttaa agtattacct tggggatgat
+    17581 tcatagctat ttgtcagatt tgcatacatt aagatgccat tggagctctt ttgtctcgtt
+    17641 tttgcattac tgcacaatct agccatcttg gtataggtgg aggagcattg atgctagggg
+    17701 ctggagaact tgaggcccga tataatttta ctacgccggc ccagtttctt caattgcaaa
+    17761 atagaagagt tgaattagga tatatcagat ttcccaacct taaggagact ttaaaaagaa
+    17821 taatatcaaa cctaggcatt ttcaactaac actggaatac taattttgga gaccttggtt
+    17881 tactctacca aagacatcaa aatttttttt cacttttttt tcttgaaaag gaggcaggga
+    17941 aggtaggtca ttaacatgtg gctgaagtaa gcttgggaaa accaatttta aatgacaata
+    18001 ttttttctag ctaggacaac tagaaagagt aaatatttta attataaaat gtatttgaaa
+    18061 aagaaataga attagggaat ttgtatcttt caaactatca cctcatatag agacctaggt
+    18121 gatagtttga gagagaaaca tacaaagtcc acagttctat ttctttttca tatacatttt
+    18181 acaaaaattt gttctaatgt ttgaccctct aataacggaa aagaggaaag gatgttttct
+    18241 ggtgagaact gctgttctgt tcagcaaaat aaagctacag aaacaaataa tgagaaggta
+    18301 cctaaagaag cttgtttatt tggaatatga gggaaccacc tgtgcatctc tgtgctatta
+    18361 aggtttctgt tctcataagc aatatttaag gtcactgaaa ggccaacata gttgcatgag
+    18421 ttatttgata cccataaata catgagaaga ggccaagagg ccttgctagt gatcatttcg
+    18481 caaaactgtc tgaggatgtc cagctccatg agagcacaga gagaatcact gtccagtttc
+    18541 caagtgggaa gggtatgctt tgtaatgctt ttaaaagtaa ctgggcagtg aaatgtgacc
+    18601 ctttacctta ataaaagaca gctggaactt caggaacata caaaatagaa atattctttc
+    18661 cagttgcaaa aggaacataa gagggttcag attcatgaac caagagttga gttgaccatt
+    18721 cttatttgca gttgaattct accatatgat ttacttcaca cttgcaccga aatagtctat
+    18781 tataaactac tggtgttggg ggtggggcgg gagtgggaat ggggaatgaa ggggaggaat
+    18841 gaacttagtt tcttaactag tataaattca gattaccatc aacttgtaga agccatatga
+    18901 agtaaaaatg ggtagcacct gcaacactgg gacttagcgt gctattaaat gtttctaaag
+    18961 atagaggcac gtagctacat gtctcatagg ggaggatgtg gttgtagcta gcagttgcct
+    19021 actagcaggc ttctttattt gcagcagcct gaaataccca ggttaggaaa agcaatcttc
+    19081 cagaatggat gctgtggaca tggtacaatt ggcgctattg atactttctg taggagcttg
+    19141 aaatgtgtgg attgtagtta agtctgaaag aaaacttgca cttgatttta aaacattttc
+    19201 ttataaatca attcacattt ataactgaga cccaacattc ctgataggaa tatttttgta
+    19261 aatcaatggt atgaagtgta aagacatgtt gaaagttaga agaagagatc ttttaagtgt
+    19321 atgcttgttt tggctgtgaa gctgaggggt ttgacattta ctattaaagt tcaaaataaa
+    19381 actagcatgg catatgaagt agaattacca aggcctgtgt ttctctaaga gaaccata
+//
+

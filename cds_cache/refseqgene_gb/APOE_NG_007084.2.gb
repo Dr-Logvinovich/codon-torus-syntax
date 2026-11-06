@@ -1,0 +1,561 @@
+LOCUS       NG_007084              10612 bp    DNA     linear   PRI 11-SEP-2026
+DEFINITION  Homo sapiens apolipoprotein E (APOE), RefSeqGene on chromosome 19;
+            nuclear gene for mitochondrial product.
+ACCESSION   NG_007084
+VERSION     NG_007084.2
+KEYWORDS    RefSeq; RefSeqGene.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 10612)
+  AUTHORS   Greyshock,N., Guyton,J.R., Sebastian,S. and Okorodudu,D.
+  TITLE     APOE p.Leu167del-Related Lipid Disorders - RETIRED CHAPTER, FOR
+            HISTORICAL REFERENCE ONLY
+  JOURNAL   (in) Adam MP, Bick S, Mirzaa GM, Wallace SE and Amemiya A (Eds.);
+            GENEREVIEWS(R);
+            (1993)
+   PUBMED   24921113
+REFERENCE   2  (bases 1 to 10612)
+  AUTHORS   Bird,T.D.
+  TITLE     Alzheimer Disease Overview
+  JOURNAL   (in) Adam MP, Bick S, Mirzaa GM, Wallace SE and Amemiya A (Eds.);
+            GENEREVIEWS(R);
+            (1993)
+   PUBMED   20301340
+REFERENCE   3  (bases 1 to 10612)
+  AUTHORS   McLean,J.W., Elshourbagy,N.A., Chang,D.J., Mahley,R.W. and
+            Taylor,J.M.
+  TITLE     Human apolipoprotein E mRNA. cDNA cloning and nucleotide sequencing
+            of a new variant
+  JOURNAL   J Biol Chem 259 (10), 6498-6504 (1984)
+   PUBMED   6327682
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from AC011481.4.
+            This sequence is a reference standard in the RefSeqGene project.
+            
+            On Dec 28, 2007 this sequence version replaced NG_007084.1.
+            
+            Summary: The protein encoded by this gene is a major apoprotein of
+            the chylomicron. It binds to a specific liver and peripheral cell
+            receptor, and is essential for the normal catabolism of
+            triglyceride-rich lipoprotein constituents. This gene maps to
+            chromosome 19 in a cluster with the related apolipoprotein C1 and
+            C2 genes. Mutations in this gene result in familial
+            dysbetalipoproteinemia, or type III hyperlipoproteinemia (HLP III),
+            in which increased plasma cholesterol and triglycerides are the
+            consequence of impaired clearance of chylomicron and VLDL remnants.
+            [provided by RefSeq, Jun 2016].
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-10612             AC011481.4         43606-54217
+FEATURES             Location/Qualifiers
+     source          1..10612
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="19"
+                     /map="19q13.32"
+     gene            <1..2908
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="translocase of outer mitochondrial membrane 40"
+                     /db_xref="GeneID:10452"
+                     /db_xref="HGNC:HGNC:18001"
+                     /db_xref="MIM:608061"
+     mRNA            join(<1..71,247..323,427..529,2249..2908)
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /product="translocase of outer mitochondrial membrane 40,
+                     transcript variant 1"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_001128917.2"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NM_001128917.2"
+                     /db_xref="GeneID:10452"
+                     /db_xref="HGNC:HGNC:18001"
+                     /db_xref="MIM:608061"
+     mRNA            join(<1..71,247..323,427..529,2249..2908)
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /product="translocase of outer mitochondrial membrane 40,
+                     transcript variant 3"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_006114.3"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NM_006114.3"
+                     /db_xref="GeneID:10452"
+                     /db_xref="HGNC:HGNC:18001"
+                     /db_xref="MIM:608061"
+     mRNA            join(<1..71,247..323,427..529,2249..2908)
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /product="translocase of outer mitochondrial membrane 40,
+                     transcript variant 2"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_001128916.2"
+                     /exception="annotated by transcript or proteomic data"
+                     /transcript_id="NM_001128916.2"
+                     /db_xref="GeneID:10452"
+                     /db_xref="HGNC:HGNC:18001"
+                     /db_xref="MIM:608061"
+     CDS             join(<1..71,247..323,427..529,2249..2388)
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /inference="similar to AA sequence (same
+                     species):RefSeq:NP_001122388.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="mitochondrial outer membrane protein; p38.5;
+                     protein Haymaker; translocase of outer mitochondrial
+                     membrane 40 homolog; translocase of outer membrane 40 kDa
+                     subunit homolog"
+                     /codon_start=2
+                     /product="mitochondrial import receptor subunit TOM40
+                     homolog"
+                     /protein_id="NP_001122388.1"
+                     /db_xref="CCDS:CCDS12646.1"
+                     /db_xref="GeneID:10452"
+                     /db_xref="HGNC:HGNC:18001"
+                     /db_xref="MIM:608061"
+                     /translation="MGNVLAASSPPAGPPPPPAPALVGLPPPPPSPPGFTLPPLGGSL
+                     GAGTSTSRSSERTPGAATASASGAAEDGACGCLPNPGTFEECHRKCKELFPIQMEGVK
+                     LTVNKGLSNHFQVNHTVALSTIGESNYHFGVTYVGTKQLSPTEAFPVLVGDMDNSGSL
+                     NAQVIHQLGPGLRSKMAIQTQQSKFVNWQVDGEYRGSDFTAAVTLGNPDVLVGSGILV
+                     AHYLQSITPCLALGGELVYHRRPGEEGTVMSLAGKYTLNNWLATVTLGQAGMHATYYH
+                     KASDQLQVGVEFEASTRMQDTSVSFGYQLDLPKANLLFKGSVDSNWIVGATLEKKLPP
+                     LPLTLALGAFLNHRKNKFQCGFGLTIG"
+     misc_feature    join(2..71,247..323,427..492)
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     Region: Disordered. /evidence=ECO:0000256|SAM:MobiDB-lite"
+     misc_feature    2299..2319
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     transmembrane region"
+     misc_feature    2338..2361
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     transmembrane region"
+     misc_feature    2380..2388
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     transmembrane region"
+     CDS             join(<1..71,247..323,427..529,2249..2388)
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /inference="similar to AA sequence (same
+                     species):RefSeq:NP_001122389.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="mitochondrial outer membrane protein; p38.5;
+                     protein Haymaker; translocase of outer mitochondrial
+                     membrane 40 homolog; translocase of outer membrane 40 kDa
+                     subunit homolog"
+                     /codon_start=2
+                     /product="mitochondrial import receptor subunit TOM40
+                     homolog"
+                     /protein_id="NP_001122389.1"
+                     /db_xref="CCDS:CCDS12646.1"
+                     /db_xref="GeneID:10452"
+                     /db_xref="HGNC:HGNC:18001"
+                     /db_xref="MIM:608061"
+                     /translation="MGNVLAASSPPAGPPPPPAPALVGLPPPPPSPPGFTLPPLGGSL
+                     GAGTSTSRSSERTPGAATASASGAAEDGACGCLPNPGTFEECHRKCKELFPIQMEGVK
+                     LTVNKGLSNHFQVNHTVALSTIGESNYHFGVTYVGTKQLSPTEAFPVLVGDMDNSGSL
+                     NAQVIHQLGPGLRSKMAIQTQQSKFVNWQVDGEYRGSDFTAAVTLGNPDVLVGSGILV
+                     AHYLQSITPCLALGGELVYHRRPGEEGTVMSLAGKYTLNNWLATVTLGQAGMHATYYH
+                     KASDQLQVGVEFEASTRMQDTSVSFGYQLDLPKANLLFKGSVDSNWIVGATLEKKLPP
+                     LPLTLALGAFLNHRKNKFQCGFGLTIG"
+     misc_feature    join(2..71,247..323,427..492)
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     Region: Disordered. /evidence=ECO:0000256|SAM:MobiDB-lite"
+     misc_feature    2299..2319
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     transmembrane region"
+     misc_feature    2338..2361
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     transmembrane region"
+     misc_feature    2380..2388
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     transmembrane region"
+     CDS             join(<1..71,247..323,427..529,2249..2388)
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /inference="similar to AA sequence (same
+                     species):RefSeq:NP_006105.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="mitochondrial outer membrane protein; p38.5;
+                     protein Haymaker; translocase of outer mitochondrial
+                     membrane 40 homolog; translocase of outer membrane 40 kDa
+                     subunit homolog"
+                     /codon_start=2
+                     /product="mitochondrial import receptor subunit TOM40
+                     homolog"
+                     /protein_id="NP_006105.1"
+                     /db_xref="CCDS:CCDS12646.1"
+                     /db_xref="GeneID:10452"
+                     /db_xref="HGNC:HGNC:18001"
+                     /db_xref="MIM:608061"
+                     /translation="MGNVLAASSPPAGPPPPPAPALVGLPPPPPSPPGFTLPPLGGSL
+                     GAGTSTSRSSERTPGAATASASGAAEDGACGCLPNPGTFEECHRKCKELFPIQMEGVK
+                     LTVNKGLSNHFQVNHTVALSTIGESNYHFGVTYVGTKQLSPTEAFPVLVGDMDNSGSL
+                     NAQVIHQLGPGLRSKMAIQTQQSKFVNWQVDGEYRGSDFTAAVTLGNPDVLVGSGILV
+                     AHYLQSITPCLALGGELVYHRRPGEEGTVMSLAGKYTLNNWLATVTLGQAGMHATYYH
+                     KASDQLQVGVEFEASTRMQDTSVSFGYQLDLPKANLLFKGSVDSNWIVGATLEKKLPP
+                     LPLTLALGAFLNHRKNKFQCGFGLTIG"
+     misc_feature    join(2..71,247..323,427..492)
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     Region: Disordered. /evidence=ECO:0000256|SAM:MobiDB-lite"
+     misc_feature    2299..2319
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     transmembrane region"
+     misc_feature    2338..2361
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     transmembrane region"
+     misc_feature    2380..2388
+                     /gene="TOMM40"
+                     /gene_synonym="C19orf1; D19S1177E; PER-EC1; PEREC1; TOM40"
+                     /note="propagated from UniProtKB/Swiss-Prot (O96008.1);
+                     transmembrane region"
+     gene            5015..8612
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="apolipoprotein E"
+                     /db_xref="GeneID:348"
+                     /db_xref="HGNC:HGNC:613"
+                     /db_xref="MIM:107741"
+     mRNA            join(5015..5060,5821..5886,6979..7171,7752..8612)
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /product="apolipoprotein E, transcript variant 2"
+                     /transcript_id="NM_000041.4"
+                     /db_xref="GeneID:348"
+                     /db_xref="HGNC:HGNC:613"
+                     /db_xref="MIM:107741"
+     exon            5015..5060
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /inference="alignment:Splign:2.1.0"
+                     /number=1
+     exon            5821..5886
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /inference="alignment:Splign:2.1.0"
+                     /number=2
+     CDS             join(5844..5886,6979..7171,7752..8469)
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="isoform b precursor is encoded by transcript
+                     variant 2; apolipoprotein E3"
+                     /codon_start=1
+                     /product="apolipoprotein E isoform b precursor"
+                     /protein_id="NP_000032.1"
+                     /db_xref="CCDS:CCDS12647.1"
+                     /db_xref="GeneID:348"
+                     /db_xref="HGNC:HGNC:613"
+                     /db_xref="MIM:107741"
+                     /translation="MKVLWAALLVTFLAGCQAKVEQAVETEPEPELRQQTEWQSGQRW
+                     ELALGRFWDYLRWVQTLSEQVQEELLSSQVTQELRALMDETMKELKAYKSELEEQLTP
+                     VAEETRARLSKELQAAQARLGADMEDVCGRLVQYRGEVQAMLGQSTEELRVRLASHLR
+                     KLRKRLLRDADDLQKRLAVYQAGAREGAERGLSAIRERLGPLVEQGRVRAATVGSLAG
+                     QPLQERAQAWGERLRARMEEMGSRTRDRLDEVKEQVAEVRAKLEEQAQQIRLQAEAFQ
+                     ARLKSWFEPLVEDMQRQWAGLVEKVQAAVGTSAAPVPSDNH"
+     sig_peptide     join(5844..5886,6979..6989)
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="/evidence=ECO:0000269|PubMed:7068630; propagated
+                     from UniProtKB/Swiss-Prot (P02649.1)"
+     mat_peptide     join(6990..7171,7752..8466)
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /product="Apolipoprotein E. /id=PRO_0000001987"
+                     /note="propagated from UniProtKB/Swiss-Prot (P02649.1)"
+     misc_feature    7011..7013
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="O-linked (GalNAc...) threonine.
+                     /evidence=ECO:0000269|PubMed:23234360; propagated from
+                     UniProtKB/Swiss-Prot (P02649.1); glycosylation site"
+     misc_feature    7041..7043
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="O-linked (GalNAc...) threonine.
+                     /evidence=ECO:0000269|PubMed:23234360; propagated from
+                     UniProtKB/Swiss-Prot (P02649.1); glycosylation site"
+     misc_feature    7753..8280
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="propagated from UniProtKB/Swiss-Prot (P02649.1);
+                     Region: 8 X 22 AA approximate tandem repeats"
+     misc_feature    7792..7794
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="N-linked (Glc) (glycation) lysine.
+                     /evidence=ECO:0000269|PubMed:10452964; propagated from
+                     UniProtKB/Swiss-Prot (P02649.1); glycosylation site"
+     misc_feature    7954..7956
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="Phosphoserine, by FAM20C.
+                     /evidence=ECO:0000269|PubMed:26091039,
+                     ECO:0007744|PubMed:24275569; propagated from
+                     UniProtKB/Swiss-Prot (P02649.1); phosphorylation site"
+     misc_feature    7987..8019
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="propagated from UniProtKB/Swiss-Prot (P02649.1);
+                     Region: LDL and other lipoprotein receptors binding.
+                     /evidence=ECO:0000269|PubMed:20030366,
+                     ECO:0000269|PubMed:2063194"
+     misc_feature    8143..8385
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="propagated from UniProtKB/Swiss-Prot (P02649.1);
+                     Region: Lipid-binding and lipoprotein association.
+                     /evidence=ECO:0000269|PubMed:2280190,
+                     ECO:0000269|PubMed:8071364"
+     misc_feature    8149..8151
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="O-linked (GalNAc...) threonine.
+                     /evidence=ECO:0000269|PubMed:19838169,
+                     ECO:0000269|PubMed:2498325; propagated from
+                     UniProtKB/Swiss-Prot (P02649.1); glycosylation site"
+     misc_feature    8311..8466
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="propagated from UniProtKB/Swiss-Prot (P02649.1);
+                     Region: Homooligomerization.
+                     /evidence=ECO:0000269|PubMed:8340399"
+     misc_feature    8347..8385
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="propagated from UniProtKB/Swiss-Prot (P02649.1);
+                     Region: Specificity for association with VLDL.
+                     /evidence=ECO:0000269|PubMed:8071364"
+     misc_feature    8434..8436
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="O-linked (GalNAc...) threonine.
+                     /evidence=ECO:0000269|PubMed:19838169; propagated from
+                     UniProtKB/Swiss-Prot (P02649.1); glycosylation site"
+     misc_feature    8437..8439
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="O-linked (GalNAc...) serine.
+                     /evidence=ECO:0000269|PubMed:19838169,
+                     ECO:0000269|PubMed:20511397; propagated from
+                     UniProtKB/Swiss-Prot (P02649.1); glycosylation site"
+     misc_feature    8455..8457
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /note="O-linked (GalNAc...) serine.
+                     /evidence=ECO:0000269|PubMed:23234360; propagated from
+                     UniProtKB/Swiss-Prot (P02649.1); glycosylation site"
+     exon            6979..7171
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /inference="alignment:Splign:2.1.0"
+                     /number=3
+     exon            7752..8612
+                     /gene="APOE"
+                     /gene_synonym="AD2; APO-E; ApoE4; LDLCQ5; LPG"
+                     /inference="alignment:Splign:2.1.0"
+                     /number=4
+ORIGIN      
+        1 tggagagctg gtctaccacc ggcggcctgg agaggagggc actgtcatgt ctctagctgg
+       61 gaaatacaca tgtgagcctg gcgcctgggt ccgagggtgg aggggctggg cccctggact
+      121 cctcctgggt ctgagggagg acgggctagg gccctggaca ctcaggtctg agggaggagg
+      181 cctgggttcc cagatgccca aatccccttg gtaatgagac cccgcctcca ccccactctc
+      241 tgacagtgaa caactggttg gcaacggtaa cgttgggcca ggcgggcatg cacgcaacat
+      301 actaccacaa agccagtgac caggtgagtg ggtgcaggga ctagctggtg ctgccagggg
+      361 ctgctgggcc tggaagtcca ggtggggcca cttgctaatt ctcatgtgtt gctccggccc
+      421 ctccagctgc aggtgggtgt ggagtttgag gccagcacaa ggatgcagga caccagcgtc
+      481 tccttcgggt accagctgga cctgcccaag gccaacctcc tcttcaaagg taaaggtctc
+      541 ggttccccta cgcgggaaac aggcaggagg tgactcaact ctgagtggat gtgtgggcca
+      601 ccacaggtgc tggaggacag tgtgctgcca ccctgtgggc ctccacatta ccagggaaca
+      661 cttgttaaaa ggtaggtggg gccgggtgcg gtggctcacg cctgtaatcc cagcactttg
+      721 ggaggccaag gcgggccgag gtaaggagat tgagaccatc ctggctaaca cggtgaaact
+      781 ccgtctctac taaaaataca aaaacaaaat tagccgggtg tggttgcggg tgcctatagt
+      841 cccaactact gaggctgagg cgggaaaatg gtatgaaccc aggaggcgga gcttgcggtg
+      901 agccgagatc gtgccaccgc actccagcct gggtgacaga gcaagactcc atctcaaaaa
+      961 aaaaaaagta ggtggacaac cctctactat gttttatgct tggaaaaaaa aagtaggtag
+     1021 agcagccagg cgtggtgact cacgcctgta atcccagcat tttgggaggc caagccaggt
+     1081 agaatacttg aggccaggag ttggagacca gcctggccaa cgtggtgaaa tcccctctct
+     1141 actaaaagta caaaaattag ccaggtgtgg tagcgtgctg caactgtagt ccccgctact
+     1201 taggaggctg aggcacaaga atcacttgaa cctgggaggc ggaggttgca gggagttgag
+     1261 actgcaccac tgcactccag cctgggtgac agagtgagac tccatctcca aaaaaaataa
+     1321 aatgaaataa ataaataaat gttaaaaaaa atctggtgga gcatctgatg ggtgtttggg
+     1381 ccaagctgga gctttgtcca tcccctctta tttttctgca cttgactctc ttatttttct
+     1441 gagactggtc tccctctgtc gcccaggcta gagtgcagca gtgcaactgc ggctcactgc
+     1501 agcctccacc tcccgggctc aagcagcctt cccacctcag cctcctgagt agctaggacc
+     1561 acaggtgtat gccaccaggc ccagctaatt tttttgatag ttttgggaga catgggggtt
+     1621 tcaccatgtt gcccaggctg gtctcgaact cctggactca agccttggcc tcccaaagtg
+     1681 ctgggattat aggtgtgagc caccacaccc agccagggta gaaggcactt tggaagcctc
+     1741 gagcctgccc cattcatctt acgttagtgg aaactgaggc ttccagaggt ttcaaggtca
+     1801 caactaaatc cagaacctca tctcaggcac actggtcgta gtcccaatgt ccagtcttaa
+     1861 gtcttcttgg atatctgtgg ctcacagatt ttgggtgttt gagcctcctg ctgagcactg
+     1921 ctggggccac agcggtgacc agccctgtct tcacgggact cagtgagagg aacagattca
+     1981 tccgcagagt gggcaggact aggttggggg aacccagggg tctagagggc ttttcagagg
+     2041 gcaggggtca ctgagcggag agcagaggag gagtgagcca tttgctccag cgtgaagttg
+     2101 ttggtgtgat ggggtttcag ggtggcagga gcagtgtggt taaaggtctg gaagctgtcg
+     2161 gcatgtggct ggtatccaag gtggccagga actctgcatg gatatggtgg gaagctggca
+     2221 cgcctctcac ctcagctctt ccctgcaggc tctgtggata gcaactggat cgtgggtgcc
+     2281 acgctggaga agaagctccc acccctgccc ctgacactgg cccttggggc cttcctgaat
+     2341 caccgcaaga acaagtttca gtgtggcttt ggcctcacca tcggctgagc cctcctggcc
+     2401 cccgccttcc acgcccttcc gattccacct ccacctccac ctccccctgc cacagagggg
+     2461 agacctgagc ccccctccct tccctccccc cttgggggtc gggggggaca ttggaaagga
+     2521 gggaccccgc caccccagca gctgaggagg ggattctgga actgaatggc gcttcgggat
+     2581 tctgagtagc aggggcagca tgcccagtgg gcctggggtc ccgggaggga ttccggaatt
+     2641 gaggggcacg caggattctg agcaccaggg gcagaggcgg ccagacaacc tcagggagga
+     2701 gtgtcctggc gtccccatcc tccaaagggc ctgggcccgc cccgaggggg cagcgagagg
+     2761 agcttcccca tccccggtca gtccaccctg ccccgtccac tttcccatct cctcggtata
+     2821 aatcatgttt ataagttatg gaagaaccgg gacattttac agaaaaaaaa caaaaaacaa
+     2881 caaaaaatat acgtgggaaa aaaaacgatg ggaggcctcc gttttctcaa gtgtgtctgg
+     2941 cctgttttga gcatttcatc cggagtctgg ccgccctgac cttcccccag ccgcctgcag
+     3001 ggggcgccag agggccggag cacggaaagc agcggatcct tgatgctgcc ttaagtccgg
+     3061 ctcagagggg cgcagcgtgg cctggggtcg ctatcttccc atccggaaca tctgccctgc
+     3121 tgggggacac tacgggcctt cccttgcctg agggtagggt ctcaaggtca cttgccccca
+     3181 gcttgacctg gccggagtgg ctatagagga ctttgtccct gcagactgca gcagcagaga
+     3241 tgacactgtc tctgagtgca gagatggggg cagggagctg ggagagggtt caagctactg
+     3301 gaacagcttc agaacaacta gggtactagg aactgctgtg tcagggagaa ggggctcaag
+     3361 gactcgcagg cctgggagga ggggcctagg ccagccatgg gagttgggtc acctgtgtct
+     3421 gaggacttgg tgctgtctgg attttgccaa cctagggctg gggtcagctg atgcccacca
+     3481 cgactcccga gcctccagga actgaaaccc tgtctgcccc cagggtctgg ggaaggaggc
+     3541 tgctgagtag aaccaacccc aggttaccaa ccccacctca gccacccctt gccagccaaa
+     3601 gcaaacaggc ccggcccggc actgggggtt ccttctcgaa ccaggagttc agcctcccct
+     3661 gacccgcaga atcttctgat cccacccgct ccaggagcca ggaatgagtc ccagtctctc
+     3721 ccagttctca ctgtgtggtt ttgccattcg tcttgctgct gaaccacggg tttctcctct
+     3781 gaaacatctg ggatttataa cagggcttag gaaagtgaca gcgtctgagc gttcactgtg
+     3841 gcctgtccat tgctagccct aacataggac cgctgtgtgc cagggctgtc ctccatgctc
+     3901 aatacacgtt agcttgtcac caaacatacc cgtgccgctg ctttcccagt ctgatgagca
+     3961 aaggaacttg atgctcagag aggacaagtc atttgcccaa ggtcacacag ctggcaactg
+     4021 gcagagccag gattcacgcc ctggcaattt gactccagaa tcctaacctt aacccagaag
+     4081 cacggcttca agcccctgga aaccacaata cctgtggcag ccagggggag gtgctggaat
+     4141 ctcatttcac atgtggggag ggggctcccc tgtgctcaag gtcacaacca aagaggaagc
+     4201 tgtgattaaa acccaggtcc catttgcaaa gcctcgactt ttagcaggtg catcatactg
+     4261 ttcccacccc tcccatccca cttctgtcca gccgcctagc cccactttct tttttttctt
+     4321 tttttgagac agtctccctc ttgctgaggc tggagtgcag tggcgagatc tcggctcact
+     4381 gtaacctccg cctcccgggt tcaagcgatt ctcctgcctc agcctcccaa gtagctagga
+     4441 ttacaggcgc ccgccaccac gcctggctaa cttttgtatt tttagtagag atggggtttc
+     4501 accatgttgg ccaggctggt ctcaaactcc tgaccttaag tgattcgccc actgtggcct
+     4561 cccaaagtgc tgggattaca ggcgtgagct accgccccca gcccctccca tcccacttct
+     4621 gtccagcccc ctagccctac tttctttctg ggatccagga gtccagatcc ccagccccct
+     4681 ctccagatta cattcatcca ggcacaggaa aggacagggt caggaaagga ggactctggg
+     4741 cggcagcctc cacattcccc ttccacgctt ggcccccaga atggaggagg gtgtctgtat
+     4801 tactgggcga ggtgtcctcc cttcctgggg actgtggggg gtggtcaaaa gacctctatg
+     4861 ccccacctcc ttcctccctc tgccctgctg tgcctggggc agggggagaa cagcccacct
+     4921 cgtgactggg ggctggccca gcccgcccta tccctggggg agggggcggg acagggggag
+     4981 ccctataatt ggacaagtct gggatccttg agtcctactc agccccagcg gaggtgaagg
+     5041 acgtccttcc ccaggagccg gtgagaagcg cagtcggggg cacggggatg agctcagggg
+     5101 cctctagaaa gagctgggac cctgggaacc cctggcctcc aggtagtctc aggagagcta
+     5161 ctcggggtcg ggcttgggga gaggaggagc gggggtgagg caagcagcag gggactggac
+     5221 ctgggaaggg ctgggcagca gagacgaccc gacccgctag aaggtggggt ggggagagca
+     5281 gctggactgg gatgtaagcc atagcaggac tccacgagtt gtcactatca tttatcgagc
+     5341 acctactggg tgtccccagt gtcctcagat ctccataact ggggagccag gggcagcgac
+     5401 acggtagcta gccgtcgatt ggagaacttt aaaatgagga ctgaattagc tcataaatgg
+     5461 aacacggcgc ttaactgtga ggttggagct tagaatgtga agggagaatg aggaatgcga
+     5521 gactgggact gagatggaac cggcggtggg gagggggtgg ggggatggaa tttgaacccc
+     5581 gggagaggaa gatggaattt tctatggagg ccgacctggg gatggggaga taagagaaga
+     5641 ccaggaggga gttaaatagg gaatgggttg ggggcggctt ggtaaatgtg ctgggattag
+     5701 gctgttgcag ataatgcaac aaggcttgga aggctaacct ggggtgaggc cgggttgggg
+     5761 ccgggctggg ggtgggagga gtcctcactg gcggttgatt gacagtttct ccttccccag
+     5821 actggccaat cacaggcagg aagatgaagg ttctgtgggc tgcgttgctg gtcacattcc
+     5881 tggcaggtat gggggcgggg cttgctcggt tccccccgct cctccccctc tcatcctcac
+     5941 ctcaacctcc tggccccatt caggcagacc ctgggccccc tcttctgagg cttctgtgct
+     6001 gcttcctggc tctgaacagc gatttgacgc tctctgggcc tcggtttccc ccatccttga
+     6061 gataggagtt agaagttgtt ttgttgttgt tgtttgttgt tgttgttttg tttttttgag
+     6121 atgaagtctc gctctgtcgc ccaggctgga gtgcagtggc gggatctcgg ctcactgcaa
+     6181 gctccgcctc ccaggtccac gccattctcc tgcctcagcc tcccaagtag ctgggactac
+     6241 aggcacatgc caccacaccc gactaacttt tttgtatttt cagtagagac ggggtttcac
+     6301 catgttggcc aggctggtct ggaactcctg acctcaggtg atctgcccgt ttcgatctcc
+     6361 caaagtgctg ggattacagg cgtgagccac cgcacctggc tgggagttag aggtttctaa
+     6421 tgcattgcag gcagatagtg aataccagac acggggcagc tgtgatcttt attctccatc
+     6481 acccccacac agccctgcct ggggcacaca aggacactca atacatgctt ttccgctggg
+     6541 cgcggtggct cacccctgta atcccagcac tttgggaggc caaggtggga ggatcacttg
+     6601 agcccaggag ttcaacacca gcctgggcaa catagtgaga ccctgtctct actaaaaata
+     6661 caaaaattag ccaggcatgg tgccacacac ctgtgctctc agctactcag gaggctgagg
+     6721 caggaggatc gcttgagccc agaaggtcaa ggttgcagtg aaccatgttc aggccgctgc
+     6781 actccagcct gggtgacaga gcaagaccct gtttataaat acataatgct ttccaagtga
+     6841 ttaaaccgac tcccccctca ccctgcccac catggctcca aagaagcatt tgtggagcac
+     6901 cttctgtgtg cccctaggta ctagatgcct ggacggggtc agaaggaccc tgacccacct
+     6961 tgaacttgtt ccacacagga tgccaggcca aggtggagca agcggtggag acagagccgg
+     7021 agcccgagct gcgccagcag accgagtggc agagcggcca gcgctgggaa ctggcactgg
+     7081 gtcgcttttg ggattacctg cgctgggtgc agacactgtc tgagcaggtg caggaggagc
+     7141 tgctcagctc ccaggtcacc caggaactga ggtgagtgtc cccatcctgg cccttgaccc
+     7201 tcctggtggg cggctatacc tccccaggtc caggtttcat tctgcccctg tcgctaagtc
+     7261 ttggggggcc tgggtctctg ctggttctag cttcctcttc ccatttctga ctcctggctt
+     7321 tagctctctg gaattctctc tctcagcttt gtctctctct cttcccttct gactcagtct
+     7381 ctcacactcg tcctggctct gtctctgtcc ttccctagct cttttatata gagacagaga
+     7441 gatggggtct cactgtgttg cccaggctgg tcttgaactt ctgggctcaa gcgatcctcc
+     7501 cgcctcggcc tcccaaagtg ctgggattag aggcatgagc caccttgccc ggcctcctag
+     7561 ctccttcttc gtctctgcct ctgccctctg catctgctct ctgcatctgt ctctgtctcc
+     7621 ttctctcggc ctctgccccg ttccttctct ccctcttggg tctctctggc tcatccccat
+     7681 ctcgcccgcc ccatcccagc ccttctcccc gcctcccact gtgcgacacc ctcccgccct
+     7741 ctcggccgca gggcgctgat ggacgagacc atgaaggagt tgaaggccta caaatcggaa
+     7801 ctggaggaac aactgacccc ggtggcggag gagacgcggg cacggctgtc caaggagctg
+     7861 caggcggcgc aggcccggct gggcgcggac atggaggacg tgtgcggccg cctggtgcag
+     7921 taccgcggcg aggtgcaggc catgctcggc cagagcaccg aggagctgcg ggtgcgcctc
+     7981 gcctcccacc tgcgcaagct gcgtaagcgg ctcctccgcg atgccgatga cctgcagaag
+     8041 cgcctggcag tgtaccaggc cggggcccgc gagggcgccg agcgcggcct cagcgccatc
+     8101 cgcgagcgcc tggggcccct ggtggaacag ggccgcgtgc gggccgccac tgtgggctcc
+     8161 ctggccggcc agccgctaca ggagcgggcc caggcctggg gcgagcggct gcgcgcgcgg
+     8221 atggaggaga tgggcagccg gacccgcgac cgcctggacg aggtgaagga gcaggtggcg
+     8281 gaggtgcgcg ccaagctgga ggagcaggcc cagcagatac gcctgcaggc cgaggccttc
+     8341 caggcccgcc tcaagagctg gttcgagccc ctggtggaag acatgcagcg ccagtgggcc
+     8401 gggctggtgg agaaggtgca ggctgccgtg ggcaccagcg ccgcccctgt gcccagcgac
+     8461 aatcactgaa cgccgaagcc tgcagccatg cgaccccacg ccaccccgtg cctcctgcct
+     8521 ccgcgcagcc tgcagcggga gaccctgtcc ccgccccagc cgtcctcctg gggtggaccc
+     8581 tagtttaata aagattcacc aagtttcacg catctgctgg cctccccctg tgatttcctc
+     8641 taagccccag cctcagtttc tctttctgcc cacatactgg ccacacaatt ctcagccccc
+     8701 tcctctccat ctgtgtctgt gtgtatcttt ctctctgccc tttttttttt ttttagacgg
+     8761 agtctggctc tgtcacccag gctagagtgc agtggcacga tcttggctca ctgcaacctc
+     8821 tgcctcttgg gttcaagcga ttctgctgcc tcagtagctg ggattacagg ctcacaccac
+     8881 cacacccggc taatttttgt atttttagta gagacgagct ttcaccatgt tggccaggca
+     8941 ggtctcaaac tcctgaccaa gtgatccacc cgccggcctc ccaaagtgct gagattacag
+     9001 gcctgagcca ccatgcccgg cctctgcccc tctttctttt ttagggggca gggaaaggtc
+     9061 tcaccctgtc acccgccatc acagctcact gcagcctcca cctcctggac tcaagtgata
+     9121 agtgatcctc ccgcctcagc ctttccagta gctgagacta caggcgcata ccactaggat
+     9181 taatttgggg gggggggtgg tgtgtgtgga gatggggtct ggctttgttg gccaggctga
+     9241 tgtggaattc ctgggctcaa gcgatactcc caccttggcc tcctgagtag ctgagactac
+     9301 tggctagcac caccacaccc agctttttat tattatttgt agagacaagg tctcaatatg
+     9361 ttgcccaggc tagtctcaaa cccctgggct caagagatcc tccgccatcg gcctcccaaa
+     9421 gtgctgggat tccaggcatg gggctccgag cccggcctgc ccaacttaat aatacttgtt
+     9481 cctcagagtt gcaactccaa atgacctgag attggtgcct ttattctaag ctattttcat
+     9541 tttttttctg ctgtcattat tctccccctt ctctcctcca gtcttatctg atatctgcct
+     9601 ccttcccacc caccctgcac cccatcccac ccctctgtct ctccctgttc tcctcaggag
+     9661 actctggctt cctgttttcc tccacttcta tcttttatct ctccctccta cggtttcttt
+     9721 tctttctccc cggcctgctt gtttctcccc caaccccctt catctggatt tcttcttctg
+     9781 ccattcagtt tggtttgagc tctctgcttc tccggttccc tctgagctag ctgtcccttc
+     9841 acccactgtg aactgggttt ccctgcccaa ccctcattct ctttctttct ttcttttttt
+     9901 tttttttttt tttttttttt ttttgagaca gagtcttgct ctgttgccca gcctggagtg
+     9961 cagtggtgca atcttggttc actgcaacct ccacttccca gattcaagca attctcctgc
+    10021 ctcagcctcc agagtagctg ggattacagg cgtgtcccac cacacccgac taatttttgt
+    10081 atttttggta gagacaaggc ttcggcattg ttggccaggc aggtctcgaa ctcctgacct
+    10141 caagtaatct gcctgcctca ccctcccaaa gtgctgggat tacaggcatg agccacctca
+    10201 cccggaccat ccctcattct ccatcctttc ctccagttgt gatgtctacc cctcatgttt
+    10261 cccaacaagc ctactgggtg ctgaatccag gctgggaaga gaagggagcg gctcttctgt
+    10321 cggagtctgc accaggccca tgctgagacg agagctggcg ctcagagagg ggaagcttgg
+    10381 atggaagccc aggagccgcc ggcactctct tctcctccca ccccctcagt tctcagagac
+    10441 ggggaggagg gttcccacca acgggggaca ggctgagact tgagcttgta tctcctgggc
+    10501 cagctgcaac atctgcttgt ccctctgccc atcttggctc ctgcacaccc tgaacttggt
+    10561 gctttccctg gcactgctct gatcacccac gtggaggcag cacccctccc ct
+//
+
