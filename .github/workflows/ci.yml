@@ -1,0 +1,38 @@
+name: Codon Torus & Syntax Invariant Verification CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  verify-invariants:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Scientific Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy matplotlib
+
+      - name: Compile Python Verification Suites (Syntax Check)
+        run: |
+          python -m py_compile super_codon_proof_v14_8.py
+          python -m py_compile codon_torus_real_audit_v3_bnt162b2.py
+
+      - name: Run v14.8 Genetic Code (8 Tables), 32 Mirror Pairs & Splicing Self-Test
+        run: |
+          python super_codon_proof_v14_8.py --self-test
+
+      - name: Run v3.5 Double-Stranded Codon Torus & Chain-Rule Exact Identity Self-Test
+        run: |
+          python -c "import codon_torus_real_audit_v3_bnt162b2 as ct; res = ct.self_test_torus_theorems(); print('TORUS INVARIANTS VERIFIED:', res); assert res['zero_random_generators_used'] is True"
