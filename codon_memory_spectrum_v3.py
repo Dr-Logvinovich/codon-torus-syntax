@@ -17,7 +17,7 @@ CHANGELOG v2.4 -> v3.0
   Supports both v3.0 and legacy v2.4 JSON payloads seamlessly.
 
 [BIO-100] Expanded curated cellular biosphere catalog from 54 to 100 RefSeq
-  species (--biosphere-100) spanning 12 taxonomic clades and FIVE distinct NCBI
+  species (--biosphere-100) spanning 13 taxonomic clades and FIVE distinct NCBI
   translation tables (Tables 1, 4, 6, 11, 12):
     * Table 4 (TGA->W, q_s=62, 3721 df): M. mycoides, M. pneumoniae, M. genitalium
     * Table 6 (TAA/TAG->Q, q_s=63, 3844 df, 2 duplex quartets): Tetrahymena, Paramecium
@@ -507,7 +507,7 @@ def assign_split(gids, pct=80, min_frac=0.10, collapse_ratio=0.5, min_roots=20):
                   "train_fraction": (n_tr / n) if n else None}
 
 
-def parse_cds(path, max_genes=0, trim=True, default_table=1, min_codons=8, gene_order="hash"):
+def parse_cds(path, max_genes=0, trim=True, default_table=1, min_codons=8, gene_order="hash", return_meta=False):
     """[FIX-28/29] record-own transl_table; kept counters summed AFTER the slice."""
     raw, tables = [], {}
     stats = dict(n_records=0, rej_nonacgt=0, rej_frame=0, rej_short=0,
@@ -547,7 +547,9 @@ def parse_cds(path, max_genes=0, trim=True, default_table=1, min_codons=8, gene_
             stats["rej_short"] += 1
             return
         tables[tb] = tables.get(tb, 0) + 1
-        raw.append((extract_gene_id(h), tb, cd, atg, stp))
+        m_p = re.search(r"\[protein=([^\]]+)\]", h)
+        pdesc = m_p.group(1).strip() if m_p else ""
+        raw.append((extract_gene_id(h), tb, cd, atg, stp, pdesc))
 
     with gzip.open(path, "rt", encoding="utf-8", errors="ignore") as f:
         for line in f:
@@ -562,23 +564,23 @@ def parse_cds(path, max_genes=0, trim=True, default_table=1, min_codons=8, gene_
         flush(hdr, buf)
 
     if not raw:
-        return [], default_table, stats
+        return ([], default_table, stats, {}) if return_meta else ([], default_table, stats)
     dom = max(tables.items(), key=lambda kv: kv[1])[0]
     stop_ids = np.flatnonzero(aa_cache[dom] == STOP)
     best = {}
-    for gid, tb, cd, atg, stp in raw:
+    for gid, tb, cd, atg, stp, pdesc in raw:
         if tb != dom:
             stats["rej_mixed_table"] += 1
             continue
         if gid not in best or cd.size > best[gid][2].size:
-            best[gid] = (gid, tb, cd, atg, stp)
+            best[gid] = (gid, tb, cd, atg, stp, pdesc)
     recs4 = []
-    for gid, tb, cd, atg, stp in best.values():
+    for gid, tb, cd, atg, stp, pdesc in best.values():
         region = cd if trim else (cd[1:-1] if cd.size >= 2 else cd)
         if stop_ids.size and np.isin(region, stop_ids).any():
             stats["rej_internal_stop"] += 1
             continue
-        recs4.append((gid, cd, atg, stp))
+        recs4.append((gid, cd, atg, stp, pdesc))
     if max_genes and max_genes > 0 and len(recs4) > max_genes:
         if gene_order == "hash":
             recs4.sort(key=lambda r: (hashlib.sha256(r[0].encode("utf-8")).hexdigest(), r[0]))
@@ -590,12 +592,15 @@ def parse_cds(path, max_genes=0, trim=True, default_table=1, min_codons=8, gene_
     stats["n_atg_start_kept"] = int(sum(int(r[2]) for r in recs4))
     stats["n_stop_end_kept"] = int(sum(int(r[3]) for r in recs4))
     recs = [(r[0], r[1]) for r in recs4]
+    meta_map = {r[0]: {"protein": r[4]} for r in recs4}
     stats["kept"] = len(recs)
     if recs:
         ln = np.array([cd.size for _, cd in recs])
         stats["n_codons_kept"] = int(ln.sum())
         stats["max_gene_codons"] = int(ln.max())
         stats["median_gene_codons"] = int(np.median(ln))
+    if return_meta:
+        return recs, dom, stats, meta_map
     return recs, dom, stats
 
 
@@ -4155,6 +4160,1100 @@ def self_test_v30(ensG=None, aa1=None):
     ok["v30_all_passed"] = True
     return ok
 
+# =====================================================================
+# 16f. THEOREM AE (v3.2) — ORTHOGONAL TORUS FUNCTIONAL DECODER
+#      Maps orthogonal channels (W_++, W_+-, W_-+, W_--, Bridge, NonBridge)
+#      onto biological functions: Expression (rCAI/ENC), Functional Modules,
+#      5' Ribosomal Ramp & Folding Boundaries, Chromatin 10.5-bp Periodicity,
+#      Synonymous Bit-Budget (Encryption Capacity), and Channel Codebooks.
+#      100% ZERO RNG, self-calibrating from cached NCBI RefSeq CDS archives.
+# =====================================================================
+KD_SCALE = {
+    "I": 4.5, "V": 4.2, "L": 3.8, "F": 2.8, "C": 2.5, "M": 1.9, "A": 1.8,
+    "G": -0.4, "T": -0.7, "S": -0.8, "W": -0.9, "Y": -1.3, "P": -1.6,
+    "H": -3.2, "E": -3.5, "Q": -3.5, "D": -3.5, "N": -3.5, "K": -3.9,
+    "R": -4.5, "*": 0.0,
+}
+TOP_IDP_SCALE = {
+    "W": -0.884, "F": -0.697, "Y": -0.510, "I": -0.486, "M": -0.397,
+    "L": -0.326, "V": -0.121, "N": 0.007, "C": 0.020, "T": 0.059,
+    "A": 0.060, "G": 0.166, "R": 0.180, "D": 0.192, "H": 0.303,
+    "Q": 0.318, "K": 0.586, "S": 0.341, "E": 0.736, "P": 0.987, "*": 0.0,
+}
+KD_ARR = np.array([KD_SCALE[ch] for ch in AA_STRING], dtype=np.float64)
+IDP_ARR = np.array([TOP_IDP_SCALE[ch] for ch in AA_STRING], dtype=np.float64)
+
+_FUNC_PATTERNS = {
+    "Ribosomal_Translation": re.compile(
+        r"(ribosomal\s+(protein|subunit)|translation\s+(initiation|elongation)|"
+        r"elongation\s+factor|eif\d|eef\d|\brpl\d|\brps\d|\brpm[a-z])", re.I),
+    "Chromatin_Histone": re.compile(
+        r"(histone|chromatin|nucleosome|swi/snf|helicase\s+chd|topoisomerase|"
+        r"condensin|cohesin|centromere|telomer|methyltransferase\s+kmt|polycomb|hp1)", re.I),
+    "TF_ZincFinger": re.compile(
+        r"(zinc\s+finger|transcription\s+factor|homeobox|forkhead|bzip|"
+        r"helix-loop-helix|dna-binding\s+protein|transcriptional\s+regulator|\bznf\d|\bzfp\d)", re.I),
+    "Membrane_Transporter": re.compile(
+        r"(transmembrane|transporter|permease|ion\s+channel|potassium\s+channel|"
+        r"sodium\s+channel|calcium\s+channel|g-protein\s+coupled|olfactory\s+receptor|"
+        r"solute\s+carrier|abc\s+transporter|porin|integral\s+membrane|receptor)", re.I),
+    "Metabolic_Enzyme": re.compile(
+        r"(dehydrogenase|synthase|synthetase|oxidoreductase|transferase|"
+        r"hydrolase|isomerase|ligase|aldolase|enolase|pyruvate\s+kinase|atpase)", re.I),
+    "Cytoskeleton_Structural": re.compile(
+        r"(actin|tubulin|myosin|collagen|keratin|dynein|kinesin|vimentin|"
+        r"spectrin|tropomyosin|flagellin|pilin|fibrillin)", re.I),
+    "Chaperone_Stress": re.compile(
+        r"(heat\s+shock|chaperon|groel|groes|dnak|dnaj|hsp\d|proteasome|"
+        r"ubiquitin|clpb|clpx|peptidyl-prolyl)", re.I),
+}
+AE_CHANNELS = ("L_total", "W_pp", "W_pm", "W_mp", "W_mm", "Bridge", "NonBridge")
+AE_ORTH_CHANNELS = ("W_pp", "W_pm", "W_mp", "W_mm", "Bridge", "NonBridge")
+
+
+def extract_protein_desc(hdr):
+    m = re.search(r"\[protein=([^\]]+)\]", hdr)
+    return m.group(1).strip() if m else ""
+
+
+def classify_gene_modules(gid, prot_desc, prot_seq):
+    txt = f"{gid} {prot_desc}"
+    mods = []
+    for name, pat in _FUNC_PATTERNS.items():
+        if pat.search(txt):
+            mods.append(name)
+    if "TF_ZincFinger" not in mods and len(_ZNF_C2H2_RE.findall(prot_seq)) >= 2:
+        mods.append("TF_ZincFinger")
+    if "Cytoskeleton_Structural" not in mods and _COLLAGEN_RE.search(prot_seq):
+        mods.append("Cytoskeleton_Structural")
+    return mods
+
+
+def build_orthogonal_channel_operators(train_cd, alpha=0.5):
+    """[THM-AE.1] Isochore-free training PMI operator L = log(P_tr / Q_tr)
+    split orthogonally under Klein V_4 (W_++ + W_+- + W_-+ + W_--) and
+    under the 16x16 dinucleotide screen (Bridge + NonBridge)."""
+    Btr = lag_counts(train_cd, NC, 1)
+    Etr = het_expected_counts(train_cd, NC, 1)
+    N = float(Btr.sum())
+    if N <= 0:
+        return None
+    P = (Btr + alpha) / (N + NC * NC * alpha)
+    Q = (Etr + alpha) / (N + NC * NC * alpha)
+    L = np.log(np.maximum(P, TINY) / np.maximum(Q, TINY))
+    TP = L.T
+    RP = L.T[np.ix_(MIRROR, MIRROR)]
+    SP = L[np.ix_(MIRROR, MIRROR)]
+    L_pp = 0.25 * (L + TP + RP + SP)
+    L_pm = 0.25 * (L + TP - RP - SP)
+    L_mp = 0.25 * (L - TP + RP - SP)
+    L_mm = 0.25 * (L - TP - RP + SP)
+    DS = _layer_avg_matrix(SUF16, 16)
+    DO = _layer_avg_matrix(OUT16, 16)
+    L_br = DS @ L @ DO
+    L_nb = L - L_br
+    ops = {
+        "L_total": L, "W_pp": L_pp, "W_pm": L_pm, "W_mp": L_mp, "W_mm": L_mm,
+        "Bridge": L_br, "NonBridge": L_nb,
+    }
+    ops["diags"] = {k: np.diag(ops[k]).copy() for k in AE_CHANNELS}
+    ops["norms_sq"] = {k: float(np.sum(ops[k] * ops[k])) for k in AE_CHANNELS}
+    ops["v4_recon_err"] = float(np.max(np.abs((L_pp + L_pm + L_mp + L_mm) - L)))
+    ops["screen_orth_err"] = abs(float(np.sum(L_br * L_nb)))
+    return ops
+
+
+def gene_h6_expected_matrix(cd, aa):
+    """Exact 64x64 expected lag-1 pair matrix under uniform synonymous shuffle of one gene."""
+    lay = aa[cd]
+    Na = np.bincount(lay, minlength=NAA).astype(np.float64)
+    Maa = np.bincount(lay[:-1] * NAA + lay[1:], minlength=NAA * NAA).reshape(NAA, NAA).astype(np.float64)
+    U = np.zeros((NAA, NC), dtype=np.float64)
+    np.add.at(U, (lay, cd), 1.0)
+    nz = Na > 0
+    U[nz] /= Na[nz, None]
+    M_eff = Maa.copy()
+    dg_corr = np.zeros(NC, dtype=np.float64)
+    for a in range(NAA):
+        if Maa[a, a] > 0:
+            if Na[a] >= 2:
+                M_eff[a, a] = Maa[a, a] * (Na[a] / (Na[a] - 1.0))
+                dg_corr += (Maa[a, a] / (Na[a] - 1.0)) * U[a]
+            else:
+                M_eff[a, a] = 0.0
+    E = U.T @ M_eff @ U
+    E[np.arange(NC), np.arange(NC)] -= dg_corr
+    return E
+
+
+def score_gene_orthogonal_channels(cd, ops, aa):
+    """[THM-AE.1] Exact per-gene orthogonal scores: raw, intra (minus Q_g), syn (minus exact H6)."""
+    n = int(cd.size)
+    if n < 2:
+        return None
+    nt = float(n - 1)
+    c = np.bincount(cd, minlength=NC).astype(np.float64)
+    denom = float(n * (n - 1))
+    Eh6 = gene_h6_expected_matrix(cd, aa) / nt
+    out = {}
+    for ch in AE_CHANNELS:
+        M = ops[ch]
+        dg = ops["diags"][ch]
+        raw = float(np.sum(M[cd[:-1], cd[1:]])) / nt
+        null_het = (float(c @ M @ c) - float(np.dot(c, dg))) / denom
+        null_h6 = float(np.sum(Eh6 * M))
+        out[ch] = {"raw": raw, "het": null_het, "intra": raw - null_het, "syn": raw - null_h6}
+    return out
+
+
+def build_ribosomal_cai_weights(train_cd, train_gids, gene_meta, aa):
+    """Self-calibrating Sharp & Li (1987) CAI weights from species ribosomal proteins
+    (fallback: top-10% biased genes if <8 ribosomal proteins annotated)."""
+    fibs = fibers_of(aa)
+    rib_seqs = []
+    for gid, cd in zip(train_gids, train_cd):
+        desc = (gene_meta.get(gid) or {}).get("protein", "")
+        if _FUNC_PATTERNS["Ribosomal_Translation"].search(f"{gid} {desc}"):
+            rib_seqs.append(cd)
+    source = "ribosomal_proteins"
+    if len(rib_seqs) < 8:
+        source = "top10pct_syn_bias_fallback"
+        ent_list = []
+        for cd in train_cd:
+            if cd.size < 40:
+                continue
+            cnt = np.bincount(cd, minlength=NC).astype(np.float64)
+            h = 0.0
+            for a, fa in enumerate(fibs):
+                if a == STOP or fa.size <= 1:
+                    continue
+                na = float(cnt[fa].sum())
+                if na > 0:
+                    p = cnt[fa] / na
+                    m = p > 0
+                    h -= (na / cd.size) * float(np.sum(p[m] * np.log(p[m]))) / math.log(fa.size)
+            ent_list.append((h, cd))
+        ent_list.sort(key=lambda x: x[0])
+        rib_seqs = [cd for _, cd in ent_list[:max(10, len(ent_list) // 10)]]
+    cnt = np.zeros(NC, dtype=np.float64) + 0.5
+    for cd in rib_seqs:
+        cnt += np.bincount(cd, minlength=NC)
+    w = np.ones(NC, dtype=np.float64)
+    for a, fa in enumerate(fibs):
+        if a == STOP or fa.size <= 1:
+            continue
+        mx = float(cnt[fa].max())
+        w[fa] = cnt[fa] / max(mx, TINY)
+    return np.log(np.maximum(w, TINY)), {"source": source, "n_ref_genes": len(rib_seqs)}
+
+
+def compute_gene_biophysics(cd, aa, log_cai_w):
+    """Exact deterministic biophysical features for one CDS (zero RNG)."""
+    n = int(cd.size)
+    aaseq = aa[cd]
+    gc3 = float(np.mean(IS_GC3[cd]))
+    log_len = math.log(max(n, 1))
+    fib_sizes = np.bincount(aa, minlength=NAA)[aaseq]
+    multi = (aaseq != STOP) & (fib_sizes > 1)
+    rcai = math.exp(float(np.mean(log_cai_w[cd[multi]]))) if np.any(multi) else float("nan")
+    cnt = np.bincount(cd, minlength=NC).astype(np.float64)
+    h_norm_num = 0.0
+    h_norm_den = 0.0
+    for a in range(NAA):
+        if a == STOP:
+            continue
+        fa = np.flatnonzero(aa == a)
+        if fa.size <= 1:
+            continue
+        na = float(cnt[fa].sum())
+        if na >= 2.0:
+            p = cnt[fa] / na
+            m = p > 0
+            h_norm_num += na * (-float(np.sum(p[m] * np.log(p[m]))) / math.log(fa.size))
+            h_norm_den += na
+    syn_ent_norm = (h_norm_num / h_norm_den) if h_norm_den > 0 else float("nan")
+    kd = KD_ARR[aaseq]
+    mean_kd = float(np.mean(kd))
+    n_tm = 0
+    if n >= 19:
+        cs = np.concatenate([[0.0], np.cumsum(kd)])
+        win = (cs[19:] - cs[:-19]) / 19.0
+        i = 0
+        while i < win.size:
+            if win[i] >= 1.6:
+                n_tm += 1
+                i += 19
+            else:
+                i += 1
+    idp = float(np.mean(IDP_ARR[aaseq]))
+    return {"gc3": gc3, "log_len": log_len, "rcai": rcai,
+            "syn_ent_norm": syn_ent_norm, "mean_kd": mean_kd,
+            "n_tm_helices": float(n_tm), "idp_score": idp}
+
+
+def _ranks_deterministic(x):
+    x = np.asarray(x, dtype=np.float64)
+    order = np.argsort(x, kind="mergesort")
+    r = np.empty_like(x, dtype=np.float64)
+    s = x[order]
+    n = x.size
+    i = 0
+    while i < n:
+        j = i
+        while j + 1 < n and s[j + 1] == s[i]:
+            j += 1
+        r[order[i:j + 1]] = 0.5 * (i + j) + 1.0
+        i = j + 1
+    return r
+
+
+def partial_spearman(x, y, covars=None):
+    """Exact deterministic partial Spearman correlation controlling for covars (e.g. GC3, log_len)."""
+    x = np.asarray(x, dtype=np.float64)
+    y = np.asarray(y, dtype=np.float64)
+    ok = np.isfinite(x) & np.isfinite(y)
+    if covars is not None and len(covars) > 0:
+        C = np.column_stack([np.asarray(c, dtype=np.float64) for c in covars])
+        ok &= np.all(np.isfinite(C), axis=1)
+        C = C[ok]
+    else:
+        C = None
+    x, y = x[ok], y[ok]
+    n = int(x.size)
+    if n < 12 or np.std(x) < 1e-15 or np.std(y) < 1e-15:
+        return {"r": None, "t": None, "n": n}
+    rx, ry = _ranks_deterministic(x), _ranks_deterministic(y)
+    if C is not None and C.shape[1] > 0:
+        RC = np.column_stack([np.ones(n)] + [_ranks_deterministic(C[:, j]) for j in range(C.shape[1])])
+        bx, *_ = np.linalg.lstsq(RC, rx, rcond=None)
+        by, *_ = np.linalg.lstsq(RC, ry, rcond=None)
+        rx = rx - RC @ bx
+        ry = ry - RC @ by
+        df = n - 2 - C.shape[1]
+    else:
+        df = n - 2
+    if df <= 1 or np.std(rx) < 1e-15 or np.std(ry) < 1e-15:
+        return {"r": None, "t": None, "n": n}
+    r = max(-1.0, min(1.0, float(np.corrcoef(rx, ry)[0, 1])))
+    t = float(r * math.sqrt(df / max(1.0 - r * r, 1e-30)))
+    return {"r": r, "t": t, "n": n}
+
+
+def _residualize_ols(y, covars):
+    y = np.asarray(y, dtype=np.float64)
+    C = np.column_stack([np.ones(y.size)] + [np.asarray(c, dtype=np.float64) for c in covars])
+    ok = np.isfinite(y) & np.all(np.isfinite(C), axis=1)
+    out = np.full_like(y, np.nan)
+    if int(ok.sum()) <= C.shape[1] + 2:
+        return out
+    beta, *_ = np.linalg.lstsq(C[ok], y[ok], rcond=None)
+    out[ok] = y[ok] - C[ok] @ beta
+    return out
+
+
+def _welch_t_d(a, b):
+    a = np.asarray(a, dtype=np.float64); a = a[np.isfinite(a)]
+    b = np.asarray(b, dtype=np.float64); b = b[np.isfinite(b)]
+    if a.size < 5 or b.size < 5:
+        return {"n_in": int(a.size), "n_out": int(b.size), "diff": None, "t": None, "d": None}
+    ma, mb = float(a.mean()), float(b.mean())
+    va, vb = float(a.var(ddof=1)), float(b.var(ddof=1))
+    se = math.sqrt(va / a.size + vb / b.size)
+    sp = math.sqrt(((a.size - 1) * va + (b.size - 1) * vb) / max(a.size + b.size - 2, 1))
+    return {"n_in": int(a.size), "n_out": int(b.size),
+            "diff": ma - mb,
+            "t": ((ma - mb) / se) if se > 1e-18 else None,
+            "d": ((ma - mb) / sp) if sp > 1e-18 else None}
+
+
+def _gene_pos_h6_prep(cd, aa):
+    lay = aa[cd]
+    Na = np.bincount(lay, minlength=NAA).astype(np.float64)
+    U = np.zeros((NAA, NC), dtype=np.float64)
+    np.add.at(U, (lay, cd), 1.0)
+    nz = Na > 0
+    U[nz] /= Na[nz, None]
+    return lay, Na, U
+
+
+def gene_positionwise_h6_baseline(lay, Na, U, M, dg):
+    """Exact E_H6[M_{C_t, C_{t+1}} | A_t, A_{t+1}] at every transition t (zero RNG)."""
+    W = U @ M @ U.T
+    d_aa = U @ dg
+    W_eff = W.copy()
+    for a in range(NAA):
+        if Na[a] >= 2.0:
+            W_eff[a, a] = (Na[a] / (Na[a] - 1.0)) * W[a, a] - d_aa[a] / (Na[a] - 1.0)
+        elif Na[a] == 1.0:
+            W_eff[a, a] = 0.0
+    return W_eff[lay[:-1], lay[1:]]
+
+
+def _seg_h6_prep(seg, aa):
+    lay = aa[seg]
+    Na = np.bincount(lay, minlength=NAA).astype(np.float64)
+    Maa = np.bincount(lay[:-1] * NAA + lay[1:], minlength=NAA * NAA).reshape(NAA, NAA).astype(np.float64)
+    U = np.zeros((NAA, NC), dtype=np.float64)
+    np.add.at(U, (lay, seg), 1.0)
+    nz = Na > 0
+    U[nz] /= Na[nz, None]
+    M_eff = Maa.copy()
+    dg_corr = np.zeros(NC, dtype=np.float64)
+    for a in np.flatnonzero(nz):
+        if Maa[a, a] > 0:
+            if Na[a] >= 2.0:
+                M_eff[a, a] = Maa[a, a] * (Na[a] / (Na[a] - 1.0))
+                dg_corr += (Maa[a, a] / (Na[a] - 1.0)) * U[a]
+            else:
+                M_eff[a, a] = 0.0
+    E_loc = U.T @ M_eff @ U
+    E_loc[np.arange(NC), np.arange(NC)] -= dg_corr
+    return E_loc
+
+
+def positional_ramp_and_folding_audit(test_cd, ops, aa, ramp_len=30):
+    """[THM-AE.4] Exact 5' Ribosomal Exit-Tunnel Ramp (0..29) vs Body vs 3' Tail
+    AND Co-Translational Folding Domain Boundaries vs Hydrophobic Cores,
+    computed BOTH raw and with EXACT position-wise H6 synonymous subtraction
+    (completely removing signal-peptide / hydrophobic AA composition confounds)."""
+    ramp_diffs = {ch: [] for ch in AE_ORTH_CHANNELS}
+    tail_diffs = {ch: [] for ch in AE_ORTH_CHANNELS}
+    bnd_diffs = {ch: [] for ch in AE_ORTH_CHANNELS}
+    surf_diffs = {ch: [] for ch in AE_ORTH_CHANNELS}
+    ramp_syn = {ch: [] for ch in AE_ORTH_CHANNELS}
+    ramp_loc_syn = {ch: [] for ch in AE_ORTH_CHANNELS}
+    ramp_vs_tail_loc = {ch: [] for ch in AE_ORTH_CHANNELS}
+    tail_syn = {ch: [] for ch in AE_ORTH_CHANNELS}
+    bnd_syn = {ch: [] for ch in AE_ORTH_CHANNELS}
+    surf_syn = {ch: [] for ch in AE_ORTH_CHANNELS}
+    n_ramp_genes = 0
+    n_fold_genes = 0
+    for cd in test_cd:
+        n = int(cd.size)
+        if n < 3 * ramp_len + 10:
+            continue
+        n_ramp_genes += 1
+        x, y = cd[:-1], cd[1:]
+        lay, Na, U = _gene_pos_h6_prep(cd, aa)
+        kd = KD_ARR[lay]
+        cs = np.concatenate([[0.0], np.cumsum(kd)])
+        h11 = (cs[11:] - cs[:-11]) / 11.0
+        has_fold = n >= 40
+        if has_fold:
+            t_idx = np.arange(13, n - 14)
+            h_mid = h11[t_idx - 5]
+            grad = np.abs(h11[t_idx - 5 + 8] - h11[t_idx - 5 - 8])
+            m_bnd = grad >= 1.2
+            m_core = (~m_bnd) & (h_mid >= 0.8)
+            m_surf = (~m_bnd) & (h_mid <= -0.8)
+            ok_bc = int(m_bnd.sum()) >= 5 and int(m_core.sum()) >= 5
+            ok_sc = int(m_surf.sum()) >= 5 and int(m_core.sum()) >= 5
+            if ok_bc or ok_sc:
+                n_fold_genes += 1
+        else:
+            ok_bc = ok_sc = False
+        seg_r = cd[:ramp_len + 1]
+        seg_tl = cd[-(ramp_len + 1):]
+        E_loc_r = _seg_h6_prep(seg_r, aa) / float(ramp_len)
+        E_loc_tl = _seg_h6_prep(seg_tl, aa) / float(ramp_len)
+        # Exact length-matched non-overlapping ramp_len-codon tiles inside body (zero finite-window bias!)
+        n_tiles = (n - 2 * ramp_len) // ramp_len
+        E_acc = np.zeros((NC, NC), dtype=np.float64)
+        for j_t in range(n_tiles):
+            st_t = ramp_len + j_t * ramp_len
+            E_acc += _seg_h6_prep(cd[st_t:st_t + ramp_len + 1], aa)
+        E_loc_b_tiled = E_acc / float(n_tiles * ramp_len)
+        b_tile_end = ramp_len + n_tiles * ramp_len
+        for ch in AE_ORTH_CHANNELS:
+            M = ops[ch]
+            tr = M[x, y]
+            tr_s = tr - gene_positionwise_h6_baseline(lay, Na, U, M, ops["diags"][ch])
+            r_raw = float(np.mean(tr[:ramp_len]))
+            b_raw = float(np.mean(tr[ramp_len:-ramp_len]))
+            tl_raw = float(np.mean(tr[-ramp_len:]))
+            ramp_diffs[ch].append(r_raw - b_raw)
+            tail_diffs[ch].append(tl_raw - b_raw)
+            ramp_syn[ch].append(float(np.mean(tr_s[:ramp_len]) - np.mean(tr_s[ramp_len:-ramp_len])))
+            tail_syn[ch].append(float(np.mean(tr_s[-ramp_len:]) - np.mean(tr_s[ramp_len:-ramp_len])))
+            r_loc = r_raw - float(np.sum(E_loc_r * M))
+            b_loc_tiled = float(np.mean(tr[ramp_len:b_tile_end])) - float(np.sum(E_loc_b_tiled * M))
+            tl_loc = tl_raw - float(np.sum(E_loc_tl * M))
+            ramp_loc_syn[ch].append(r_loc - b_loc_tiled)
+            ramp_vs_tail_loc[ch].append(r_loc - tl_loc)
+            if ok_bc:
+                tr_f, tr_fs = tr[t_idx], tr_s[t_idx]
+                bnd_diffs[ch].append(float(np.mean(tr_f[m_bnd]) - np.mean(tr_f[m_core])))
+                bnd_syn[ch].append(float(np.mean(tr_fs[m_bnd]) - np.mean(tr_fs[m_core])))
+            if ok_sc:
+                tr_f, tr_fs = tr[t_idx], tr_s[t_idx]
+                surf_diffs[ch].append(float(np.mean(tr_f[m_surf]) - np.mean(tr_f[m_core])))
+                surf_syn[ch].append(float(np.mean(tr_fs[m_surf]) - np.mean(tr_fs[m_core])))
+
+    def _summ(dct):
+        res = {}
+        for ch, vals in dct.items():
+            arr = np.asarray(vals, dtype=np.float64)
+            if arr.size < 10:
+                res[ch] = {"n": int(arr.size), "mean_diff": None, "t": None}
+            else:
+                m, se, t, _ = _tstat(arr)
+                res[ch] = {"n": int(arr.size), "mean_diff": m, "se": se, "t": t}
+        return res
+
+    return {
+        "ramp_codons": int(ramp_len),
+        "n_ramp_genes": int(n_ramp_genes),
+        "n_fold_genes": int(n_fold_genes),
+        "ramp_minus_body": _summ(ramp_diffs),
+        "tail_minus_body": _summ(tail_diffs),
+        "folding_boundary_minus_core": _summ(bnd_diffs),
+        "surface_minus_core": _summ(surf_diffs),
+        "ramp_minus_body_syn": _summ(ramp_syn),
+        "ramp_local_h6_syn": _summ(ramp_loc_syn),
+        "ramp_vs_tail_local_h6_syn": _summ(ramp_vs_tail_loc),
+        "tail_minus_body_syn": _summ(tail_syn),
+        "folding_boundary_minus_core_syn": _summ(bnd_syn),
+        "surface_minus_core_syn": _summ(surf_syn),
+    }
+
+
+def nucleosome_10_5bp_audit(test_cd, max_lag_nt=150, aa=None):
+    """[THM-AE.5] Exact frame-mean-subtracted WW/SS (GC/AT) autocorrelation over
+    1 full 147-bp nucleosome core particle (lags up to 150 nt), separated into:
+      (1) wobble_aa_centered (GC3 centered per amino acid -> immune to alpha-helix 10.8-nt!),
+      (2) wobble_pos3 (global-centered 3rd position),
+      (3) core_pos12 (positions 1+2 -> alpha-helix 3.6-aa = 10.8-nt control),
+      (4) full_nt (all 3 positions, frame-mean subtracted)."""
+    if aa is None:
+        aa = AA_TABLE1
+    cnt = np.zeros(3, dtype=np.float64)
+    gc_s = np.zeros(3, dtype=np.float64)
+    cnt_aa = np.zeros(NAA, dtype=np.float64)
+    gc3_aa = np.zeros(NAA, dtype=np.float64)
+    for s in test_cd:
+        if s.size * 3 <= max_lag_nt + 6:
+            continue
+        cnt += float(s.size)
+        gc_s[0] += float(np.sum((C_N1[s] == 1) | (C_N1[s] == 2)))
+        gc_s[1] += float(np.sum((C_N2[s] == 1) | (C_N2[s] == 2)))
+        gc_s[2] += float(np.sum((C_N3[s] == 1) | (C_N3[s] == 2)))
+        a_s = aa[s]
+        cnt_aa += np.bincount(a_s, minlength=NAA)
+        gc3_aa += np.bincount(a_s, weights=IS_GC3[s].astype(np.float64), minlength=NAA)
+    if cnt[0] <= 0:
+        return None
+    mu = gc_s / cnt
+    mu_aa = np.where(cnt_aa > 0, gc3_aa / np.maximum(cnt_aa, 1.0), 0.5)
+    fib_sz = np.bincount(aa, minlength=NAA)
+    is_multi = (aa != STOP) & (fib_sz[aa] > 1)
+
+    def _run_stream(mode):
+        num = np.zeros(max_lag_nt, dtype=np.float64)
+        den = np.zeros(max_lag_nt, dtype=np.float64)
+        vsum = vcnt = 0.0
+        for s in test_cd:
+            n = int(s.size)
+            if n * 3 <= max_lag_nt + 6:
+                continue
+            if mode == "wobble_aa_centered":
+                m = is_multi[s].astype(np.float64)
+                g = (IS_GC3[s].astype(np.float64) - mu_aa[aa[s]]) * m
+                vsum += float(np.dot(g, g))
+                vcnt += float(np.sum(m))
+                for k in range(1, max_lag_nt // 3 + 1):
+                    d = 3 * k
+                    num[d - 1] += float(np.dot(g[:-k], g[k:]))
+                    den[d - 1] += float(np.dot(m[:-k], m[k:]))
+                continue
+            g0 = ((C_N1[s] == 1) | (C_N1[s] == 2)).astype(np.float64) - mu[0]
+            g1 = ((C_N2[s] == 1) | (C_N2[s] == 2)).astype(np.float64) - mu[1]
+            g2 = ((C_N3[s] == 1) | (C_N3[s] == 2)).astype(np.float64) - mu[2]
+            if mode == "wobble_pos3":
+                vsum += float(np.dot(g2, g2))
+                vcnt += float(n)
+                for k in range(1, max_lag_nt // 3 + 1):
+                    d = 3 * k
+                    num[d - 1] += float(np.dot(g2[:-k], g2[k:]))
+                    den[d - 1] += float(n - k)
+                continue
+            arr = np.zeros(n * 3, dtype=np.float64)
+            msk = np.zeros(n * 3, dtype=np.float64)
+            if mode == "full_nt":
+                arr[0::3], arr[1::3], arr[2::3] = g0, g1, g2
+                msk[:] = 1.0
+            elif mode == "core_pos12":
+                arr[0::3], arr[1::3] = g0, g1
+                msk[0::3] = msk[1::3] = 1.0
+            vsum += float(np.dot(arr, arr))
+            vcnt += float(np.sum(msk))
+            for d in range(1, max_lag_nt + 1):
+                num[d - 1] += float(np.dot(arr[:-d], arr[d:]))
+                den[d - 1] += float(np.dot(msk[:-d], msk[d:]))
+        if vcnt <= 0 or vsum <= 1e-15:
+            return None
+        var = vsum / vcnt
+        valid = den > 0
+        acf = np.zeros(max_lag_nt, dtype=np.float64)
+        acf[valid] = (num[valid] / den[valid]) / max(var, 1e-15)
+        d_all = np.arange(1, max_lag_nt + 1, dtype=np.float64)
+        use = valid & (d_all >= 4.0)
+        lags = d_all[use]
+        y = acf[use]
+        if lags.size < 12:
+            return None
+        sl, ic = np.polyfit(lags, y, 1)
+        yd = y - (sl * lags + ic)
+        periods = np.round(np.arange(7.0, 14.05, 0.1), 2)
+        clean = (np.abs(periods - 9.0) >= 0.35) & (np.abs(periods - 12.0) >= 0.35)
+        periods_c = periods[clean]
+        pwrs = np.array([
+            float(np.abs(np.sum(yd * np.exp(-2j * math.pi * lags / P))) ** 2) / yd.size
+            for P in periods_c
+        ])
+        med = float(np.median(pwrs))
+        m_euk = (periods_c >= 9.6) & (periods_c <= 10.5)
+        m_prk = (periods_c >= 10.9) & (periods_c <= 11.6)
+        m_hlx = (periods_c >= 9.5) & (periods_c <= 11.7)
+        i_euk = int(np.flatnonzero(m_euk)[np.argmax(pwrs[m_euk])])
+        i_prk = int(np.flatnonzero(m_prk)[np.argmax(pwrs[m_prk])])
+        i_hlx = int(np.flatnonzero(m_hlx)[np.argmax(pwrs[m_hlx])])
+        i_all = int(np.argmax(pwrs))
+        return {
+            "helix_peak_period_nt": float(periods_c[i_hlx]),
+            "helix_peak_snr": float(pwrs[i_hlx] / max(med, 1e-30)),
+            "euk_nuc_period_nt": float(periods_c[i_euk]),
+            "euk_nuc_snr": float(pwrs[i_euk] / max(med, 1e-30)),
+            "prok_supercoil_period_nt": float(periods_c[i_prk]),
+            "prok_supercoil_snr": float(pwrs[i_prk] / max(med, 1e-30)),
+            "nuc_peak_period_nt": float(periods_c[i_hlx]),
+            "nuc_snr_10_5bp": float(pwrs[i_hlx] / max(med, 1e-30)),
+            "global_peak_period_nt": float(periods_c[i_all]),
+            "global_peak_snr": float(pwrs[i_all] / max(med, 1e-30)),
+            "acf_d10": float(acf[9]), "acf_d11": float(acf[10]),
+            "acf_d21": float(acf[20]),
+        }
+
+    return {
+        "max_lag_nt": int(max_lag_nt),
+        "wobble_aa_centered": _run_stream("wobble_aa_centered"),
+        "wobble_pos3": _run_stream("wobble_pos3"),
+        "core_pos12": _run_stream("core_pos12"),
+        "full_nt": _run_stream("full_nt"),
+    }
+
+
+def torus_encryption_capacity(test_cd, aa):
+    """[THM-AE.2] Exact synonymous & duplex information capacity (bits/codon & Mb/cohort).
+    Proves exact identity: H(C|A) = H(A^rho|A) + H(C|A,A^rho) to <1e-15."""
+    cnt = np.zeros(NC, dtype=np.float64)
+    for cd in test_cd:
+        cnt += np.bincount(cd, minlength=NC)
+    N = float(cnt.sum())
+    if N <= 0:
+        return None
+    p = cnt / N
+    ar = aa[MIRROR]
+    ln2 = math.log(2.0)
+    pa = np.bincount(aa, weights=p, minlength=NAA)
+    c_max_bits = 0.0
+    for a in range(NAA):
+        ka = int(np.count_nonzero(aa == a))
+        if pa[a] > 0 and ka > 1:
+            c_max_bits += float(pa[a]) * math.log(ka) / ln2
+    H_C_A = 0.0
+    for c in range(NC):
+        if p[c] > 0 and pa[aa[c]] > 0:
+            H_C_A -= float(p[c]) * math.log(p[c] / pa[aa[c]]) / ln2
+    p_ar = np.bincount(aa * NAA + ar, weights=p, minlength=NAA * NAA).reshape(NAA, NAA)
+    H_Arho_A = 0.0
+    H_C_A_Arho = 0.0
+    for a in range(NAA):
+        if pa[a] <= 0:
+            continue
+        for r in range(NAA):
+            if p_ar[a, r] > 0:
+                H_Arho_A -= float(p_ar[a, r]) * math.log(p_ar[a, r] / pa[a]) / ln2
+    for c in range(NC):
+        d = p_ar[aa[c], ar[c]]
+        if p[c] > 0 and d > 0:
+            H_C_A_Arho -= float(p[c]) * math.log(p[c] / d) / ln2
+    B1 = lag_counts(test_cd, NC, 1)
+    sp = two_sided_screen_split(B1, aa)
+    Ssyn_bits = _s_syn_of_counts(B1, aa) / ln2
+    Icc_bits = sp["I_CC"] / ln2
+    Ibr_bits = sp["I_bridge"] / ln2
+    Inb_bits = (sp["D_5prime_lead"] + sp["D_3prime_wobble"] + sp["D_1_3"]) / ln2
+    free_syn_bits = max(0.0, H_C_A - Ssyn_bits)
+    return {
+        "n_codons_cohort": int(N),
+        "C_syn_max_bits_per_codon": c_max_bits,
+        "H_syn_empirical_bits_per_codon": H_C_A,
+        "H_antisense_channel_bits_per_codon": H_Arho_A,
+        "H_D8_duplex_free_bits_per_codon": H_C_A_Arho,
+        "capacity_split_abs_err": abs(H_C_A - (H_Arho_A + H_C_A_Arho)),
+        "I_total_lag1_bits_per_codon": Icc_bits,
+        "I_bridge_lag1_bits_per_codon": Ibr_bits,
+        "I_nonbridge_lag1_bits_per_codon": Inb_bits,
+        "S_syn_occupied_bits_per_codon": Ssyn_bits,
+        "free_syn_bandwidth_bits_per_codon": free_syn_bits,
+        "occupied_syn_fraction": (Ssyn_bits / H_C_A) if H_C_A > 0 else None,
+        "total_syn_capacity_megabits_cohort": H_C_A * N / 1e6,
+        "total_duplex_free_megabits_cohort": H_C_A_Arho * N / 1e6,
+    }
+
+
+def extract_channel_codebook(P_te, ops, aa, top_k=6):
+    """[THM-AE.6] Extracts the highest-energy positive ('preferred') and negative
+    ('forbidden/stalling') codon-pair words in each orthogonal channel."""
+    book = {}
+    ar = aa[MIRROR]
+    for ch in ("W_pm", "W_mp", "W_mm", "NonBridge"):
+        contrib = P_te * ops[ch]
+        flat = contrib.ravel()
+        order = np.argsort(flat)
+        neg_idx = order[:top_k]
+        pos_idx = order[-top_k:][::-1]
+
+        def _fmt(idxs):
+            rows = []
+            for idx in idxs:
+                x, y = divmod(int(idx), NC)
+                rows.append({
+                    "pair": f"{CODONS[x]}->{CODONS[y]}",
+                    "aa_sense": f"{AA_STRING[int(aa[x])]}->{AA_STRING[int(aa[y])]}",
+                    "aa_anti": f"{AA_STRING[int(ar[y])]}->{AA_STRING[int(ar[x])]}",
+                    "contrib_nats": float(flat[idx]),
+                    "operator_val": float(ops[ch][x, y]),
+                    "prob": float(P_te[x, y]),
+                })
+            return rows
+
+        book[ch] = {"top_positive": _fmt(pos_idx), "top_negative": _fmt(neg_idx)}
+    return book
+
+
+def thm_AE_functional_decoder(train_cd, train_gids, test_cd, test_gids, gene_meta, aa, alpha=0.5):
+    """[THM-AE] Complete Zero-RNG Orthogonal Torus Functional Decoder."""
+    ops = build_orthogonal_channel_operators(train_cd, alpha=alpha)
+    if ops is None:
+        return None
+    log_cai_w, cai_meta = build_ribosomal_cai_weights(train_cd, train_gids, gene_meta, aa)
+    n_te = len(test_cd)
+    bio_keys = ("gc3", "log_len", "rcai", "syn_ent_norm", "mean_kd", "n_tm_helices", "idp_score")
+    bio_arr = {k: np.full(n_te, np.nan) for k in bio_keys}
+    ch_intra = {ch: np.full(n_te, np.nan) for ch in AE_CHANNELS}
+    ch_syn = {ch: np.full(n_te, np.nan) for ch in AE_CHANNELS}
+    mod_masks = {m: np.zeros(n_te, dtype=bool) for m in _FUNC_PATTERNS}
+    max_v4_err = max_sc_err = max_dir_null = 0.0
+
+    for i, (gid, cd) in enumerate(zip(test_gids, test_cd)):
+        if cd.size < 15:
+            continue
+        bf = compute_gene_biophysics(cd, aa, log_cai_w)
+        for k in bio_keys:
+            bio_arr[k][i] = bf[k]
+        sc = score_gene_orthogonal_channels(cd, ops, aa)
+        if sc is not None:
+            for ch in AE_CHANNELS:
+                ch_intra[ch][i] = sc[ch]["intra"]
+                ch_syn[ch][i] = sc[ch]["syn"]
+            max_dir_null = max(max_dir_null, abs(sc["W_mp"]["het"]), abs(sc["W_mm"]["het"]))
+            for md_k in ("intra", "syn"):
+                e_v4 = abs(sc["L_total"][md_k] - sum(sc[k][md_k] for k in ("W_pp", "W_pm", "W_mp", "W_mm")))
+                e_sc = abs(sc["L_total"][md_k] - (sc["Bridge"][md_k] + sc["NonBridge"][md_k]))
+                max_v4_err = max(max_v4_err, e_v4)
+                max_sc_err = max(max_sc_err, e_sc)
+        desc = (gene_meta.get(gid) or {}).get("protein", "")
+        prot_seq = _translate_gene(cd, aa)
+        for m in classify_gene_modules(gid, desc, prot_seq):
+            mod_masks[m][i] = True
+
+    covs = [bio_arr["gc3"], bio_arr["log_len"]]
+    covs_ent = [bio_arr["gc3"], bio_arr["log_len"], bio_arr["syn_ent_norm"]]
+    targets_bio = ("rcai", "syn_ent_norm", "mean_kd", "n_tm_helices", "idp_score")
+    pcorr_intra, pcorr_syn = {}, {}
+    for ch in AE_ORTH_CHANNELS:
+        pcorr_intra[ch] = {bk: partial_spearman(ch_intra[ch], bio_arr[bk], covs) for bk in targets_bio}
+        pcorr_syn[ch] = {bk: partial_spearman(ch_syn[ch], bio_arr[bk], covs) for bk in targets_bio}
+        pcorr_intra[ch]["rcai_ctrl_ent"] = partial_spearman(ch_intra[ch], bio_arr["rcai"], covs_ent)
+        pcorr_syn[ch]["rcai_ctrl_ent"] = partial_spearman(ch_syn[ch], bio_arr["rcai"], covs_ent)
+
+    res_intra = {ch: _residualize_ols(ch_intra[ch], covs) for ch in AE_ORTH_CHANNELS}
+    res_syn = {ch: _residualize_ols(ch_syn[ch], covs) for ch in AE_ORTH_CHANNELS}
+    modules = {}
+    for m_name, mask in mod_masks.items():
+        if int(mask.sum()) < 5:
+            continue
+        modules[m_name] = {
+            "n_genes": int(mask.sum()),
+            "intra_resid_vs_bg": {ch: _welch_t_d(res_intra[ch][mask], res_intra[ch][~mask]) for ch in AE_ORTH_CHANNELS},
+            "syn_resid_vs_bg": {ch: _welch_t_d(res_syn[ch][mask], res_syn[ch][~mask]) for ch in AE_ORTH_CHANNELS},
+        }
+
+    valid_cai = np.isfinite(bio_arr["rcai"])
+    hi_lo = None
+    if int(valid_cai.sum()) >= 40:
+        q85 = float(np.nanpercentile(bio_arr["rcai"], 85))
+        q15 = float(np.nanpercentile(bio_arr["rcai"], 15))
+        m_hi = valid_cai & (bio_arr["rcai"] >= q85)
+        m_lo = valid_cai & (bio_arr["rcai"] <= q15)
+        hi_lo = {
+            "q85_rcai": q85, "q15_rcai": q15,
+            "intra_resid_hi_vs_lo": {ch: _welch_t_d(res_intra[ch][m_hi], res_intra[ch][m_lo]) for ch in AE_ORTH_CHANNELS},
+            "syn_resid_hi_vs_lo": {ch: _welch_t_d(res_syn[ch][m_hi], res_syn[ch][m_lo]) for ch in AE_ORTH_CHANNELS},
+        }
+
+    ramp_fold = positional_ramp_and_folding_audit(test_cd, ops, aa, ramp_len=30)
+    chromatin = nucleosome_10_5bp_audit(test_cd, max_lag_nt=150, aa=aa)
+    capacity = torus_encryption_capacity(test_cd, aa)
+    B1_te = lag_counts(test_cd, NC, 1)
+    P1_te = B1_te / max(float(B1_te.sum()), TINY)
+    codebook = extract_channel_codebook(P1_te, ops, aa, top_k=6)
+
+    return {
+        "integrity": {
+            "op_v4_recon_err": ops["v4_recon_err"],
+            "op_screen_orth_err": ops["screen_orth_err"],
+            "per_gene_v4_max_err": max_v4_err,
+            "per_gene_screen_max_err": max_sc_err,
+            "per_gene_directed_null_max_err": max_dir_null,
+        },
+        "operator_norms_sq": ops["norms_sq"],
+        "cai_calibration": cai_meta,
+        "partial_corr_intra": pcorr_intra,
+        "partial_corr_syn": pcorr_syn,
+        "functional_modules": modules,
+        "high_vs_low_expression": hi_lo,
+        "positional_ramp_folding": ramp_fold,
+        "chromatin_10_5bp": chromatin,
+        "encryption_capacity": capacity,
+        "codebook": codebook,
+    }
+
+
+def self_test_v32(ensG=None, aa1=None):
+    ok = {}
+    if aa1 is None:
+        aa1 = AA_TABLE1
+    if ensG is None:
+        ok["v32_all_passed"] = True
+        return ok
+    genes = [ensG[0][i * 150:(i + 1) * 150] for i in range(18)]
+    genes = [g[aa1[g] != STOP] for g in genes]
+    gids = [f"G{i:03d}" for i in range(len(genes))]
+    meta = {gids[i]: {"protein": "ribosomal protein L1" if i < 6 else "metabolic dehydrogenase"}
+            for i in range(len(genes))}
+    ae = thm_AE_functional_decoder(genes[:10], gids[:10], genes[10:], gids[10:], meta, aa1)
+    integ = ae["integrity"]
+    assert integ["op_v4_recon_err"] < 1e-14
+    assert integ["op_screen_orth_err"] < 1e-12
+    assert integ["per_gene_v4_max_err"] < 1e-14
+    assert integ["per_gene_screen_max_err"] < 1e-14
+    assert integ["per_gene_directed_null_max_err"] < 1e-15
+    cap = ae["encryption_capacity"]
+    assert cap["capacity_split_abs_err"] < 1e-14
+    ops = build_orthogonal_channel_operators(genes[:10])
+    Eh6 = gene_h6_expected_matrix(genes[10], aa1)
+    ref = layer_shuffle_analytic_gene(genes[10], NC, aa1, NAA, ops["L_total"], ops["diags"]["L_total"])
+    assert abs(float(np.sum(Eh6 * ops["L_total"])) - ref) < 1e-12
+    lay_t, Na_t, U_t = _gene_pos_h6_prep(genes[10], aa1)
+    tr_e = gene_positionwise_h6_baseline(lay_t, Na_t, U_t, ops["L_total"], ops["diags"]["L_total"])
+    pos_h6_err = abs(float(np.sum(tr_e)) - ref)
+    assert pos_h6_err < 1e-12, pos_h6_err
+    # Alpha-helix immunity test: pure AA 3.6-aa (10.8-nt) alternation with fixed codon per AA -> None in wobble_aa_centered
+    c_L, c_K = CODON_IDX["CTG"], CODON_IDX["AAA"]
+    helix_ctrl = [np.where(np.cos(2 * math.pi * np.arange(120) / 3.6) > 0, c_L, c_K).astype(np.int64)
+                  for _ in range(5)]
+    nuc_hlx = nucleosome_10_5bp_audit(helix_ctrl, max_lag_nt=150, aa=aa1)
+    assert nuc_hlx["wobble_aa_centered"] is None
+    # Pure synonymous 10.5-bp modulation on fixed Ala -> sharp 10.5-bp peak over 147-bp nucleosome
+    c_at, c_gc = CODON_IDX["GCT"], CODON_IDX["GCC"]
+    syn105 = [np.where(np.cos(2 * math.pi * (3 * np.arange(120) + 2 + g) / 10.5) > 0, c_gc, c_at).astype(np.int64)
+              for g in range(5)]
+    nuc = nucleosome_10_5bp_audit(syn105, max_lag_nt=150, aa=aa1)
+    assert 10.4 <= nuc["wobble_aa_centered"]["helix_peak_period_nt"] <= 10.6
+    assert nuc["wobble_aa_centered"]["euk_nuc_snr"] > 40.0
+    # Bacterial 11.2-bp supercoiling synthetic check
+    syn112 = [np.where(np.cos(2 * math.pi * (3 * np.arange(120) + 2 + g) / 11.2) > 0, c_gc, c_at).astype(np.int64)
+              for g in range(5)]
+    nuc112 = nucleosome_10_5bp_audit(syn112, max_lag_nt=150, aa=aa1)
+    assert 11.1 <= nuc112["wobble_aa_centered"]["helix_peak_period_nt"] <= 11.3
+    assert nuc112["wobble_aa_centered"]["prok_supercoil_snr"] > 40.0
+    # Local H6 constant-codon segment must have exact 0.0 excess
+    seg0 = np.full(30, c_gc, dtype=np.int64)
+    E_loc0 = _seg_h6_prep(seg0, aa1) / 29.0
+    loc0_err = abs(float(np.mean(ops["L_total"][seg0[:-1], seg0[1:]])) - float(np.sum(E_loc0 * ops["L_total"])))
+    assert loc0_err < 1e-13, loc0_err
+    # Length-matched tiled local-H6 guard: periodic stationary gene with identical 30-codon tiles -> EXACT 0.0!
+    tile30 = np.resize(genes[0][:30], 30)
+    per_gene = np.tile(tile30, 6)  # 180 codons, every 30-codon window identical -> ramp - tiled_body == 0
+    rf_stat = positional_ramp_and_folding_audit([per_gene] * 12, ops, aa1, ramp_len=30)
+    stat_err = max(abs(rf_stat["ramp_local_h6_syn"][ch]["mean_diff"]) for ch in AE_ORTH_CHANNELS)
+    assert stat_err < 1e-14, stat_err
+    ok["thmAE_per_gene_v4_err"] = integ["per_gene_v4_max_err"]
+    ok["thmAE_pos_h6_identity_err"] = pos_h6_err
+    ok["thmAE_local_h6_zero_err"] = loc0_err
+    ok["thmAE_tiled_local_h6_stat_err"] = stat_err
+    ok["thmAE_directed_null_err"] = integ["per_gene_directed_null_max_err"]
+    ok["thmAE_capacity_split_err"] = cap["capacity_split_abs_err"]
+    ok["thmAE_euk_10_5bp_snr"] = nuc["wobble_aa_centered"]["euk_nuc_snr"]
+    ok["thmAE_prok_11_2bp_snr"] = nuc112["wobble_aa_centered"]["prok_supercoil_snr"]
+    ok["thmAE_alpha_helix_immunity_ok"] = True
+    ok["v32_all_passed"] = True
+    return ok
+
+
+def write_decoder_md(payload, path):
+    R = [r for r in payload.get("results", []) if r.get("theorem_AE")]
+    def _dom_of(cl):
+        if cl == "bacterium": return "Bacteria"
+        if cl == "archaeon": return "Archaea"
+        return "Eukaryota"
+
+    L = [f"# Theorem AE (v3.2) — Orthogonal Torus Functional Decoder Report", "",
+         f"100% ZERO RNG · Taxa decoded: **{len(R)}**.", "",
+         "## 0. Three-Domain Biosphere Meta-Summary (Medians Across Decoded Genomes)", "",
+         "| Domain | n | rCAI~W_-+ (ctrl GC3,Len) | rCAI~W_-+ (+Ent) | Local-H6 5'Ramp W_-+ t | Local-H6 5'Ramp NonBr t | AA-Wobble Helix Peak P (nt) | Euk 9.6-10.5 SNR | Prok 10.9-11.6 SNR | H_syn (b/c) |",
+         "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
+    for dom in ("Eukaryota", "Bacteria", "Archaea"):
+        sub = [r for r in R if _dom_of(r.get("clade", "")) == dom]
+        if not sub:
+            continue
+        def _med(fn):
+            vs = [fn(r) for r in sub]
+            vs = [float(v) for v in vs if _finite(v)]
+            return float(np.median(vs)) if vs else None
+        L.append(
+            f"| **{dom}** | {len(sub)} | "
+            f"{fnum(_med(lambda r: ((r['theorem_AE'].get('partial_corr_syn') or {}).get('W_mp') or {}).get('rcai', {}).get('r')),3,True)} | "
+            f"{fnum(_med(lambda r: ((r['theorem_AE'].get('partial_corr_syn') or {}).get('W_mp') or {}).get('rcai_ctrl_ent', {}).get('r')),3,True)} | "
+            f"{fnum(_med(lambda r: ((r['theorem_AE'].get('positional_ramp_folding') or {}).get('ramp_local_h6_syn') or {}).get('W_mp', {}).get('t')),2,True)} | "
+            f"{fnum(_med(lambda r: ((r['theorem_AE'].get('positional_ramp_folding') or {}).get('ramp_local_h6_syn') or {}).get('NonBridge', {}).get('t')),2,True)} | "
+            f"{fnum(_med(lambda r: ((r['theorem_AE'].get('chromatin_10_5bp') or {}).get('wobble_aa_centered') or {}).get('helix_peak_period_nt')),2)} | "
+            f"{fnum(_med(lambda r: ((r['theorem_AE'].get('chromatin_10_5bp') or {}).get('wobble_aa_centered') or {}).get('euk_nuc_snr')),2)} | "
+            f"{fnum(_med(lambda r: ((r['theorem_AE'].get('chromatin_10_5bp') or {}).get('wobble_aa_centered') or {}).get('prok_supercoil_snr')),2)} | "
+            f"{fnum(_med(lambda r: (r['theorem_AE'].get('encryption_capacity') or {}).get('H_syn_empirical_bits_per_codon')),3)} |"
+        )
+    L += ["",
+         "## 1. Exact Synonymous & Duplex Encryption Capacity (bits/codon)", "",
+         "| Species | Clade | H_syn (bits/cod) | H_anti (bits/cod) | H_D8 free | S_syn occ | Free syn | Cohort Cap (Mb) |",
+         "|---|---|---:|---:|---:|---:|---:|---:|"]
+    for r in R:
+        cap = (r["theorem_AE"] or {}).get("encryption_capacity") or {}
+        if not cap:
+            continue
+        L.append(f"| {r['species']} | {r.get('clade','?')} | {fnum(cap['H_syn_empirical_bits_per_codon'],4)} | "
+                 f"{fnum(cap['H_antisense_channel_bits_per_codon'],4)} | "
+                 f"{fnum(cap['H_D8_duplex_free_bits_per_codon'],4)} | "
+                 f"{fnum(cap['S_syn_occupied_bits_per_codon'],4)} | "
+                 f"{fnum(cap['free_syn_bandwidth_bits_per_codon'],4)} | "
+                 f"{fnum(cap['total_syn_capacity_megabits_cohort'],3)} |")
+    L += ["", "## 2. Expression Speed (rCAI) — Partial Spearman r Controlling for GC3 & Length (Pure Synonymous s^syn)", "",
+          "| Species | rCAI ref | W_+- (t) | W_-+ (t) | W_-- (t) | NonBridge (t) | Bridge (t) |",
+          "|---|---|---:|---:|---:|---:|---:|"]
+    for r in R:
+        ae = r["theorem_AE"]
+        ps = ae.get("partial_corr_syn") or {}
+        cal = ae.get("cai_calibration") or {}
+        def _cell(ch):
+            v = (ps.get(ch) or {}).get("rcai") or {}
+            return f"{fnum(v.get('r'),3,True)} ({fnum(v.get('t'),1,True)})"
+        L.append(f"| {r['species']} | `{cal.get('source','?')}` ({cal.get('n_ref_genes',0)}) | "
+                 f"{_cell('W_pm')} | {_cell('W_mp')} | {_cell('W_mm')} | {_cell('NonBridge')} | {_cell('Bridge')} |")
+    L += ["", "## 3. Co-Translational Folding (Hydrophobicity KD & Disorder IDP) — Partial Spearman r (s^intra / s^syn)", "",
+          "| Species | KD vs W_-+ (syn) | KD vs W_-- (syn) | KD vs NonBr (syn) | IDP vs W_-+ (syn) | IDP vs NonBr (syn) |",
+          "|---|---:|---:|---:|---:|---:|"]
+    for r in R:
+        ps = r["theorem_AE"].get("partial_corr_syn") or {}
+        def _c(ch, bk):
+            v = (ps.get(ch) or {}).get(bk) or {}
+            return f"{fnum(v.get('r'),3,True)} ({fnum(v.get('t'),1,True)})"
+        L.append(f"| {r['species']} | {_c('W_mp','mean_kd')} | {_c('W_mm','mean_kd')} | "
+                 f"{_c('NonBridge','mean_kd')} | {_c('W_mp','idp_score')} | {_c('NonBridge','idp_score')} |")
+    L += ["", "## 4. 5' Ribosomal Exit-Tunnel Ramp (Segment-LOCAL H6) & Co-Translational Folding (Boundary & Surface vs Hydrophobic Core, Exact H6)", "",
+          "| Species | n_ramp | LocH6 Ramp W_-+ (t) | LocH6 Ramp W_-- (t) | LocH6 Ramp NonBr (t) | Syn FoldBnd W_-+ (t) | Syn Surf-Core Bridge (t) | Syn Surf-Core NonBr (t) |",
+          "|---|---:|---:|---:|---:|---:|---:|---:|"]
+    for r in R:
+        rf = r["theorem_AE"].get("positional_ramp_folding") or {}
+        def _rf(sec, ch):
+            v = (rf.get(sec) or {}).get(ch) or {}
+            return f"{fnum(v.get('mean_diff'),4,True)} ({fnum(v.get('t'),1,True)})"
+        L.append(f"| {r['species']} | {rf.get('n_ramp_genes',0)} | "
+                 f"{_rf('ramp_local_h6_syn','W_mp')} | {_rf('ramp_local_h6_syn','W_mm')} | "
+                 f"{_rf('ramp_local_h6_syn','NonBridge')} | "
+                 f"{_rf('folding_boundary_minus_core_syn','W_mp')} | "
+                 f"{_rf('surface_minus_core_syn','Bridge')} | {_rf('surface_minus_core_syn','NonBridge')} |")
+    L += ["", "## 5. DNA Helical Pitch in AA-Centered Pure Synonymous Wobble (147-bp Core: Eukaryotic ~10.1-bp Nucleosome vs Prokaryotic ~11.2-bp Supercoiling)", "",
+          "| Species | Clade | Wobble Peak P (nt) | Peak SNR | Euk 9.6-10.5 SNR | Prok 10.9-11.6 SNR | Pos 1+2 Peak P (nt) | Pos 1+2 SNR |",
+          "|---|---|---:|---:|---:|---:|---:|---:|"]
+    for r in R:
+        ch = r["theorem_AE"].get("chromatin_10_5bp") or {}
+        wa = ch.get("wobble_aa_centered") or {}
+        c12 = ch.get("core_pos12") or {}
+        L.append(f"| {r['species']} | {r.get('clade','?')} | {fnum(wa.get('helix_peak_period_nt'),1)} | "
+                 f"{fnum(wa.get('helix_peak_snr'),2)} | {fnum(wa.get('euk_nuc_snr'),2)} | "
+                 f"{fnum(wa.get('prok_supercoil_snr'),2)} | "
+                 f"{fnum(c12.get('helix_peak_period_nt'),1)} | {fnum(c12.get('helix_peak_snr'),2)} |")
+    L += ["", "## 6. Functional Module Fingerprints (GC3+Length Residualized Pure Synonymous s^syn, Welch t)", "",
+          "| Species | Module | n | W_+- t | W_-+ t | W_-- t | NonBridge t |",
+          "|---|---|---:|---:|---:|---:|---:|"]
+    for r in R:
+        mods = r["theorem_AE"].get("functional_modules") or {}
+        for mn, mv in mods.items():
+            sr = mv.get("syn_resid_vs_bg") or {}
+            L.append(f"| {r['species']} | `{mn}` | {mv['n_genes']} | "
+                     f"{fnum((sr.get('W_pm') or {}).get('t'),2,True)} | "
+                     f"{fnum((sr.get('W_mp') or {}).get('t'),2,True)} | "
+                     f"{fnum((sr.get('W_mm') or {}).get('t'),2,True)} | "
+                     f"{fnum((sr.get('NonBridge') or {}).get('t'),2,True)} |")
+    L += ["", "## 7. Top Channel Codebook Words (First 6 Species)", ""]
+    for r in R[:6]:
+        cb = r["theorem_AE"].get("codebook") or {}
+        L.append(f"### {r['species']}")
+        for ch_k in ("W_mp", "W_mm", "NonBridge"):
+            pos = ", ".join(f"`{w['pair']}` ({w['aa_sense']})" for w in (cb.get(ch_k) or {}).get("top_positive", [])[:4])
+            neg = ", ".join(f"`{w['pair']}` ({w['aa_sense']})" for w in (cb.get(ch_k) or {}).get("top_negative", [])[:4])
+            L.append(f"- **{ch_k}** preferred: {pos} | avoided: {neg}")
+        L.append("")
+    atomic_write(path, "\n".join(L) + "\n")
+
+
+def make_fig8_decoder(payload, out_dir, dpi=300, fmt="png"):
+    if not HAVE_MPL:
+        return None
+    R = [r for r in payload.get("results", []) if r.get("theorem_AE")]
+    if not R:
+        return None
+    fd = Path(out_dir) / "figures"
+    fd.mkdir(parents=True, exist_ok=True)
+    fig, axes = plt.subplots(2, 2, figsize=(16, 11.5))
+    fig.suptitle(f"Fig 8. Thm AE — Orthogonal Torus Functional Decoder ({len(R)} taxa, 100% Zero-RNG)",
+                 fontsize=14, fontweight="bold", y=0.98)
+
+    # Panel A: Partial Spearman r (pure syn, controlling for GC3 & length) with Expression rCAI
+    ax = axes[0, 0]
+    chs = ["W_pm", "W_mp", "W_mm", "NonBridge", "Bridge"]
+    vals_by_ch = []
+    for ch in chs:
+        vs = [((r["theorem_AE"].get("partial_corr_syn") or {}).get(ch) or {}).get("rcai", {}).get("r")
+              for r in R]
+        vals_by_ch.append([v for v in vs if _finite(v)])
+    pos_x = np.arange(len(chs))
+    bp = ax.boxplot(vals_by_ch, positions=pos_x, widths=0.52, patch_artist=True,
+                    medianprops=dict(color="black", lw=1.8))
+    cols_ch = ["#1f77b4", "#d62728", "#ff7f0e", "#17becf", "#7f7f7f"]
+    for patch, c in zip(bp["boxes"], cols_ch):
+        patch.set_facecolor(c); patch.set_alpha(0.55)
+    for i, vs in enumerate(vals_by_ch):
+        if vs:
+            jit = np.linspace(-0.14, 0.14, len(vs)) if len(vs) > 1 else [0.0]
+            ax.scatter(np.full(len(vs), i) + jit, vs, color=cols_ch[i], s=22, alpha=0.85, edgecolors="k", lw=0.3)
+    ax.axhline(0.0, color="k", ls="--", lw=0.9)
+    ax.set_xticks(pos_x); ax.set_xticklabels(chs, fontsize=9.5)
+    ax.set_ylabel("Partial Spearman r (ctrl: GC3, log-len)")
+    ax.set_title("A. Expression / Translation Speed (rCAI) in Pure Synonymous s^syn")
+    ax.grid(True, axis="y", ls=":", alpha=0.35)
+
+    # Panel B: Functional Module Heatmap (median Welch t of GC3-residualized pure syn scores)
+    ax = axes[0, 1]
+    mod_names = list(_FUNC_PATTERNS.keys())
+    hm_chs = ["W_pm", "W_mp", "W_mm", "NonBridge"]
+    M_hm = np.full((len(mod_names), len(hm_chs)), np.nan)
+    for mi, mn in enumerate(mod_names):
+        for ci, ch in enumerate(hm_chs):
+            ts = [(((r["theorem_AE"].get("functional_modules") or {}).get(mn) or {})
+                   .get("syn_resid_vs_bg") or {}).get(ch, {}).get("t") for r in R]
+            ts = [v for v in ts if _finite(v)]
+            if ts:
+                M_hm[mi, ci] = float(np.median(ts))
+    vmax = max(2.5, float(np.nanmax(np.abs(M_hm)))) if np.any(np.isfinite(M_hm)) else 3.0
+    im = ax.imshow(M_hm, cmap="RdBu_r", vmin=-vmax, vmax=vmax, aspect="auto")
+    ax.set_xticks(range(len(hm_chs))); ax.set_xticklabels(hm_chs, fontsize=9.5)
+    ax.set_yticks(range(len(mod_names))); ax.set_yticklabels([m.replace("_", "\n") for m in mod_names], fontsize=8.5)
+    for mi in range(len(mod_names)):
+        for ci in range(len(hm_chs)):
+            if np.isfinite(M_hm[mi, ci]):
+                ax.text(ci, mi, f"{M_hm[mi, ci]:+.1f}", ha="center", va="center", fontsize=8.5, fontweight="bold")
+    fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04, label="Median Welch t (GC3-resid s^syn)")
+    ax.set_title("B. Biological Module Signatures Across Orthogonal Channels")
+
+    # Panel C: Segment-Local H6-stripped Pure Synonymous 5' Ribosomal Ramp (immune to GC3 gradients!)
+    ax = axes[1, 0]
+    ramp_vals = []
+    for ch in chs:
+        ts = [((r["theorem_AE"].get("positional_ramp_folding") or {}).get("ramp_local_h6_syn") or {}).get(ch, {}).get("t")
+              for r in R]
+        ramp_vals.append([v for v in ts if _finite(v)])
+    bp2 = ax.boxplot(ramp_vals, positions=pos_x, widths=0.52, patch_artist=True,
+                     medianprops=dict(color="black", lw=1.8))
+    for patch, c in zip(bp2["boxes"], cols_ch):
+        patch.set_facecolor(c); patch.set_alpha(0.55)
+    ax.axhline(0.0, color="k", ls="--", lw=0.9)
+    ax.set_xticks(pos_x); ax.set_xticklabels(chs, fontsize=9.5)
+    ax.set_ylabel("Paired gene-level t (Tiled 30-tr. Local-H6 Ramp − Body)")
+    ax.set_title("C. Unbiased Length-Matched Local-H6 5' Ramp (30-tr. / 31-cod Tiles)")
+    ax.grid(True, axis="y", ls=":", alpha=0.35)
+
+    # Panel D: DNA Helical Pitch Bifurcation in AA-Centered Wobble (Euk ~10.1 bp vs Prok ~11.2 bp)
+    ax = axes[1, 1]
+    ax.axvspan(9.7, 10.5, color="#1b9e77", alpha=0.10, label="Euk nucleosome (9.7–10.5 bp)")
+    ax.axvspan(10.9, 11.6, color="#393b79", alpha=0.10, label="Prok supercoil (10.9–11.6 bp)")
+    pts_d = []
+    for r in R:
+        wa = (r["theorem_AE"].get("chromatin_10_5bp") or {}).get("wobble_aa_centered") or {}
+        p_pk = wa.get("helix_peak_period_nt")
+        snr_pk = wa.get("helix_peak_snr")
+        if _finite(p_pk) and _finite(snr_pk):
+            cl = r.get("clade", NAME2CLADE.get(r["species"], "unknown"))
+            mk = "^" if cl == "bacterium" else ("s" if cl == "archaeon" else "o")
+            ax.scatter(p_pk, snr_pk, color=CLADE_COLORS.get(cl, "#444"), marker=mk,
+                       s=58 if mk != "o" else 44, alpha=0.88, edgecolors="k", lw=0.45)
+            pts_d.append((snr_pk, p_pk, r["species"], cl))
+    # Annotate top peaks with horizontal bounding-box de-collision (restores E_coli, zero overlaps)
+    pts_d.sort(reverse=True)
+    placed_boxes = []  # (x0, x1, y_mid) in data coords
+    for snr_pk, p_pk, sp, cl in pts_d:
+        if len(R) > 20 and snr_pk < 9.5:
+            continue
+        if len(R) <= 20 and snr_pk < 2.5:
+            continue
+        w_est = 0.043 * len(sp)  # approximate label width in nt
+        cands = ([(p_pk + 0.045, p_pk + 0.045 + w_est, 5, "left"),
+                  (p_pk - 0.045 - w_est, p_pk - 0.045, -5, "right")]
+                 if p_pk <= 11.15 else
+                 [(p_pk - 0.045 - w_est, p_pk - 0.045, -5, "right"),
+                  (p_pk + 0.045, p_pk + 0.045 + w_est, 5, "left")])
+        chosen = None
+        for x0, x1, dx_pt, ha in cands:
+            if x0 < 9.42 or x1 > 11.83:
+                continue
+            hit_lbl = any((x0 < bx1 and x1 > bx0 and abs(snr_pk - by) < 1.95) for bx0, bx1, by in placed_boxes)
+            hit_dot = any((sp != sp2 and x0 - 0.04 <= p2 <= x1 + 0.04 and abs(snr_pk - s2) < 1.1)
+                          for s2, p2, sp2, _ in pts_d)
+            if not hit_lbl and not hit_dot:
+                chosen = (x0, x1, dx_pt, ha)
+                break
+        if chosen is None:
+            continue
+        x0, x1, dx_pt, ha = chosen
+        placed_boxes.append((x0, x1, snr_pk))
+        ax.annotate(sp, (p_pk, snr_pk), fontsize=7.2, ha=ha, va="center",
+                    xytext=(dx_pt, 0), textcoords="offset points")
+    ax.axhline(3.0, color="crimson", ls=":", lw=1.0, alpha=0.7)
+    ax.set_xlim(9.4, 11.85)
+    ax.margins(y=0.12)
+    ax.set_xlabel("AA-Centered Synonymous Wobble Peak Period (nt)")
+    ax.set_ylabel("Peak DFT SNR over 147-bp Core")
+    ax.set_title("D. Synonymous Helical Pitch: Euk Nucleosome (●) vs Bact (▲) vs Arch (■)")
+    ax.legend(fontsize=8, loc="upper left"); ax.grid(True, ls=":", alpha=0.35)
+
+    fig.tight_layout(rect=[0, 0, 1, 0.95])
+    p_out = fd / f"fig8_thmAE_functional_decoder.{fmt}"
+    fig.savefig(p_out, dpi=dpi, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [FIG] {p_out}")
+    return str(p_out)
+
 
 def self_test(verbose=False):
     ok = {}
@@ -4826,6 +5925,7 @@ def self_test(verbose=False):
     ok.update(self_test_v23(ensG, aa1))
     ok.update(self_test_v24(ensG, aa1))
     ok.update(self_test_v30(ensG, aa1))
+    ok.update(self_test_v32(ensG, aa1))
 
     if verbose:
         print(json.dumps(_clean(ok), indent=2))
@@ -4840,9 +5940,10 @@ def analyze_species(name, path, args):
     print(f"\n[{name}] {path.name}")
     macc = re.search(r"(GCF_\d+)", path.name)
     default_tb = ACC2TABLE.get(macc.group(1), NAME2TABLE.get(name, 1)) if macc else NAME2TABLE.get(name, 1)
-    recs, table, stats = parse_cds(path, max_genes=args.max_genes, trim=not args.no_trim,
-                                   default_table=default_tb, min_codons=args.min_codons,
-                                   gene_order=getattr(args, "gene_order", "hash"))
+    recs, table, stats, gene_meta = parse_cds(path, max_genes=args.max_genes, trim=not args.no_trim,
+                                              default_table=default_tb, min_codons=args.min_codons,
+                                              gene_order=getattr(args, "gene_order", "hash"),
+                                              return_meta=True)
     if len(recs) < args.min_genes:
         print(f"  [skip] too few valid CDS ({len(recs)})")
         return None
@@ -4857,6 +5958,8 @@ def analyze_species(name, path, args):
     dfS = duplex_df_table(aa, support=sup)
     dfS_theory = duplex_df_table(aa, support=(aa != STOP))
     mask, sinfo = assign_split([g for g, _ in recs], args.train_pct)
+    train_gids = [g for (g, _), m in zip(recs, mask) if m]
+    test_gids = [g for (g, _), m in zip(recs, mask) if not m]
     train_cd = [cd for (_, cd), m in zip(recs, mask) if m]
     test_cd = [cd for (_, cd), m in zip(recs, mask) if not m]
     if len(train_cd) < 20 or len(test_cd) < 20:
@@ -5152,6 +6255,18 @@ def analyze_species(name, path, args):
               f"dip14(all)={fnum(ab_res['all_mp']['dip14_log10'],3,True)} "
               f"peakP={fnum(ab_res['all_mp']['dft_peak_period'],1)} "
               f"SNR14={fnum(ab_res['all_mp']['dft_snr_at_14'],2)} -> {ab_res['verdict']}")
+    # ---------- [THM-AE] Orthogonal Torus Functional Decoder ----------
+    if not getattr(args, "no_decode", False):
+        ae_res = thm_AE_functional_decoder(train_cd, train_gids, test_cd, test_gids, gene_meta, aa, alpha=0.5)
+        if ae_res is not None:
+            res["theorem_AE"] = ae_res
+            r_mp = ((ae_res.get("partial_corr_syn") or {}).get("W_mp") or {}).get("rcai", {})
+            r_nb = ((ae_res.get("partial_corr_syn") or {}).get("NonBridge") or {}).get("rcai", {})
+            cap_ = ae_res.get("encryption_capacity") or {}
+            w3_ = (ae_res.get("chromatin_10_5bp") or {}).get("wobble_pos3") or {}
+            print(f"  [AE]  rCAI~syn(W_-+={fnum(r_mp.get('r'),3,True)}, NonBr={fnum(r_nb.get('r'),3,True)}) | "
+                  f"H_syn={fnum(cap_.get('H_syn_empirical_bits_per_codon'),3)}b/c | "
+                  f"10.5bp_wob_SNR={fnum(w3_.get('nuc_snr_10_5bp'),2)}")
     # ---------- Compact matrices for [THM-AC] cross-species phylogeny (kept in memory only) ----------
     B1_tr = lag_counts(train_cd, NC, 1)
     P1_te = Bt1 / max(float(Bt1.sum()), TINY)
@@ -5215,7 +6330,7 @@ def atomic_write(p, text):
 def write_md(payload, path):
     R = payload["results"]
     L = [f"# Codon Memory Spectrum v{VERSION} — real NCBI RefSeq audit", "",
-         "ZERO RNG in every proof path. Theorems A–AD.", "",
+         "ZERO RNG in every proof path. Theorems A–AE.", "",
          f"kernel `{payload['config']['kernel_mode']}`; taxa **{len(R)}**.", "",
          "## 1. Theorem M — Klein V_4 quadrants (1056/1024/1024/992)", "",
          "| Species | k | ‖W_++‖² | ‖W_+-‖² static | ‖W_-+‖² | ‖W_--‖² | dyn share of mirror |",
@@ -5553,9 +6668,9 @@ def _add_bottom_legend(fig, labels, colors_map, ncol=9, fontsize=7.0):
         for lb in labels
     ]
     n_rows = math.ceil(len(labels) / max(1, ncol))
-    bottom_pad = min(0.42, 0.07 + 0.025 * n_rows)
+    bottom_pad = min(0.46, 0.13 + 0.042 * n_rows)
     fig.subplots_adjust(top=0.87, bottom=bottom_pad, left=0.055, right=0.985, wspace=0.22)
-    fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.005),
+    fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.015),
                ncol=ncol, fontsize=fontsize, frameon=True, framealpha=0.95,
                edgecolor="#cccccc", handlelength=1.4, columnspacing=0.9, labelspacing=0.3)
 
@@ -5596,7 +6711,7 @@ def make_figures(payload, out_dir, dpi=300, fmt="png", plot_mode="auto"):
 
     def _sv(fig, stem):
         p_out = fd / f"{stem}.{fmt}"
-        fig.savefig(p_out, dpi=dpi, bbox_inches="tight")
+        fig.savefig(p_out, dpi=dpi, bbox_inches="tight", pad_inches=0.14)
         plt.close(fig)
         saved.append(str(p_out))
         print(f"  [FIG] {p_out}")
@@ -5938,6 +7053,11 @@ def make_figures(payload, out_dir, dpi=300, fmt="png", plot_mode="auto"):
         fig.tight_layout(rect=[0, 0, 1, 0.93])
         _sv(fig, "fig7_thmAC_phylogeny_codes")
 
+    # ---- FIG 8 (NEW v3.2): Theorem AE — Orthogonal Torus Functional Decoder ----
+    f8 = make_fig8_decoder(payload, out_dir, dpi=dpi, fmt=fmt)
+    if f8:
+        saved.append(f8)
+
     return saved
 
 
@@ -5949,7 +7069,7 @@ def main(argv=None):
     p.add_argument("--cds-dir", default="cds_cache")
     p.add_argument("--out-dir", default="results_memory_v30")
     p.add_argument("--self-test", action="store_true")
-    p.add_argument("--replot-only", type=str, default="", help="Regenerate Figs 1-7 from an existing JSON (v2.4 or v3.0) and exit")
+    p.add_argument("--replot-only", type=str, default="", help="Regenerate Figs 1-8 from an existing JSON (v2.4, v3.0-v3.2) and exit")
     p.add_argument("--dpi", type=int, default=300, help="Figure resolution (default: 300)")
     p.add_argument("--plot-format", choices=["png", "pdf", "svg", "jpg"], default="png")
     p.add_argument("--plot-mode", choices=["auto", "lines", "clade", "both"], default="auto")
@@ -5992,6 +7112,9 @@ def main(argv=None):
     p.add_argument("--h3b-lags", default="1,2,3,5,10,20,30")
     p.add_argument("--no-h567", action="store_true")
     p.add_argument("--no-znf", action="store_true", help="Skip Theorem AB ZNF/periodicity stratification")
+    p.add_argument("--no-decode", action="store_true", help="Skip Theorem AE functional decoder in full run")
+    p.add_argument("--decode-only", action="store_true",
+                   help="Fast standalone mode: run ONLY Theorem AE functional decoder across target species")
     p.add_argument("--h5-alpha", type=float, default=0.1)
     p.add_argument("--h5-max-genes", type=int, default=0)
     p.add_argument("--mc-check", type=int, default=0)
@@ -6002,7 +7125,7 @@ def main(argv=None):
     # ---- Mode 1: Standalone zero-RNG self-test ----
     if args.self_test:
         print("=" * 100)
-        print(f"SELF-TEST v{VERSION} — Theorems A..AA + AB (ZNF/Periodicity) + AC (Phylogeny) + AD (Isochore-Free Screen)")
+        print(f"SELF-TEST v{VERSION} — Theorems A..AA + AB (ZNF/Periodicity) + AC (Phylogeny) + AD (Isochore-Free Screen) + AE (Functional Decoder)")
         print("=" * 100)
         self_test(verbose=True)
         print("ALL SELF-TESTS PASSED.")
@@ -6077,6 +7200,69 @@ def main(argv=None):
     if not targets:
         print("[ERROR] no target assemblies.")
         return 1
+
+    # ---- Fast Standalone Mode: --decode-only (Theorem AE across cached genomes in seconds) ----
+    if args.decode_only:
+        t_dec = time.time()
+        dec_results, dec_failures = [], []
+        for i, (nm, pp) in enumerate(targets, 1):
+            print(f"\n--- [DECODE {i}/{len(targets)}] {nm} ({pp.name}) ---")
+            try:
+                macc = re.search(r"(GCF_\d+)", pp.name)
+                dtb = ACC2TABLE.get(macc.group(1), NAME2TABLE.get(nm, 1)) if macc else NAME2TABLE.get(nm, 1)
+                recs, table, stats, gmeta = parse_cds(
+                    pp, max_genes=args.max_genes, trim=not args.no_trim,
+                    default_table=dtb, min_codons=args.min_codons,
+                    gene_order=args.gene_order, return_meta=True)
+                if len(recs) < args.min_genes:
+                    print(f"  [skip] too few valid CDS ({len(recs)})")
+                    continue
+                aa = aa_array(table)
+                mask, sinfo = assign_split([g for g, _ in recs], args.train_pct)
+                tr_g = [g for (g, _), m in zip(recs, mask) if m]
+                te_g = [g for (g, _), m in zip(recs, mask) if not m]
+                tr_c = [cd for (_, cd), m in zip(recs, mask) if m]
+                te_c = [cd for (_, cd), m in zip(recs, mask) if not m]
+                if len(tr_c) < 20 or len(te_c) < 20:
+                    continue
+                ae = thm_AE_functional_decoder(tr_c, tr_g, te_c, te_g, gmeta, aa, alpha=0.5)
+                if ae is None:
+                    continue
+                cl = NAME2CLADE.get(nm, ACC2CLADE.get(macc.group(1), "unknown") if macc else "unknown")
+                dec_results.append({
+                    "species": nm, "clade": cl, "file": pp.name, "transl_table": int(table),
+                    "parse_stats": stats, "split_info": sinfo, "theorem_AE": ae,
+                })
+                r_mp = ((ae.get("partial_corr_syn") or {}).get("W_mp") or {}).get("rcai", {})
+                r_nb = ((ae.get("partial_corr_syn") or {}).get("NonBridge") or {}).get("rcai", {})
+                rmp_b = ((ae.get("positional_ramp_folding") or {}).get("ramp_local_h6_syn") or {}).get("W_mp", {})
+                cap_ = ae.get("encryption_capacity") or {}
+                w3_ = (ae.get("chromatin_10_5bp") or {}).get("wobble_aa_centered") or {}
+                print(f"  [AE] n_te={len(te_c)} | rCAI~syn(W_-+={fnum(r_mp.get('r'),3,True)}, t={fnum(r_mp.get('t'),1,True)} | "
+                      f"NonBr={fnum(r_nb.get('r'),3,True)}, t={fnum(r_nb.get('t'),1,True)}) | "
+                      f"LocH6_5'Ramp W_-+ t={fnum(rmp_b.get('t'),1,True)} | "
+                      f"H_syn={fnum(cap_.get('H_syn_empirical_bits_per_codon'),3)}b/c | "
+                      f"Pitch={fnum(w3_.get('helix_peak_period_nt'),1)}nt (SNR={fnum(w3_.get('helix_peak_snr'),2)})")
+            except Exception as e:
+                import traceback
+                print(f"[ERROR] {nm}: {e}")
+                traceback.print_exc()
+                dec_failures.append({"species": nm, "error": repr(e)})
+        payload = {"version": "3.2-decoder", "self_test": st, "config": vars(args),
+                   "n_species": len(dec_results), "n_failed": len(dec_failures),
+                   "failures": dec_failures, "runtime_seconds": time.time() - t_dec,
+                   "results": dec_results}
+        atomic_write(out / "functional_decoder_v32.json", json.dumps(_clean(payload), indent=2))
+        write_decoder_md(payload, out / "functional_decoder_v32.md")
+        f8 = None if args.no_plots else make_fig8_decoder(payload, out, dpi=args.dpi, fmt=args.plot_format)
+        print("\n" + "=" * 100)
+        print(f"DECODE-ONLY DONE: {len(dec_results)} OK, {len(dec_failures)} failed, {(time.time()-t_dec):.1f} s")
+        print(f"[JSON] {out/'functional_decoder_v32.json'}")
+        print(f"[MD]   {out/'functional_decoder_v32.md'}")
+        if f8:
+            print(f"[FIG8] {f8}")
+        print("=" * 100)
+        return 0
 
     # Optional --resume support (with persistent matrix_cache_v30.npz for Thm AC)
     results, failures = [], []
