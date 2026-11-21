@@ -1,9 +1,9 @@
-# From Form to Program, The Double-Stranded Codon Torus (𝕋₄³ = (ℤ/4ℤ)³) & The Codon Memory Spectrum: Zero-RNG Null Towers, Isochore-Free Screen Memory, C2H2 Zinc-Finger Periodicity, Alignment-Free Phylogeny & Synthetic mRNA Forensics
+# From Form to Program, The Double-Stranded Codon Torus (𝕋₄³ = (ℤ/4ℤ)³) & The Codon Memory Spectrum: Zero-RNG Null Towers, Isochore-Free Screen Memory, C2H2 Zinc-Finger Periodicity, Alignment-Free Phylogeny, Orthogonal Functional Decoding & Synthetic mRNA Forensics
 
 [![Codon Torus & Syntax CI](https://github.com/Dr-Logvinovich/codon-torus-syntax/actions/workflows/ci.yml/badge.svg)](https://github.com/Dr-Logvinovich/codon-torus-syntax/actions/workflows/ci.yml)
 [![Zenodo Preprint I (v14.8)](https://img.shields.io/badge/Zenodo_Paper_I_v14.8-10.5281%2Fzenodo.23479667-blue.svg)](https://doi.org/10.5281/zenodo.23479667)
 [![Zenodo Preprint II (Torus v3.5)](https://img.shields.io/badge/Zenodo_Paper_II_v3.5-10.5281%2Fzenodo.23695321-008080.svg)](https://doi.org/10.5281/zenodo.23695321)
-[![Zenodo Preprint III (Spectrum v3.1)](https://img.shields.io/badge/Zenodo_Paper_III_v3.1-10.5281%2Fzenodo.24242062-8a2be2.svg)](https://doi.org/10.5281/zenodo.24242062)
+[![Zenodo Preprint III (Spectrum v3.2)](https://img.shields.io/badge/Zenodo_Paper_III_v3.2-10.5281%2Fzenodo.24242062-8a2be2.svg)](https://doi.org/10.5281/zenodo.24242062)
 [![ORCID: V. Logvinovich](https://img.shields.io/badge/ORCID-0009--0007--2040--6955-a6ce39.svg)](https://orcid.org/0009-0007-2040-6955)
 [![ORCID: J.-C. Perez](https://img.shields.io/badge/ORCID-0000--0001--6446--2042-a6ce39.svg)](https://orcid.org/0000-0001-6446-2042)
 [![Offline Cache Included](https://img.shields.io/badge/NCBI_Cache_Included-100_RefSeq_Genomes_%2B_Frontier-2ea44f.svg)](cds_cache)
@@ -15,7 +15,7 @@
 > * **Authors:** **Victor Logvinovich** (Master of Physical and Mathematical Sciences; Researcher in Mathematics Education, Kobrin, Belarus; [ORCID: 0009-0007-2040-6955](https://orcid.org/0009-0007-2040-6955)) and **Jean-Claude Perez** (PhD in Mathematics and Computer Science, Retired IBM AI European Research Centre, Montpellier; Luc Montagnier Foundation; [ORCID: 0000-0001-6446-2042](https://orcid.org/0000-0001-6446-2042)).
 > * **Paper I (`v14.8` — From Form to Program):** [https://doi.org/10.5281/zenodo.23479667](https://doi.org/10.5281/zenodo.23479667) *(Concept DOI: [10.5281/zenodo.23287684](https://doi.org/10.5281/zenodo.23287684))*
 > * **Paper II (`v3.5` — The Double-Stranded Codon Torus):** [https://doi.org/10.5281/zenodo.23695321](https://doi.org/10.5281/zenodo.23695321) *(Concept DOI: [10.5281/zenodo.23508080](https://doi.org/10.5281/zenodo.23508080))*
-> * **Paper III (`v3.1` — The Codon Memory Spectrum, 100-Genome Biosphere Edition):** [https://doi.org/10.5281/zenodo.24242062](https://doi.org/10.5281/zenodo.24242062) *(All-Versions Concept DOI; full PDF included in [`Codon_Memory_Spectrum_v3.tex.pdf`](Codon_Memory_Spectrum_v3.tex.pdf))*
+> * **Paper III (`v3.2` — The Codon Memory Spectrum & Orthogonal Functional Decoder, 100-Genome Biosphere Edition):** [https://doi.org/10.5281/zenodo.24242062](https://doi.org/10.5281/zenodo.24242062) *(All-Versions Concept DOI; full 52-page PDF included in [`Codon_Memory_Spectrum_v3.tex.pdf`](Codon_Memory_Spectrum_v3.tex.pdf))*
 
 ---
 
@@ -25,26 +25,27 @@
 | :--- | :--- | :---: | :--- |
 | **Paper I (`v14.8`)**<br>*From Form to Program* | Operationalizes static **form** vs. dynamic **program** across a 10-null hierarchy (`H0`–`H7`); establishes the `L = 30` codon (29-transition / 89-nt) invariant, two-scale phylogenetic transfer (132/132 mammal pairs + Primate–Rodent asymmetry), 14/14 human RefSeqGene intron–exon splicing confinement (`TP53`, `KRAS`, `BRCA1`), Venter `JCVI-syn1.0/3.0` forensics, viral "Genetic Trojans" (`HPV-16 E7`, `Adenovirus E3 RID-α`), and the `Max-CAI` crash. | [`super_codon_proof_v14_8.py`](super_codon_proof_v14_8.py) | 54 RefSeq cellular taxa + 13 frontier genomes + 14 human RefSeqGene loci |
 | **Paper II (`v3.5`)**<br>*The Double-Stranded Codon Torus* | Proves that `ρ(c) = −Rc + 3·1 (mod 4)` is a fixed-point-free isometry on `𝕋₄³ = (ℤ/4ℤ)³` splitting `ℝ⁶⁴ = V₊ ⊕ V₋` (`32 ⊕ 32`); proves the duplex fibration `α_dup(c) = (α(c), α(ρ(c)))` (`64 → 56`, collapsing synonymous dimension `43 → 8`); proves antisense channel dominance (`74.1%–88.5%` of `S_syn`); uncovers the 1,101-codon antisense ORF in Pfizer `BNT162b2` and 820-codon `+2` corridor in Moderna `mRNA-1273`; builds the **Corollary 4.4 Duplex-Safe Viterbi Compiler**. | [`codon_torus_real_audit_v3_bnt162b2.py`](codon_torus_real_audit_v3_bnt162b2.py) | 9 reference RefSeq genomes (9,834,024 held-out transitions) + 17q22 locus + 8 Spike-2P constructs |
-| **Paper III (`v3.1`)**<br>*The Codon Memory Spectrum* | Replaces the entire Monte-Carlo stack (`H4`–`H7` + 4 layer-shuffle towers) with exact polynomial-time **zero-RNG** expectations (`10⁻¹⁵–10⁻²⁰`); proves Klein `V₄` splitting (`1056 ⊕ 1024 ⊕ 1024 ⊕ 992`) and blind commutator classification across **5 NCBI genetic codes** (Tables 1, 4, 6, 11, 12; topological jump `b₁: 25 → 26` on Table 4); proves the rank-`≤ 16` `16 × 16` dinucleotide screen (`93.75%` invisible to `H3b`) and two finite-sample bias lemmas (`3.7%`/`8.4%` fit on minimal *Mycoplasma*); proves **Theorem AD** (isochore-free within-gene memory & bias-corrected screen-KL chain rules: `100/100` positive `K_nonbr^MM`), **Theorem AB** (causal sequence-only C2H2 zinc-finger resolution of `Δk = 14` dips across 6 animal lineages, `92.4%–113.1%` explained, + `19/19` therian mammals vs. `0/1` monotreme), and **Theorem AC** (alignment-free phylogeny: `72.7%` directed cosine, `73.7%` non-bridge cosine vs. `20.2%` GC3). | [`codon_memory_spectrum_v3.py`](codon_memory_spectrum_v3.py)<br>*(unified engine + built-in `--replot-only` renderer)* | **100 cellular RefSeq genomes** across 13 clades & 5 genetic codes, lags `k = 1, ..., 60` (**521,837 genes**, **265,535,126 sense codons**, **796,605,378 nt**, deterministic `--gene-order hash`) |
+| **Paper III (`v3.1–v3.2`)**<br>*The Codon Memory Spectrum* | Replaces the entire Monte-Carlo stack (`H4`–`H7` + 4 layer-shuffle towers) with exact polynomial-time **zero-RNG** expectations (`10⁻¹⁵–10⁻²⁰`); proves Klein `V₄` splitting (`1056 ⊕ 1024 ⊕ 1024 ⊕ 992`) and blind commutator classification across **5 NCBI genetic codes** (Tables 1, 4, 6, 11, 12; topological jump `b₁: 25 → 26` on Table 4); proves the rank-`≤ 16` `16 × 16` dinucleotide screen (`93.75%` invisible to `H3b`) and two finite-sample bias lemmas (`3.7%`/`8.4%` fit on minimal *Mycoplasma*); proves **Theorem AD** (isochore-free within-gene memory & bias-corrected screen-KL chain rules: `100/100` positive `K_nonbr^MM`), **Theorem AB** (causal sequence-only C2H2 zinc-finger resolution of `Δk = 14` dips across 6 animal lineages, `92.4%–113.1%` explained, + `19/19` therian mammals vs. `0/1` monotreme), **Theorem AC** (alignment-free phylogeny: `72.7%` directed cosine, `73.7%` non-bridge cosine vs. `20.2%` GC3), and **Theorem AE (`v3.2`)** (orthogonal functional decoding of translation speed `rCAI` in `68/75` eukaryotes + *E. coli* entropy resolution, length-matched tiled 30-tr. Local-H6 `5'`-ramp three-domain bifurcation, position-wise H6 cotranslational folding in `98/100` taxa, and AA-centred 147-bp helical-pitch bifurcation `10.10` vs. `11.10 nt`). | [`codon_memory_spectrum_v3.py`](codon_memory_spectrum_v3.py)<br>*(unified engine + `--decode-only` + `--replot-only` renderer)* | **100 cellular RefSeq genomes** across 13 clades & 5 genetic codes, lags `k = 1, ..., 60` (**521,837 genes**, **265,535,126 sense codons**, **796,605,378 nt**, deterministic `--gene-order hash`) |
 
 ---
 
 ## Complete Repository Architecture (100% Self-Contained & Offline-Ready)
 
-Unlike standard bioinformatics repositories that require hours of external FTP downloads before a single test can run, this repository ships with the **full local NCBI cache (`cds_cache/`)** covering all **100 cellular RefSeq genomes**, all frontier/RefSeqGene/vaccine records, and **all pre-computed verification outputs (`results_verified/` and `results_memory_v31_100/`)**:
+Unlike standard bioinformatics repositories that require hours of external FTP downloads before a single test can run, this repository ships with the **full local NCBI cache (`cds_cache/`)** covering all **100 cellular RefSeq genomes**, all frontier/RefSeqGene/vaccine records, and **all pre-computed verification outputs (`results_verified/`, `results_memory_v31_100/`, and `results_decoder_v32_100/`)**:
 
 | Path / Artifact | Category | Contents & Verification Scope |
 | :--- | :---: | :--- |
 | **[`code_logos_perez_v14_8.tex.pdf`](code_logos_perez_v14_8.tex.pdf)** | **Preprint I (34 pp.)** | *"From Form to Program: Medium-Range Conditional Codon Syntax Inside Real Genes — Strict Null-Model Evidence Across 54 Cellular RefSeq Taxa, a Codon-Mirror-Symmetry Control, Two-Scale Phylogenetic Transfer, Intron-Exon Compartment Confinement, Synthetic Genome Forensics, and the Biotech 'Max-CAI' Codon-Optimization Crash"* (`v14.8`). |
 | **[`codon_torus_logos_perez_v3.tex.pdf`](codon_torus_logos_perez_v3.tex.pdf)** | **Preprint II (33 pp.)** | *"The Double-Stranded Codon Torus: Duplex Mirror Fibration of DNA Coding Space, Markovian Lumpability, and Information-Theoretic Consequences"* (`v3.5`). |
-| **[`Codon_Memory_Spectrum_v3.tex.pdf`](Codon_Memory_Spectrum_v3.tex.pdf)** | **Preprint III (46 pp.)** | *"The Codon Memory Spectrum on the Double-Stranded Torus: Exact Zero-RNG Null Towers, Klein Four-Group Symmetry Breaking, Isochore-Free Screen Memory, Causal C2H2 Zinc-Finger Periodicity, and Alignment-Free Phylogeny Across 100 RefSeq Genomes and Five Genetic Codes"* (`v3.1`). |
+| **[`Codon_Memory_Spectrum_v3.tex.pdf`](Codon_Memory_Spectrum_v3.tex.pdf)** | **Preprint III (52 pp.)** | *"The Codon Memory Spectrum on the Double-Stranded Torus: Exact Zero-RNG Null Towers, Klein Four-Group Symmetry Breaking, Isochore-Free Screen Memory, Causal C2H2 Zinc-Finger Periodicity, Alignment-Free Phylogeny, and Orthogonal Functional Decoding Across 100 RefSeq Genomes"* (`v3.2`, Theorems A–AE, Appendix Tables A1–A7). |
 | **[`super_codon_proof_v14_8.py`](super_codon_proof_v14_8.py)** | **Verification Engine I** | Autonomous self-testing pipeline (`v14.6–v14.8`): 10-level null model hierarchy (`H0`–`H7`) across 54 cellular RefSeq taxa + SARS-CoV-2, 14-gene human RefSeqGene intron-exon compartment confinement (`TP53`, `KRAS`, `BRCA1`, etc.), 13 frontier genomes (Giant Viruses, 2.8 km boreholes, 122 °C archaea, Venter's `JCVI-syn1.0` & `JCVI-syn3.0`), viral "Genetic Trojans" (`HPV-16 E7`, `Adenovirus E3 RID-α`), organelle OS rewriting, and the `Max-CAI` crash test. |
 | **[`codon_torus_real_audit_v3_bnt162b2.py`](codon_torus_real_audit_v3_bnt162b2.py)** | **Verification Engine II** | Simulation-free, **zero-RNG** analytic audit suite (`v3.2 / v3.5`): verifies exact chain-rule decompositions on `𝕋₄³ = (ℤ/4ℤ)³` to `< 10⁻¹⁵ nats/codon`, the two-strand duplex fibration `α_dup: 64 → 56`, Kemeny–Snell Markov lumpability (`G²`), antisense program dominance (`74.1%–88.5%`), 6-frame duplex ORF forensics on **Pfizer BNT162b2** (3,825 nt) and **Moderna mRNA-1273** (3,828 nt / `OR134578.1`), and the constructive **Corollary 4.4 Duplex-Safe Viterbi Compiler**. |
-| **[`codon_memory_spectrum_v3.py`](codon_memory_spectrum_v3.py)** | **Verification Engine III (`v3.1`)** | Unified self-testing, **100% zero-RNG** multi-lag analytic engine & publication figure renderer (`Theorems A–AD`, deterministic `--gene-order hash`, built-in `--replot-only` & `--plot-mode both`): executes across **100 cellular RefSeq genomes** (13 clades, 5 NCBI genetic codes: Tables 1, 4, 6, 11, 12; 521,837 genes, 265,535,126 sense codons, 796,605,378 nt) with closed-form expectations for `H4`–`H7` and 4 layer-shuffle towers, Klein `V₄` quadrant split, `16 × 16` dinucleotide screen, bias-corrected isochore-free screen-KL chain rules (**Theorem AD**), sequence-only C2H2 zinc-finger stratification (**Theorem AB**), alignment-free cosine/Frobenius phylogeny & blind multi-code classification (**Theorem AC**). |
+| **[`codon_memory_spectrum_v3.py`](codon_memory_spectrum_v3.py)** | **Verification Engine III (`v3.1–v3.2`)** | Unified self-testing, **100% zero-RNG** multi-lag analytic engine, orthogonal functional decoder & publication figure renderer (`Theorems A–AE`, deterministic `--gene-order hash`, built-in `--decode-only`, `--replot-only` & `--plot-mode both`): executes across **100 cellular RefSeq genomes** (13 clades, 5 NCBI genetic codes: Tables 1, 4, 6, 11, 12; 521,837 genes, 265,535,126 sense codons, 796,605,378 nt) with closed-form expectations for `H4`–`H7` and 4 layer-shuffle towers, Klein `V₄` quadrant split, `16 × 16` dinucleotide screen, bias-corrected isochore-free screen-KL chain rules (**Theorem AD**), sequence-only C2H2 zinc-finger stratification (**Theorem AB**), alignment-free cosine/Frobenius phylogeny & blind multi-code classification (**Theorem AC**), and per-gene orthogonal functional decoding (**Theorem AE**). |
 | **[`run_all_audits.sh`](run_all_audits.sh)** | **1-Click Master Runner** | Executes built-in mathematical unit tests, runs verification engines across cached datasets, and generates JSON/Markdown reports and publication figures. |
 | **[`cds_cache/`](cds_cache)** | **Local NCBI Cache (Full Biosphere)** | All **100** official RefSeq cellular `*_cds_from_genomic.fna.gz` assemblies (`BIOSPHERE_100` + `manifest_v30.json`), **16** human RefSeqGene GenBank loci (`NG_*.gb` + `JCVI-syn1.0/3.0`), **13** Frontier Biosphere CDS archives, **19** viral/chimera/vaccine FASTA records (`NC_045512.2`, `OR134577.1`, `OR134578.1`, `mRNA-1273`), and the 100-kb human chromosome 17 window `NC_000017.11:55154472-55254472`. |
 | **[`results_verified/`](results_verified)** | **Verified Outputs I & II** | Complete JSON, Markdown, and log outputs for all 5 audit stages of Papers I & II (`01_codon_torus_and_bnt162b2_v3_5` through `05_biosphere_55taxa_smoke`) plus all 8 publication figures (`PNG` & `PDF`). |
-| **[`results_memory_v31_100/`](results_memory_v31_100)** | **Verified Outputs III (`v3.1`)** | Complete 100-taxon zero-RNG output bundle (`memory_spectrum_v30.json`, `memory_spectrum_v30.md`) and all 11 publication figures (`300 DPI`) in [`results_memory_v31_100/figures/`](results_memory_v31_100/figures) (clade-median + IQR overlays [`fig1`](results_memory_v31_100/figures/fig1_klein_quadrants_clades.png)–[`fig4`](results_memory_v31_100/figures/fig4_tower_phase_boxes_clades.png), companion 100-line overlays, and discovery panels [`fig5`](results_memory_v31_100/figures/fig5_thmAD_isochore_free_screen.png)–[`fig7`](results_memory_v31_100/figures/fig7_thmAC_phylogeny_codes.png)). |
+| **[`results_memory_v31_100/`](results_memory_v31_100)** | **Verified Outputs III (`v3.1`)** | Complete 100-taxon zero-RNG output bundle (`memory_spectrum_v30.json`, `memory_spectrum_v30.md`, powering Tables A1–A6) and all 11 publication figures (`300 DPI`) in [`results_memory_v31_100/figures/`](results_memory_v31_100/figures) (clade-median + IQR overlays [`fig1`](results_memory_v31_100/figures/fig1_klein_quadrants_clades.png)–[`fig4`](results_memory_v31_100/figures/fig4_tower_phase_boxes_clades.png), companion 100-line overlays, and discovery panels [`fig5`](results_memory_v31_100/figures/fig5_thmAD_isochore_free_screen.png)–[`fig7`](results_memory_v31_100/figures/fig7_thmAC_phylogeny_codes.png)). |
+| **[`results_decoder_v32_100/`](results_decoder_v32_100)** | **Verified Outputs III (`v3.2`, Thm AE)** | Complete 100-taxon zero-RNG orthogonal functional decoder bundle ([`functional_decoder_v32.json`](results_decoder_v32_100/functional_decoder_v32.json), [`functional_decoder_v32.md`](results_decoder_v32_100/functional_decoder_v32.md), powering Appendix Table A7) and the four-panel publication synthesis [`fig8_thmAE_functional_decoder.png`](results_decoder_v32_100/figures/fig8_thmAE_functional_decoder.png) (`300 DPI`). |
 | **[`Cadon_DNA.mp4`](Cadon_DNA.mp4)** | **Visual Explainer** | Programmatic scientific animation illustrating the double-stranded codon torus `𝕋₄³`, `TP53` splicing syntax, and six-frame duplex barriers on `BNT162b2` / `mRNA-1273`. |
 
 ---
@@ -186,11 +187,11 @@ Full report in [`results_verified/04_viral_trojan_and_maxcai_crash_v14_8/chimera
 
 ---
 
-## Part IV: The Codon Memory Spectrum on the Double-Stranded Torus Across 100 RefSeq Genomes & Five Genetic Codes (Paper III, `v3.1`)
+## Part IV: The Codon Memory Spectrum & Orthogonal Functional Decoder Across 100 RefSeq Genomes & Five Genetic Codes (Paper III, `v3.1–v3.2`)
 
-**Preprint III ([`Codon_Memory_Spectrum_v3.tex.pdf`](Codon_Memory_Spectrum_v3.tex.pdf), 46 pp., Concept DOI: [`10.5281/zenodo.24242062`](https://doi.org/10.5281/zenodo.24242062))** and its unified self-testing engine **[`codon_memory_spectrum_v3.py`](codon_memory_spectrum_v3.py) (`v3.1`, Theorems A–AD)** scale the zero-RNG multi-lag operator theory (`k = 1, ..., 60` codons) to **100 cellular NCBI RefSeq genomes** spanning **13 taxonomic clades** and **five NCBI genetic codes** (Table 1: `n = 70`, Table 11: `n = 22`, Table 12: `n = 3`, Table 4: `n = 3`, Table 6: `n = 2`; **521,837** deduplicated genes, **265,535,126** sense codons, **796,605,378** nucleotides under deterministic SHA-256 hash gene-cap ordering `--gene-order hash`, `n_failed = 0`).
+**Preprint III ([`Codon_Memory_Spectrum_v3.tex.pdf`](Codon_Memory_Spectrum_v3.tex.pdf), 52 pp., Concept DOI: [`10.5281/zenodo.24242062`](https://doi.org/10.5281/zenodo.24242062))** and its unified self-testing engine **[`codon_memory_spectrum_v3.py`](codon_memory_spectrum_v3.py) (`v3.1–v3.2`, Theorems A–AE)** scale the zero-RNG multi-lag operator theory (`k = 1, ..., 60` codons) and orthogonal per-gene functional decoding to **100 cellular NCBI RefSeq genomes** spanning **13 taxonomic clades** and **five NCBI genetic codes** (Table 1: `n = 70`, Table 11: `n = 22`, Table 12: `n = 3`, Table 4: `n = 3`, Table 6: `n = 2`; **521,837** deduplicated genes, **265,535,126** sense codons, **796,605,378** nucleotides under deterministic SHA-256 hash gene-cap ordering `--gene-order hash`, `n_failed = 0`).
 
-Across all `100 × 7` taxon–lag evaluations, core MI/KL structural identities hold to `≤ 1.11 × 10⁻¹⁶ nats/codon` (semigroup closure `‖Q₁^k − Q_k‖_max ≤ 1.39 × 10⁻¹⁶`; Theorem W three-way residual `≤ 2.83 × 10⁻¹⁴`; Theorem AD forward/reverse KL chain rules `≤ 2.78 × 10⁻¹⁷` and `≤ 3.47 × 10⁻¹⁷`).
+Across all `100 × 7` taxon–lag evaluations, core MI/KL structural identities hold to `≤ 1.11 × 10⁻¹⁶ nats/codon` (semigroup closure `‖Q₁^k − Q_k‖_max ≤ 1.39 × 10⁻¹⁶`; Theorem W three-way residual `≤ 2.83 × 10⁻¹⁴`; Theorem AD forward/reverse KL chain rules `≤ 2.78 × 10⁻¹⁷` and `≤ 3.47 × 10⁻¹⁷`; Theorem AE within-gene directed-null error `≤ 2.35 × 10⁻¹⁷`, capacity split `≤ 1.11 × 10⁻¹⁵` bits/codon, and length-matched tiled Local-H6 stationary-null error `8.88 × 10⁻¹⁶`).
 
 ### 1. Exact Zero-RNG Null Stack & Resolution–Horizon Trade-Off (Theorems A, B.1, C.2, D, H, K, N)
 * **Closed-Form Analytic Expectations:** Every stochastic control in the ten-null stack (`H4` block permutations in `O(n + q²)`, between-gene hypergeometric null `E_het^(k)`, Markovian `H5` with step-wise mass conservation `‖u_t‖₁ = 1` to `< 10⁻¹²`, synonymous `H6`, 32-mirror-orbit `H7`, and all four layer-shuffle towers `Λ ∈ {het, aa, dup, mirror}` in `2F` BLAS calls) is computed exactly with zero RNG and verified against exhaustive permutation enumeration to `10⁻¹⁵–10⁻²⁰`:
@@ -297,7 +298,35 @@ Without sequence alignment or species labels, leave-one-out `1`-NN clade purity 
 
 ![Fig 7. Theorem AC — Zero-RNG Alignment-Free Phylogeny & Blind Genetic-Code Fingerprints (100 Taxa)](results_memory_v31_100/figures/fig7_thmAC_phylogeny_codes.png)
 
-### 7. Core 15-Taxon Snapshot from the 100-Genome Hash-Ordered Audit (`codon_memory_spectrum_v3.py`, `v3.1`)
+### 7. Theorem AE (`v3.2`): Orthogonal Torus Functional Decoder Across 100 Genomes (`100% Zero-RNG`)
+Lifting the Klein `V₄` and `16 × 16`-screen projectors to the per-gene isochore-free joint PMI operator `L = log(P_tr / Q_tr)` (`α = 0.5`, within-gene directed-null error `≤ 2.35 × 10⁻¹⁷`, exact position-wise H6 baseline `𝔼_H6[s^syn(t)] = 0`, and length-matched tiled 30-transition / 31-codon Local-H6 `5'`-ramp stationary-null error `8.88 × 10⁻¹⁶`) separates six distinct biological layers across all 100 RefSeq genomes (`1,283.1 s` total wall time; archived in [`results_decoder_v32_100/functional_decoder_v32.json`](results_decoder_v32_100/functional_decoder_v32.json)):
+
+$$
+H(C \mid A) \;=\; \underbrace{H(A^\rho \mid A)}_{H_{\text{anti}}} \;+\; \underbrace{H(C \mid A, A^\rho)}_{H_{\mathcal{D}_8}} \qquad (\text{verified to } \le 1.11 \times 10^{-15}\text{ bits/codon across } 100/100\text{ genomes})
+$$
+
+| Functional Pillar (Theorem AE) | Primary Channel(s) | Biosphere-100 Quantitative Result (`100% Zero-RNG`) |
+| :--- | :--- | :--- |
+| **1. Synonymous Capacity & `H_{𝒟₈}` Stratification** | `H(C \| A) = H_anti + H_{𝒟₈}` | Error `≤ 1.11 × 10⁻¹⁵`; `~1.5–1.6 bits/codon` free (`1%–4%` occupied). `H_{𝒟₈}` tracks code fiber dimension: **Table 12** (`dim = 6`, `n = 3`): `0.082–0.094` (med `0.087`, below all 7 Table-1 fungi `0.159–0.183`); **Table 1** euk. med `0.177` (IQR `0.171–0.180`), **Table 11** prok. med `0.128`, **Table 4** med `0.114`; **Table 6** (`dim = 10`, 2 quartets, `n = 2`): **`0.280–0.321` bits/codon** (strictly above all `dim ≤ 8` genomes, max `0.224`). |
+| **2. Translation Speed (`rCAI`) & Max-CAI Paradox** | Directed `W_{-+}`, `Bridge` | Controlling for GC3 and `log L`, pure synonymous `W_{-+}` tracks ribosomal `rCAI` in **`68/75` (`90.7%`) eukaryotes** (`p = 1.17 × 10⁻¹³`, med `+0.167`; `+0.183` after entropy control; primate `Bridge` `r = +0.44` to `+0.49`, `t = +17…+19`). Adding `syn_ent_norm` resolves the apparent negative *E. coli* Max-CAI sign (`-0.178 → -0.019`, `t = -0.57`). |
+| **3. Unbiased Tiled `5'`-Ramp (`30`-tr. / `31`-cod. Tiles)** | `W_{-+}`, `W_{--}`, `NonBridge` | Stationary-null error `8.88 × 10⁻¹⁶`; universal directed depletion (`W_{-+} < 0` in **`88/100`**, `p = 1.91 × 10⁻¹⁵`; `W_{--} < 0` in **`90/100`**, `p = 3.06 × 10⁻¹⁷`), plus sharp **`NonBridge` kingdom inversion**: prokaryotes **`24/25 < 0`** (med `-2.20`, `p = 1.55 × 10⁻⁶`) vs. land plants **`11/11 > 0`** (`10/10` angiosperms `t ≥ +4.5`, med `+6.15`, Rice `+12.8`; *Chlamydomonas* `-14.9`; Mann–Whitney `p = 1.27 × 10⁻⁶`). |
+| **4. Cotranslational Folding Code (Pos.-Wise H6)** | `KD`, `Surface − Core`, `FoldBoundary` | Gene-level Kyte–Doolittle hydrophobicity (`KD`) `> 0` in **`88/100`** (`W_{-+}`, `p = 1.91 × 10⁻¹⁵`) and **`89/100`** (`W_{--}`, `p = 2.54 × 10⁻¹⁶`). Within genes, `Surface − Core < 0` in **`87/100`** (`Bridge`, `p = 1.31 × 10⁻¹⁴`), **`92/100`** (`NonBridge`, `p = 3.21 × 10⁻¹⁹`), and **`98/100`** in at least one channel (sole exceptions: *B. rapa*, *P. patens*); `FoldBoundary − Core` dips in `W_{-+}` in **`79/100`** (`p = 4.34 × 10⁻⁹`). |
+| **5. Synonymous Helical Pitch (`147`-bp Core DFT)** | AA-centred wobble GC3 DFT | Immune to protein `α`-helices (`3.6 aa = 10.8 nt`); separates **eukaryotic nucleosome pitch** (med **`10.10 nt`**, `12/12` plants in `9.5–10.5 nt`) from **bacterial negative-supercoiling pitch** (med **`11.10 nt`**, `11/11` strong peaks `SNR ≥ 4` in `10.8–11.6 nt`; Mann–Whitney `p = 1.71 × 10⁻⁴` peak, **`p = 2.60 × 10⁻⁶`** band ratio), while archaea (`n = 6`) span both bands (`9.9–10.5 nt` vs. `11.0–11.5 nt`). |
+| **6. Biological Module Signatures** | GC3-resid. `s^syn` (4 ch.) | `Membrane_Transporter` (`+0.8, +1.1, +1.3, +1.0`) and `Metabolic_Enzyme` (`+0.5, +0.8, +0.4, +0.9`) are uniformly elevated across all four channels, whereas `TF_ZincFinger` splits biosphere-median polarity (`W_{-+} = -1.1`, `NonBridge = +0.8`) and flips sharply positive in non-mammalian C2H2 resonators (*Octopus* `+10.9`, *Anolis* `+7.9`, Zebrafish `+6.7`). |
+
+**Three-Domain `5'`-Ramp Bifurcation (Length-Matched Tiled `30`-Transition / `31`-Codon Local-H6, Paired Gene-Level `t`):**
+
+| Lineage Group | `n` | Tiled `5'`-Ramp `W_{-+}` | Tiled `5'`-Ramp `W_{--}` | Tiled `5'`-Ramp `NonBridge` |
+| :--- | :---: | :--- | :--- | :--- |
+| **Therian mammals** (excl. Platypus) | `19` | med `-5.30` (**`19/19` `t < -2`**) | med `-2.00` (`19/19 < 0`) | med `+0.50` (neutral; Platypus `+4.2`) |
+| **All vertebrates** | `32` | med `-4.85` (`32/32 < 0`, `28/32 t < -2`) | med `-1.75` (`27/32 < 0`) | Birds `3/3 > +3.5` (`+3.6, +5.4, +5.0`) |
+| **Land plants** (`10` angiosp. + `1` moss) | `11` | med `-1.10` (mixed) | med `-1.00` (`10/11 < 0`) | **`11/11 > 0`**; angiosp. `10/10 ≥ +4.5` (med `+6.15`) |
+| **Prokaryotes** (`19` bact. + `6` arch.) | `25` | med `-1.50` (`19/25 < 0`) | med `-2.10` (`23/25 < 0`) | **`24/25 < 0`** (med `-2.20`, `p = 1.55 × 10⁻⁶`) |
+| **All biosphere** | **`100`** | **`88/100 < 0`** (`p = 1.91 × 10⁻¹⁵`) | **`90/100 < 0`** (`p = 3.06 × 10⁻¹⁷`) | **Kingdom inversion** (`p_MWU = 1.27 × 10⁻⁶`) |
+
+![Fig 8. Theorem AE — Orthogonal Torus Functional Decoder Across 100 Cellular RefSeq Genomes (100% Zero-RNG)](results_decoder_v32_100/figures/fig8_thmAE_functional_decoder.png)
+
+### 8. Core 15-Taxon Snapshot from the 100-Genome Hash-Ordered Audit (`codon_memory_spectrum_v3.py`, `v3.1–v3.2`)
 
 | Taxon (Core Panel) | Sense Codons | `I(C_t; C_{t+1})` | `I_bridge` (225 df) | `D_{5'lead}` (675 df) | `D_{3'wob}` (675 df) | `D_{1↔3}` (2025 df) | `d₃b(1)` | `d₃b_ph(1)` | `Δx₁(1)` | `Δx₁(30)` | Exact `Δ₅` (`t₅`) | Exact `Δ₆` (`t₆`) | Exact `Δ₇` (`t₇`) | `p*(64/20/32/4/2)` |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | :---: |
@@ -317,7 +346,7 @@ Without sequence alignment or species labels, leave-one-out `1`-NN clade purity 
 | **`Dictyostelium`** | 3,169,712 | `0.103592` | `0.043201` | `0.026722` | `0.023631` | `0.010039` | `0.307524` | `0.070873` | `0.036761` | **`0.007675`** | `0.032721` (`7.88`) | `0.079208` (`81.14`) | `0.081499` (`71.60`) | **`2/3/2/6/14`** |
 | **`P_aeruginosa`** | 1,852,135 | `0.110723` | `0.054119` | `0.022602` | `0.024679` | `0.009324` | `0.368807` | `0.058612` | `0.031926` | **`0.004810`** | `0.132308` (`24.00`) | `0.191056` (`135.5`) | `0.123805` (`116.1`) | `1/2/1/4/0` |
 
-*(Full 100-taxon biosphere tables A1–A6 are published in Appendix A of [`Codon_Memory_Spectrum_v3.tex.pdf`](Codon_Memory_Spectrum_v3.tex.pdf) and archived in [`results_memory_v31_100/memory_spectrum_v30.json`](results_memory_v31_100/memory_spectrum_v30.json).)*
+*(Full 100-taxon biosphere tables A1–A7 are published in Appendix A of [`Codon_Memory_Spectrum_v3.tex.pdf`](Codon_Memory_Spectrum_v3.tex.pdf) and archived in [`results_memory_v31_100/memory_spectrum_v30.json`](results_memory_v31_100/memory_spectrum_v30.json) [Tables A1–A6] and [`results_decoder_v32_100/functional_decoder_v32.json`](results_decoder_v32_100/functional_decoder_v32.json) [Table A7].)*
 
 ---
 
@@ -350,7 +379,7 @@ python3 super_codon_proof_v14_8.py --frontier-audit --cds-dir cds_cache --out-di
 # 5. Viral "Genetic Trojan" Scanner, Organelle OS Rewriting & Biotech Max-CAI Crash Test (v14.8):
 python3 super_codon_proof_v14_8.py --chimera-audit --cds-dir cds_cache --out-dir results_verified/04_viral_trojan_and_maxcai_crash_v14_8
 
-# 6. Paper III (v3.1) Deterministic Self-Tests (Theorems A-AD, all 8 NCBI tables, exhaustive permutation fixtures, 3-period de Bruijn B(4,6) null, synthetic ZNF control):
+# 6. Paper III (v3.1-v3.2) Deterministic Self-Tests (Theorems A-AE, all 8 NCBI tables, exhaustive permutation fixtures, 3-period de Bruijn B(4,6) null, synthetic ZNF & tiled Local-H6 controls):
 python3 codon_memory_spectrum_v3.py --self-test
 
 # 7. Paper III (v3.1) Full 100-Taxon Biosphere Audit (13 clades, 5 genetic codes, lags k = 1..60, unbiased SHA-256 hash cap, zero RNG):
@@ -358,10 +387,18 @@ python3 codon_memory_spectrum_v3.py \
     --cds-dir cds_cache --out-dir results_memory_v31_100 \
     --biosphere-100 --max-genes 6000 --gene-order hash --max-lag 60 --kernel-mode backoff --plot-mode both
 
-# 8. Fast Re-Rendering of All 11 Publication Figures (300 DPI) from Pre-Computed JSON Without Recomputing:
+# 8. Paper III (v3.2) Standalone Theorem AE Orthogonal Functional Decoder Across All 100 Genomes (zero RNG, emits JSON, MD & Fig 8):
+python3 codon_memory_spectrum_v3.py \
+    --cds-dir cds_cache --out-dir results_decoder_v32_100 \
+    --biosphere-100 --max-genes 6000 --gene-order hash --decode-only --dpi 300
+
+# 9. Fast Re-Rendering of Publication Figures (300 DPI) from Pre-Computed JSON Without Recomputing:
 python3 codon_memory_spectrum_v3.py \
     --replot-only results_memory_v31_100/memory_spectrum_v30.json \
     --out-dir results_memory_v31_100 --dpi 300 --plot-format png --plot-mode both
+python3 codon_memory_spectrum_v3.py \
+    --replot-only results_decoder_v32_100/functional_decoder_v32.json \
+    --out-dir results_decoder_v32_100 --dpi 300 --plot-format png
 ```
 
 ---
@@ -393,10 +430,10 @@ python3 codon_memory_spectrum_v3.py \
 
 @misc{LogvinovichPerez2026MemorySpectrum,
   author       = {Logvinovich, Victor and Perez, Jean-Claude},
-  title        = {{The Codon Memory Spectrum on the Double-Stranded Torus: Exact Zero-RNG Null Towers, Klein Four-Group Symmetry Breaking, Isochore-Free Screen Memory, Causal C2H2 Zinc-Finger Periodicity, and Alignment-Free Phylogeny Across 100 RefSeq Genomes and Five Genetic Codes}},
+  title        = {{The Codon Memory Spectrum on the Double-Stranded Torus: Exact Zero-RNG Null Towers, Klein Four-Group Symmetry Breaking, Isochore-Free Screen Memory, Causal C2H2 Zinc-Finger Periodicity, Alignment-Free Phylogeny, and Orthogonal Functional Decoding Across 100 RefSeq Genomes}},
   year         = {2026},
   month        = nov,
-  version      = {v3.1},
+  version      = {v3.2},
   doi          = {10.5281/zenodo.24242062},
   url          = {[https://doi.org/10.5281/zenodo.24242062](https://doi.org/10.5281/zenodo.24242062)},
   note         = {All-versions Concept DOI: 10.5281/zenodo.24242062; GitHub Repository: [https://github.com/Dr-Logvinovich/codon-torus-syntax](https://github.com/Dr-Logvinovich/codon-torus-syntax), ORCID: 0009-0007-2040-6955, 0000-0001-6446-2042}
